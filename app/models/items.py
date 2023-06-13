@@ -15,6 +15,18 @@ class Items(db.Model):
     price = db.Column(db.Integer, nullable=False)
     picture_aws_link=db.Column(db.String(500), nullable = False)
 
+    def to_dict(self):
+        item_reviews = Reviews.query.filter_by(item_id = self.id).all()
+
+
+        return{
+            'id': self.id,
+            'owner_id': self.owner_id,
+            'name': self.name,
+            'desc': self.desc,
+            'price': self.price,
+            'picture_aws_link': self.picture_aws_link
+        }
     # connecting to user table
     userid = db.relationship(
         "User", back_populates = 'item'
