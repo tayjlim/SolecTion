@@ -85,11 +85,7 @@ def undo_items():
     picture_aws_link='https://images.stockx.com/images/Nike-Dunk-SB-Low-Freddy-Krueger.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1607045341&q=57'
     )
 
-
-
-
-
-
+    
     db.session.add(shoe1)
     db.session.add(shoe2)
     db.session.add(shoe3)
