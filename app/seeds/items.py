@@ -17,7 +17,7 @@ def undo_items():
 
 def under_items():
     if environment == "production":
-        db.session.execute(f"TRUNCATE table {SCHEMA}.animes RESTART IDENTITY CASCADE;")
+        db.session.execute(f"TRUNCATE table {SCHEMA}.items RESTART IDENTITY CASCADE;")
     else:
         db.session.execute(text("DELETE FROM items"))
 
