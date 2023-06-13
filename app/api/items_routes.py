@@ -10,6 +10,7 @@ def get_all_items():
     response = [item.to_dict() for item in all_items]
     return {'item': response}
 
+
 @items_routes.route('/<int:id>')
 def get_single_item(id):
     single_shoe = Items.query.get(id)
