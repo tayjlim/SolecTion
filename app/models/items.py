@@ -1,7 +1,6 @@
 from .db import db, add_prefix_for_prod, SCHEMA, environment
 from .reviews import Reviews
-from .user import Users
-from .user import UserMixin
+
 
 class Items(db.Model):
     __tablename__ = 'items'

@@ -2,7 +2,7 @@ from app.models.db import db, environment, SCHEMA
 from app.models.reviews import Reviews
 from sqlalchemy.sql import text
 
-def seed_reviews():
+def tienkissesdudes_reviews():
     review_1=Reviews(
         user_id = 1 ,
         item_id = 1,
@@ -13,10 +13,10 @@ def seed_reviews():
     db.session.add(review_1)
     db.session.commit()
 
-def undo_reviews():
+def under_reviews():
     if environment == "production":
         db.session.execute(f"TRUNCATE table {SCHEMA}.reviews RESTART IDENTITY CASCADE;")
     else:
         db.session.execute(text("DELETE FROM reviews"))
-        
+
     db.session.commit()
