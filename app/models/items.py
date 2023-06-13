@@ -16,8 +16,6 @@ class Items(db.Model):
     picture_aws_link=db.Column(db.String(500), nullable = False)
 
     def to_dict(self):
-        item_reviews = Reviews.query.filter_by(item_id = self.id).all()
-
 
         return{
             'id': self.id,
