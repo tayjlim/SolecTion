@@ -32,5 +32,5 @@ class Items(db.Model):
 
     # connecting to review table
     review_name = db.relationship(
-        "Reviews", cascade="all,delete-orphan",back_populates = 'review_item_id'
+        "Reviews", back_populates = 'review_item_id'
     )

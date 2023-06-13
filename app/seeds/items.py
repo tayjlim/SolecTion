@@ -10,7 +10,7 @@ def undo_items():
         price = 120,
         picture_aws_link = 'https://cdn.discordapp.com/attachments/1118210959077556414/1118211310547636224/img36.jpg')
 
-    
+
 
     db.session.add(shoe1)
     db.session.commit()
@@ -19,6 +19,6 @@ def under_items():
     if environment == "production":
         db.session.execute(f"TRUNCATE table {SCHEMA}.animes RESTART IDENTITY CASCADE;")
     else:
-        db.session.execute(text("DELETE FROM animes"))
+        db.session.execute(text("DELETE FROM items"))
 
     db.session.commit()
