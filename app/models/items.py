@@ -1,9 +1,10 @@
 from .db import db, add_prefix_for_prod, SCHEMA, environment
 from .reviews import Reviews
+from .user import Users
 from .user import UserMixin
 
 class Items(db.Model):
-    __tablename__: 'items'
+    __tablename__ = 'items'
 
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
@@ -19,7 +20,7 @@ class Items(db.Model):
     userid = db.relationship(
         "User", back_populates = 'item'
     )
-    
+
     # connecting to review table
     review_name = db.relationship(
         "Reviews", cascade="all,delete-orphan",back_populates = 'review_item_id'
