@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { login } from "../../store/session";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
+import * as sessionActions from "../../store/session";
 import "./LoginForm.css";
 
 function LoginFormModal() {
@@ -10,6 +11,12 @@ function LoginFormModal() {
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
   const { closeModal } = useModal();
+
+  const handleDemoSubmit = async (e) => {
+    e.preventDefault();
+    return dispatch(sessionActions.login("demo@aa.io", "password"))
+      .then(closeModal)
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -50,6 +57,10 @@ function LoginFormModal() {
         </label>
         <button type="submit">Log In</button>
       </form>
+      <button type="submit"
+         onClick={handleDemoSubmit}>Demo User Login
+      </button>
+
     </>
   );
 }

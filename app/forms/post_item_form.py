@@ -8,5 +8,4 @@ class ItemForm(FlaskForm):
     name = StringField('name',validators=[DataRequired()])
     desc = StringField('desc', validators=[DataRequired()])
     price = IntegerField('price',validators=[DataRequired()])
-    # cover_picture= FileField('cover_picture', validators=[FileRequired(),FileAllowed(['png', 'jpeg', 'jpg'])])
-    cover_picture_link_test = StringField('cover_picture_link_test', validators=[DataRequired()])
+    picture_aws_link = FileField('picture_aws_link', validators=[FileRequired(),FileAllowed(['png', 'jpeg', 'jpg'])])
