@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import './index.css'
 function SellPage() {
 
-    const [coverPicture, setCoverPicture] = useState(undefined)
+    const [picture_aws_link, setPicture_aws_link] = useState(undefined)
     const [name,setName] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState(1)
@@ -12,9 +12,10 @@ function SellPage() {
     e.preventDefault()
     const formData = new FormData()
 
-    formData.append('')
-    formData.append('')
-    formData.append('')
+    formData.append('name',name)
+    formData.append('desc',description)
+    formData.append('price',price)
+    formData.append('picture_aws_link',picture_aws_link)
     }
 
 
