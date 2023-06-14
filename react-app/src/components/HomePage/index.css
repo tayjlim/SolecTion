@@ -1,0 +1,18 @@
+.ItemTileContainer{
+    display: flex;
+    flex-direction: column;
+    border: 1 solid  rgb(236, 0, 0)
+
+}
+.shoePicTile{
+    width:140px;
+    height:75px;
+    object-fit: contain;
+}
+
+.itemsMapOfShoesContainer{
+    display:inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-self: center;
+}

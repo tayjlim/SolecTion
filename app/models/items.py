@@ -26,6 +26,7 @@ class Items(db.Model):
             'picture_aws_link': self.picture_aws_link
         }
     # connecting to user table
+    
     userid = db.relationship(
         "User", back_populates = 'item'
     )

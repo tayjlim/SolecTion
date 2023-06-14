@@ -10,7 +10,13 @@ function Navigation({ isLoaded }){
 	return (
 		<ul>
 			<li>
-				<NavLink exact to="/">Home</NavLink>
+				<NavLink exact to="/">
+				<img className ='logoHeaderNav' src = 'https://cdn.discordapp.com/attachments/1117931108747722862/1118582479146733658/solection-low-resolution-logo-color-on-transparent-background.png'/>
+				</NavLink>
+
+				<NavLink exact to ='/sell'>
+				sell here
+				</NavLink>
 			</li>
 			{isLoaded && (
 				<li>
