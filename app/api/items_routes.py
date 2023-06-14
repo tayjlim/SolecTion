@@ -16,18 +16,20 @@ def get_all_items():
 
 
 @items_routes.route('/new', methods=['POST'])
-# @login_required
+@login_required
 def make_new_item():
-    # user_id = current_user.id
-    form = ItemForm()
 
+
+    form = ItemForm()
+    form["csrf_token"].data = request.cookies["csrf_token"]
+    user_id = current_user.id
     if form.validate_on_submit():
-        picture=form.data['cover_picture'] # file
+        picture=form.data['picture_aws_link'] # file
         picture.filename = get_unique_filename(picture.filename) # get a unique name
-        uploaded = upload_file_to_s3(picture.filename) #upload to aws
+        uploaded = upload_file_to_s3(picture) #upload to aws
         aws_link = uploaded['url']
         new_item = Items(
-            owner_id= form.data['owner_id'],
+            owner_id= user_id,
             name = form.data['name'],
             desc = form.data['desc'],
             price = form.data['price'],
@@ -43,12 +45,17 @@ def make_new_item():
 
 
 @items_routes.route('/<int:id>/delete' ,methods=['DELETE'])
-# @login_required
+@login_required
 def edit_item(item_id):
     item_delete = Items.query.get(item_id)
+    user_id = current_user.id
 
     if(item_delete is None):
         return {'message':'Item could not be found'}
+
+    if item_delete['owner_id'] != user_id :
+        return {'message':'Forbidden'}
+
 
     remove_file_from_s3(item_delete['picture_aws_link'])
     db.session.delete(item_delete)
