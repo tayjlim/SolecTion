@@ -3,13 +3,14 @@ const DELETE_ITEMS = 'items/deleteItems'
 const POST_ITEMS = 'items/postItems'
 const EDIT_ITEMS = 'items/editItems'
 
+
+
 const postItems = (items) =>{
     return{
         type: POST_ITEMS,
         payload: items
     }
 }
-
 export const postItemsThunk =(items) => async(dispatch) =>{
     const response = await fetch('/api/items/new',{
         method:'POST',
@@ -22,6 +23,24 @@ export const postItemsThunk =(items) => async(dispatch) =>{
     }
 }
 
+const deleteItems = (itemsId) => {
+    return{
+        type: DELETE_ITEMS,
+        itemsId
+    }
+}
+export const deleteItemsThunk = (itemsId)=> async (dispatch) =>{
+
+    const response = await fetch(`/api/items/${itemsId}`,{
+        method:'DELETE'
+    })
+    if(response.ok){
+        dispatch(deleteItems(itemsId))
+    }else{
+        return false
+    }
+}
+
 
 const getAllItems = (items) =>{
     return{
@@ -29,7 +48,6 @@ const getAllItems = (items) =>{
         payload:items
     }
 }
-
 export const getAllItemsThunk =() => async (dispatch) =>{
     const response = await fetch('/api/items')
     const data = await response.json()

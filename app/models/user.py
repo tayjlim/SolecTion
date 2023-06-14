@@ -32,6 +32,6 @@ class User(db.Model, UserMixin):
             'email': self.email
         }
     #Connecting to Item
-    item = db.relationship('Items', back_populates = 'userid')
+    item = db.relationship('Items', cascade="all,delete-orphan",back_populates = 'userid')
     #connecting to User
-    review = db.relationship('Reviews', back_populates = 'review_user_id')
+    review = db.relationship('Reviews', cascade="all,delete-orphan", back_populates = 'review_user_id')
