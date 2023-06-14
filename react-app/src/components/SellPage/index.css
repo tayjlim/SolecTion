@@ -1,0 +1,4 @@
+.createItemFormContainer{
+    display:flex;
+    flex-direction: column;
+}
