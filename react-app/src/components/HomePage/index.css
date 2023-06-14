@@ -1,13 +1,16 @@
 .ItemTileContainer{
     display: flex;
     flex-direction: column;
-    border: 1 solid  rgb(236, 0, 0)
-
+    border: 1px solid #e2e8f0;
+    width: 200px;
+    height: 200px;
+    margin:8px;
+    border-radius: 4px;
 }
 .shoePicTile{
     width:140px;
     height:75px;
-    object-fit: contain;
+    object-fit: cover;
 }
 
 .itemsMapOfShoesContainer{
@@ -15,4 +18,17 @@
     justify-content: center;
     flex-wrap: wrap;
     align-self: center;
+}
+.homePageEntireDiv{
+    display:flex;
+    flex-direction: column;
+    padding-left: 20px;
+    padding-right: 20px;
+    justify-content: center;
+}
+.homePageLinkThang{
+    align-self: center;
+    max-height: 400px;
+    max-width: 1000px;
+    object-fit: cover;
 }

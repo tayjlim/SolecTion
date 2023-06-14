@@ -22,10 +22,10 @@ def make_new_item():
     form = ItemForm()
 
     if form.validate_on_submit():
-        # picture=form.data['cover_picture']
-        # picture.filename = get_unique_filename(picture.filename)
-        # uploaded = upload_file_to_s3(picture.filename)
-        # aws_link = uploaded['url']
+        picture=form.data['cover_picture'] # file
+        picture.filename = get_unique_filename(picture.filename) # get a unique name
+        uploaded = upload_file_to_s3(picture.filename) #upload to aws
+        aws_link = uploaded['url']
         new_item = Items(
             owner_id= form.data['owner_id'],
             name = form.data['name'],

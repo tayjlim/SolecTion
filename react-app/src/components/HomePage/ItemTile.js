@@ -1,13 +1,18 @@
+import { useHistory } from "react-router-dom";
 import './index.css'
 function ItemTile({item}){
-    console.log(item)
+    const history = useHistory();
+
+    const handleClick= () =>{
+        history.push(`/items/${item.id}`)
+    }
 
     return (
-        <div id = {item.id} className="ItemTileContainer">
+        <div id = {item.id} className="ItemTileContainer" onClick={handleClick}>
 
         <img className = 'shoePicTile' src = {item.picture_aws_link}></img>
-        <h3>{item.name}</h3>
-        <h3>{item.price}</h3>
+        <p>{item.name}</p>
+        <h3>${item.price}</h3>
 
        </div>
 
