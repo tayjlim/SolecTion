@@ -10,6 +10,18 @@ const postItems = (items) =>{
     }
 }
 
+export const postItemsThunk =(items) => async(dispatch) =>{
+    const response = await fetch('/api/items/new',{
+        method:'POST',
+        body: items
+    })
+    const data = await response.json()
+    if(response.ok){
+        dispatch(postItems(data))
+        return data
+    }
+}
+
 
 const getAllItems = (items) =>{
     return{
@@ -42,6 +54,11 @@ const itemsReducer = (state = initialState, action) =>{
         case GET_ALL_ITEMS:{
             let newState = { ...state }
             newState = { ...action.payload }
+            return newState
+        }
+        case POST_ITEMS:{
+            let newState = {...state}
+            newState[action.payload.id] = action.payload
             return newState
         }
 

@@ -31,7 +31,7 @@ def make_new_item():
             name = form.data['name'],
             desc = form.data['desc'],
             price = form.data['price'],
-            picture_aws_link = form.data['picture_aws_link']
+            picture_aws_link = aws_link
         )
 
         db.session.add(new_item)
@@ -56,7 +56,7 @@ def edit_item(item_id):
 
     return {'message':'Item deleted'}
 
-# @items_routes.route('/<int:id>', met)
+# @items_routes.route('/<int:id>', methods = ['PUT'])
 # def get_single_item(id):
 #     single_shoe = Items.query.get(id)
 #     single_shoe_dict = single_shoe.to_dict()

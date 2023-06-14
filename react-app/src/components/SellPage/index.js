@@ -4,22 +4,40 @@ import './index.css'
 function SellPage() {
 
     const [coverPicture, setCoverPicture] = useState(undefined)
-    const [price, setPrice] = useState(0)
+    const [name,setName] = useState('')
+    const [description, setDescription] = useState('')
+    const [price, setPrice] = useState(1)
 
- function handleSubmit() {
+ function handleSubmit(e) {
+    e.preventDefault()
+    const formData = new FormData()
 
+    formData.append('')
+    formData.append('')
+    formData.append('')
     }
+
+
 return(
     <div className = 'createItemFormContainer'>
         <form className = 'createItemFormContainer' onSubmit={handleSubmit}>
                 <label>Item</label>
-                <input></input>
+                <input
+                placeholder = 'name'
+                type = 'text'
+                value = {name}
+                onChange = {(e) => setName(e.target.value)}
+                />
 
                 <label>description</label>
-                <input></input>
+                <input
+                placeholder = 'write a product description'
+                type = 'text'
+                value = {description}
+                onChange = {(e) => setDescription(e.target.value)}
+                />
 
                 <label>Picture</label>
-
                 <input
                 placeholder="insert a file here "
                 type="file"
@@ -29,7 +47,6 @@ return(
                 />
 
                 <label>Price</label>
-                
                 <input
                         placeholder=""
                         type="number"
