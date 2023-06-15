@@ -10,11 +10,11 @@ const editItems = (items) =>{
     }
 }
 export const editItemsThunk =(itemsId, items) => async (dispatch) =>{
+    console.log(items,'--------------inside thunk-------')
     const res = await fetch (`/api/items/${itemsId}/edit`,{
         method:'PUT',
         body: items
     })
-
     const data = await res.json()
     if(res.ok){
         dispatch(editItems(data))
@@ -83,7 +83,6 @@ export const getAllItemsThunk =() => async (dispatch) =>{
 }
 
 const initialState = {}
-
 const itemsReducer = (state = initialState, action) =>{
     switch(action.type){
         case GET_ALL_ITEMS:{
@@ -102,11 +101,11 @@ const itemsReducer = (state = initialState, action) =>{
             return newState
         }
 
-        case EDIT_ITEMS: {
-            let newState = { ...state }
-            newState[action.payload.id] = action.payload
-            return newState
-        }
+        // case EDIT_ITEMS: {
+        //     let newState = { ...state }
+        //     newState[action.payload.id] = action.payload
+        //     return newState
+        // }
 
         default:
             return state
