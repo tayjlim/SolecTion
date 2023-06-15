@@ -1,8 +1,7 @@
-
+import { getAllItemsThunk } from "../../store/items.js";
 import { useParams, NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-import { getAllItemsThunk } from '../../store/items';
 import OpenModalMenuItem from "../Navigation/OpenModalMenuItem.js";
 import DeleteItems from '../DeleteItems'
 import EditItems from "../EditItems";
@@ -19,8 +18,10 @@ function ItemsDetail(){
 
 
     useEffect(()=>{
-        
+    dispatch(getAllItemsThunk());
+
     },[dispatch])
+
     if (!singleItem) return null
 
     else
