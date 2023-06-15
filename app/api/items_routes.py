@@ -57,7 +57,7 @@ def edit_item(id):
         return {'message':'Item could not be found'}
 
     user_id = current_user.id
-    #add logic of user_id matching the itemOwner Id 
+    #add logic of user_id matching the itemOwner Id
     remove_file_from_s3(item_obj['picture_aws_link'])
 
     db.session.delete(item_delete)
@@ -65,11 +65,11 @@ def edit_item(id):
 
     return {'message':'Item deleted'}
 
-# @items_routes.route('/<int:id>', methods = ['PUT'])
-# def get_single_item(id):
-#     single_shoe = Items.query.get(id)
-#     single_shoe_dict = single_shoe.to_dict()
-#     return {'item': single_shoe_dict}
+@items_routes.route('/<int:id>/edit', methods = ['PUT'])
+def get_single_item(id):
+    single_shoe = Items.query.get(id)
+    single_shoe_dict = single_shoe.to_dict()
+    pass
 
 @items_routes.route('/<int:id>')
 def get_single_item(id):

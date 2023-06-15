@@ -3,7 +3,24 @@ const DELETE_ITEMS = 'items/deleteItems'
 const POST_ITEMS = 'items/postItems'
 const EDIT_ITEMS = 'items/editItems'
 
+const editItems = (items) =>{
+    return{
+        type: EDIT_ITEMS,
+        body:items
+    }
+}
+export const editItemsThunk =(itemsId, items) => async (dispatch) =>{
+    const res = await fetch (`/api/items/${itemsId}/edit`,{
+        method:'PUT',
+        body: items
+    })
 
+    const data = await res.json()
+    if(res.ok){
+        dispatch(editItems(data))
+        return data
+    }
+}
 
 const postItems = (items) =>{
     return{
@@ -81,6 +98,12 @@ const itemsReducer = (state = initialState, action) =>{
         }
         case POST_ITEMS:{
             let newState = {...state}
+            newState[action.payload.id] = action.payload
+            return newState
+        }
+
+        case EDIT_ITEMS: {
+            let newState = { ...state }
             newState[action.payload.id] = action.payload
             return newState
         }
