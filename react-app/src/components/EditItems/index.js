@@ -15,7 +15,7 @@ function EditItems ({item}){
 
     const [name, setName] = useState(item.name)
     const [desc, setDesc] = useState(item.desc)
-    const [picture_aws_link, setPicture_aws_link] = useState()
+    const [picture_aws_link, setPicture_aws_link] = useState(undefined)
     const [price,setPrice] = useState(item.price)
 
     const tienkissesDudes = async(tien) =>{
@@ -24,8 +24,11 @@ function EditItems ({item}){
         const formData = new FormData()
         formData.append('name',name)
         formData.append('desc',desc)
-        formData.append('picture_aws_link',picture_aws_link)
         formData.append('price',price)
+        
+        if(picture_aws_link){
+        formData.append('picture_aws_link',picture_aws_link)
+        }
 
         const res = await dispatch(editItemsThunk(item.id,formData))
         await dispatch(getAllItemsThunk())
