@@ -71,14 +71,15 @@ def weoweoweo(id):
     single_shoe = Items.query.get(id)
 
     form = EditItemForm()
-
+    aws_link = ''
     if form.data['picture_aws_link']:
-        remove_file_from_s3(single_shoe.picture_aws_link)
         picture = form.data['picture_aws_link']
+
         picture.filename = get_unique_filename(picture.filename)
         uploaded = upload_file_to_s3(picture)
-
         aws_link = uploaded['url']
+
+        remove_file_from_s3(single_shoe.picture_aws_link)
 
     form["csrf_token"].data = request.cookies["csrf_token"]
 
@@ -86,7 +87,9 @@ def weoweoweo(id):
         single_shoe.name = form.data['name']
         single_shoe.desc = form.data['desc']
         single_shoe.price = form.data['price']
-        single_shoe.picture_aws_link = aws_link
+        if len (aws_link) > 0:
+            single_shoe.picture_aws_link = aws_link
+        
         db.session.commit()
         edited_singleShoe = single_shoe.to_dict()
         return edited_singleShoe
