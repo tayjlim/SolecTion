@@ -62,7 +62,6 @@ return(
                         placeholder=""
                         type="number"
                         min="1"
-                        max="99"
                         value={price}
                         onChange={(e) => setPrice(e.target.value)}
                     />
