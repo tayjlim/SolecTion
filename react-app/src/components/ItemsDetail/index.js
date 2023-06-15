@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import OpenModalMenuItem from "../Navigation/OpenModalMenuItem.js";
 import DeleteItems from '../DeleteItems'
 import EditItems from "../EditItems";
+import './index.css'
 
 
 function ItemsDetail(){
@@ -27,11 +28,25 @@ function ItemsDetail(){
     else
     return(
         <div>this is a detail page
+            <div className = 'headerShoePriceButton'>
 
+            <div className = 'columnLeft'>
             <h2>
             {singleItem.name}
             </h2>
-            <img src = ''></img>
+            <img src = {singleItem.picture_aws_link}></img>
+            </div>
+
+            <div className = 'columnRight'>
+            
+            <div className ='clockDivandText'>
+                <img className ='miniClock'src ='https://stockx-assets.imgix.net/dynamic/LowInventoryBadgeV3.gif?auto=format,compress&w=150&h=150&gif-q=50'/>
+                <p>Only a Couple Left!</p>
+            </div>
+            <button className = 'buyNowButton'>Buy Now for {singleItem.price}</button>
+            </div>
+            </div>
+
 
             {(user.id === singleItem.owner_id)
                ? <div>

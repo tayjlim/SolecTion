@@ -1,0 +1,24 @@
+.headerShoePriceButton{
+    display:flex;
+    justify-content: center;
+}
+.columnLeft{
+    margin-right:20px;
+}
+
+.buyNowButton{
+    width:100px;
+    height:70px;
+    font-weight:bolder;
+    background-color: white;
+    border:1px solid black;
+
+}
+.columnRight{
+    
+}
+.clockDivandText{
+    height:40px;
+    background-color: #e9e8e3;
+    display:flex;
+}
