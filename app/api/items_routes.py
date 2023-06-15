@@ -5,6 +5,7 @@ from flask_login import current_user, login_user, logout_user, login_required
 from app.models.reviews import Reviews
 from app.api.aws_helpers import get_unique_filename,upload_file_to_s3,remove_file_from_s3
 from app.forms.post_item_form import ItemForm
+from app.forms.edit_item_form import EditItemForm
 
 items_routes = Blueprint('items',__name__)
 
@@ -40,7 +41,7 @@ def make_new_item():
         db.session.commit()
         return new_item.to_dict()
     else:
-        return {'error': form.errors}
+        return {'error': form.errors} , 400
 
 
 
@@ -48,9 +49,6 @@ def make_new_item():
 @login_required
 def edit_item(id):
     item_delete = Items.query.get(id)
-
-
-
     item_obj = item_delete.to_dict()
 
     if(item_delete is None):
@@ -58,18 +56,45 @@ def edit_item(id):
 
     user_id = current_user.id
     #add logic of user_id matching the itemOwner Id
-    remove_file_from_s3(item_obj['picture_aws_link'])
+    remove_file_from_s3(item_delete.picture_aws_link)
 
     db.session.delete(item_delete)
     db.session.commit()
 
     return {'message':'Item deleted'}
 
+
+
 @items_routes.route('/<int:id>/edit', methods = ['PUT'])
-def get_single_item(id):
+@login_required
+def weoweoweo(id):
     single_shoe = Items.query.get(id)
-    single_shoe_dict = single_shoe.to_dict()
-    pass
+
+    form = EditItemForm()
+    aws_link = ''
+    if form.data['picture_aws_link']:
+        picture = form.data['picture_aws_link']
+
+        picture.filename = get_unique_filename(picture.filename)
+        uploaded = upload_file_to_s3(picture)
+        aws_link = uploaded['url']
+
+        remove_file_from_s3(single_shoe.picture_aws_link)
+
+    form["csrf_token"].data = request.cookies["csrf_token"]
+
+    if form.validate_on_submit():
+        single_shoe.name = form.data['name']
+        single_shoe.desc = form.data['desc']
+        single_shoe.price = form.data['price']
+        if len (aws_link) > 0:
+            single_shoe.picture_aws_link = aws_link
+        
+        db.session.commit()
+        edited_singleShoe = single_shoe.to_dict()
+        return edited_singleShoe
+    else:
+        return 401
 
 @items_routes.route('/<int:id>')
 def get_single_item(id):

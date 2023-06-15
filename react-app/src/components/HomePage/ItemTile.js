@@ -10,9 +10,9 @@ function ItemTile({item}){
     return (
         <div id = {item.id} className="ItemTileContainer" onClick={handleClick}>
 
-        <img className = 'shoePicTile' src = {item.picture_aws_link}></img>
-        <p>{item.name}</p>
-        <h3>${item.price}</h3>
+            <img className = 'shoePicTile' src = {item.picture_aws_link}></img>
+            <p>{item.name}</p>
+            <h3>${item.price}</h3>
 
        </div>
 

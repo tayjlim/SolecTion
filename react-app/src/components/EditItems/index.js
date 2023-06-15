@@ -1,22 +1,44 @@
 import { useParams, NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
+import { useModal } from "../../context/Modal";
+import { editItemsThunk,getAllItemsThunk } from "../../store/items";
 
 function EditItems ({item}){
     const dispatch = useDispatch();
-    const {itemId} = useParams();
-    const singleItem = useSelector(state=> state.items)[itemId]
-
+    const { closeModal } = useModal()
     console.log(item)
+
+
+    // console.log(singleItem, '------ undefined? ------')
+    // const singleItem = useSelector(state=> state.items)[itemId]
+
     const [name, setName] = useState(item.name)
-    const [description, setDescription] = useState(item.desc)
-    const [picture_aws_link, setPicture_aws_link] = useState()
+    const [desc, setDesc] = useState(item.desc)
+    const [picture_aws_link, setPicture_aws_link] = useState(undefined)
     const [price,setPrice] = useState(item.price)
-    
+
+    const tienkissesDudes = async(tien) =>{
+        tien.preventDefault()
+
+        const formData = new FormData()
+        formData.append('name',name)
+        formData.append('desc',desc)
+        formData.append('price',price)
+        
+        if(picture_aws_link){
+        formData.append('picture_aws_link',picture_aws_link)
+        }
+
+        const res = await dispatch(editItemsThunk(item.id,formData))
+        await dispatch(getAllItemsThunk())
+        return closeModal()
+
+    }
 
     return(
         <div>
-            <form>
+            <form onSubmit={tienkissesDudes}>
             <h2>Edit your Listing!</h2>
             <label>
                 Name
@@ -37,8 +59,8 @@ function EditItems ({item}){
             <input
             placeholder = 'write a product description'
             type = 'text'
-            value = {description}
-            onChange = {(e) => setDescription(e.target.value)}
+            value = {desc}
+            onChange = {(e) => setDesc(e.target.value)}
             />
 
             <label>
