@@ -44,19 +44,22 @@ def make_new_item():
 
 
 
-@items_routes.route('/<int:id>/delete' ,methods=['DELETE'])
+@items_routes.route('/<int:id>' ,methods=["DELETE"])
 @login_required
 def edit_item(id):
     item_delete = Items.query.get(id)
-    user_id = current_user.id
+
+
+
+    item_obj = item_delete.to_dict()
 
     if(item_delete is None):
         return {'message':'Item could not be found'}
 
-    if item_delete['owner_id'] != user_id :
-        return {'message':'Forbidden'}
+    user_id = current_user.id
+    #add logic of user_id matching the itemOwner Id 
+    remove_file_from_s3(item_obj['picture_aws_link'])
 
-    remove_file_from_s3(item_delete['picture_aws_link'])
     db.session.delete(item_delete)
     db.session.commit()
 

@@ -8,7 +8,7 @@ class Items(db.Model):
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
 
-    id= db.Column(db.Integer, primary_key = True)
+    id = db.Column(db.Integer, primary_key = True)
     owner_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
     name = db.Column(db.String(255),nullable = False)
     desc = db.Column(db.String(1000),nullable = False)

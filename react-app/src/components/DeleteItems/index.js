@@ -11,9 +11,11 @@ const DeleteItems =  ({item}) => {
     const dispatch=useDispatch();
     const {closeModal} = useModal();
     const history = useHistory();
+    console.log(item.id)
 
     const handleClick = async(e) =>{
         e.preventDefault();
+        console.log(item.id)
         await dispatch(deleteItemsThunk(item.id))
         await dispatch(getAllItemsThunk())
         closeModal()
@@ -23,7 +25,7 @@ const DeleteItems =  ({item}) => {
  return(
     <div className='delete-modal-container'>
       <div>
-      <h1>Confirm Delete</h1>
+      <h1>{item.id}</h1>
       <div className="random-text">Are you sure you want to remove this Item?</div>
       </div>
       <div className="delete-two-buttons">

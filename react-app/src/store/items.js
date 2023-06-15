@@ -30,7 +30,7 @@ const deleteItems = (itemsId) => {
     }
 }
 export const deleteItemsThunk = (itemsId)=> async (dispatch) =>{
-
+    console.log('inside thunk - -----------------------------')
     const response = await fetch(`/api/items/${itemsId}`,{
         method:'DELETE'
     })
@@ -72,6 +72,11 @@ const itemsReducer = (state = initialState, action) =>{
         case GET_ALL_ITEMS:{
             let newState = { ...state }
             newState = { ...action.payload }
+            return newState
+        }
+        case DELETE_ITEMS: {
+            let newState = { ...state }
+            delete newState[action.animeId]
             return newState
         }
         case POST_ITEMS:{
