@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { getAllItemsThunk } from '../../store/items';
 import OpenModalMenuItem from "../Navigation/OpenModalMenuItem.js";
 import DeleteItems from '../DeleteItems'
+import EditItems from "../EditItems";
 
 
 function ItemsDetail(){
@@ -18,8 +19,8 @@ function ItemsDetail(){
 
 
     useEffect(()=>{
-
-    })
+        
+    },[dispatch])
     if (!singleItem) return null
 
     else
@@ -31,13 +32,24 @@ function ItemsDetail(){
             </h2>
             <img src = ''></img>
 
-            {(user.id === singleItem.owner_id)?
-                <div>
-                <OpenModalMenuItem
-                className="delete-button"
-                itemText="Delete this episode"
-                modalComponent={<DeleteItems item={singleItem} key={`${singleItem.id}-items`} />}
-                />
+            {(user.id === singleItem.owner_id)
+               ? <div>
+
+                <button>
+                    <OpenModalMenuItem
+                    className="delete-button"
+                    itemText="Delete this Item"
+                    modalComponent={<DeleteItems item={singleItem} key={`${singleItem.id}-items`} />}
+                    />
+                </button>
+
+                <button>
+                    <OpenModalMenuItem
+                    className="edit-button"
+                    itemText="Edit this Item"
+                    modalComponent={<EditItems item={singleItem} key={`${singleItem.id}-items`} />}
+                    />
+                </button>
 
 
 
