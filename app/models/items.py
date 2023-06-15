@@ -8,7 +8,7 @@ class Items(db.Model):
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
 
-    id= db.Column(db.Integer, primary_key = True)
+    id = db.Column(db.Integer, primary_key = True)
     owner_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
     name = db.Column(db.String(255),nullable = False)
     desc = db.Column(db.String(1000),nullable = False)
@@ -26,12 +26,12 @@ class Items(db.Model):
             'picture_aws_link': self.picture_aws_link
         }
     # connecting to user table
-    
+
     userid = db.relationship(
         "User", back_populates = 'item'
     )
 
     # connecting to review table
     review_name = db.relationship(
-        "Reviews", back_populates = 'review_item_id'
+        "Reviews",cascade="all,delete-orphan", back_populates = 'review_item_id'
     )
