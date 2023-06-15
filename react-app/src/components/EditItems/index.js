@@ -25,15 +25,15 @@ function EditItems ({item}){
         formData.append('name',name)
         formData.append('desc',desc)
         formData.append('price',price)
-        
+
         if(picture_aws_link){
         formData.append('picture_aws_link',picture_aws_link)
         }
 
         const res = await dispatch(editItemsThunk(item.id,formData))
         await dispatch(getAllItemsThunk())
-        return closeModal()
 
+        return closeModal()
     }
 
     return(
