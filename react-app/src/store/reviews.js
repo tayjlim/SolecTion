@@ -10,7 +10,7 @@ const getReviews = (reviews) =>{
 
 export const getReviewsThunk = (itemId) => async(dispatch) =>{
     const response = await fetch(`/api/items/${itemId}/reviews`)
-    const data = response.json()
+    const data = await response.json()
 
     if(response.ok){
         const itemReviews = {}
@@ -18,6 +18,7 @@ export const getReviewsThunk = (itemId) => async(dispatch) =>{
             itemReviews[review.id] = review
         })
         dispatch(getReviews(itemReviews))
+        // console.log('--------- item reviews',itemReviews)
         return itemReviews
     }
 }

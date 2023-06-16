@@ -2,7 +2,9 @@ import { getAllItemsThunk } from "../../store/items.js";
 import { useParams, NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
+
 import OpenModalMenuItem from "../Navigation/OpenModalMenuItem.js";
+import { getReviewsThunk } from "../../store/reviews.js";
 
 import DeleteItems from '../DeleteItems'
 import EditItems from "../EditItems";
@@ -22,9 +24,12 @@ function ItemsDetail(){
     const user = useSelector((state) => state.session.user);
     console.log(user)
 
+    const reviews = useSelector((state) => state.reviews)
+    console.log(reviews)
 
     useEffect(()=>{
     dispatch(getAllItemsThunk());
+    dispatch(getReviewsThunk(itemId))
 
     },[dispatch])
 
