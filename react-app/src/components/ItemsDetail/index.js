@@ -3,6 +3,8 @@ import { useParams, NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import Reviews from '../Reviews'
+import CreateReview from "../CreateReview/index.js";
+import LoginFormModal from "../LoginFormModal/index.js";
 import OpenModalMenuItem from "../Navigation/OpenModalMenuItem.js";
 import { getReviewsThunk } from "../../store/reviews.js";
 
@@ -29,6 +31,14 @@ function ItemsDetail(){
 
     // console.log('TOTAL REVIEWS =========',reviewsObj)
 
+    const renderCreateReview = (reviewsArr, user) => {
+        for (let review of reviewsArr) {
+          // console.log('iterating the index? or the arr[0]',i)
+          if (review.userId === user.id)
+            return false
+        }
+        return true
+      }
 
     useEffect(()=>{
     dispatch(getAllItemsThunk());
@@ -130,9 +140,34 @@ function ItemsDetail(){
 
                 </div> : null}
            <div className = 'reviewsDivContainer'>
-           <h2>
-           On Feet Pictures
-           </h2>
+
+
+
+            <h2>On Feet Pictures</h2>
+
+            {(!user) ?
+
+                <button>
+
+                    <OpenModalMenuItem
+                    className ='onFeetButton'
+                    itemText ='Log In to Post a Picture'
+                    modalComponent={<LoginFormModal/>}
+                    />
+
+                </button>
+                :
+                <button>
+                    <OpenModalMenuItem
+                    className ='onFeetButton'
+                    itemText='Post a Picture'
+                    modalComponent={<CreateReview user = {user}/>}
+                    />
+                </button>
+
+            }
+
+
            <Reviews itemId = {itemId} reviews={reviewsObj}></Reviews>
            </div>
 
