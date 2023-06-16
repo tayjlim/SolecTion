@@ -1,0 +1,57 @@
+.headerShoePriceButton{
+    display:flex;
+    justify-content: center;
+    border-bottom: 1px #e2e8f0 solid;
+}
+.columnLeft{
+    margin-right:20px;
+}
+
+.buyNowButton{
+    margin-top:5px;
+    width:100%;
+    height:70px;
+    font-weight:bolder;
+    background-color: white;
+    border:1px solid #e2e8f0;
+
+}
+.verifyCondition{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.columnRight{
+
+    width:350px;
+    margin:15px;
+
+}
+.clockDivandText{
+    height:40px;
+    background-color: #e9e8e3;
+    display:flex;
+    align-items: center;
+}
+
+.stockXVerifiedpTag{
+ padding-bottom: 9px;
+ border-bottom: .5px #e2e8f0 solid;
+}
+
+.iconthing{
+
+    width:24px;
+    height:24px;
+}
+
+.stickerandheading{
+    display:flex;
+    align-items: center;
+}
+.miniClock{
+    width:40px;
+}
+.shoepic{
+    width:450px;
+}

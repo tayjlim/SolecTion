@@ -72,6 +72,7 @@ def weoweoweo(id):
 
     form = EditItemForm()
     aws_link = ''
+    
     if form.data['picture_aws_link']:
         picture = form.data['picture_aws_link']
 
@@ -87,9 +88,10 @@ def weoweoweo(id):
         single_shoe.name = form.data['name']
         single_shoe.desc = form.data['desc']
         single_shoe.price = form.data['price']
+
         if len (aws_link) > 0:
             single_shoe.picture_aws_link = aws_link
-        
+
         db.session.commit()
         edited_singleShoe = single_shoe.to_dict()
         return edited_singleShoe
