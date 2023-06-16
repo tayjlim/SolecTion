@@ -2,9 +2,12 @@
     display:flex;
     justify-content: center;
     border-bottom: 1px #e2e8f0 solid;
+    margin: 0 auto;
+    max-width: 1296px;
+
 }
 .columnLeft{
-    margin-right:20px;
+    margin-right:76px;
 }
 
 
@@ -16,14 +19,20 @@
 .columnRight{
 
     width:350px;
-    margin:15px;
+    margin-left:64px;
+    align-self: flex-end;
+    align-items: flex-end;
+    align-content: flex-end;
 
 }
 .clockDivandText{
-    height:40px;
+    height:60px;
     background-color: #e9e8e3;
     display:flex;
     align-items: center;
+}
+.clockDivandText>p{
+    font-weight: bold;
 }
 
 .stockXVerifiedpTag{
@@ -48,11 +57,21 @@
     width:450px;
 }
 .productDetails{
-
     border-bottom: 1px #e2e8f0 solid;
+    margin: 0 auto;
+    max-width: 1296px;
 
-    
 }
 .priceDivDetails{
     display:flex;
+}
+
+.reviewsDivContainer{
+    margin: 0 auto;
+    max-width: 1296px;
+}
+
+.OnfeetButtonDiv{
+    display:flex;
+    justify-content: space-between;
 }

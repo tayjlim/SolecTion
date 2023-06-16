@@ -49,6 +49,7 @@ def get_items_reviews(id):
     if items_reviews:
         response = []
         for review in items_reviews:
+            # print('+_+_+_+_+_+_+_+_+_+_+', review.to_dict())
             response.append(review.to_dict())
 
         return {"reviews":response}

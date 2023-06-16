@@ -10,9 +10,35 @@ const getReviews = (reviews) =>{
 
 export const getReviewsThunk = (itemId) => async(dispatch) =>{
     const response = await fetch(`/api/items/${itemId}/reviews`)
-    const data = response.json()
+    const data = await response.json()
 
     if(response.ok){
-        
+        const itemReviews = {}
+        data.reviews.forEach((review)=>{
+            itemReviews[review.id] = review
+        })
+        dispatch(getReviews(itemReviews))
+        // console.log('--------- item reviews',itemReviews)
+        return itemReviews
     }
 }
+
+
+
+const initialState ={}
+
+const itemsReviewReducer = (state = initialState, action) =>{
+    switch(action.type){
+
+        case GET_ALL_REVIEWS:{
+            let newState = {}
+            newState = {...action.payload}
+            return newState
+        }
+
+        default:
+            return state
+    }
+}
+
+export default itemsReviewReducer

@@ -8,6 +8,7 @@ button{
     background-color: white;
     border:1px solid #e2e8f0;
     font-size: 24px;
+
     transition-delay:300ms;
     transition:background-color 700ms ease;
     transition:color 700ms ease;
@@ -18,9 +19,23 @@ button:hover{
 
     color: white;
     background-color: black;
+
     transition-delay:700ms;
     transition:background-color 700ms ease;
     transition:color 700ms ease;
+
     cursor:pointer;
 
 }
+body{
+    font-family: basic-sans, sans-serif;
+}
+
+.profile-dropdown {
+    position: absolute;
+    right: 2%;
+    border-radius: 3px;
+    padding: 10px;
+    text-align: left;
+    top: 5%;
+  }
