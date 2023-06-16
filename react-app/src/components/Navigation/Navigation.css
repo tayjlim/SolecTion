@@ -17,20 +17,23 @@ width:300px;
   align-items: flex-end;
   margin-bottom: 8px;
 }
+
 .searchNav{
   height:65px;
   width:45%;
   font-size: 18px;
 }
 
-.sellLoginSignUp{display:flex; align-items: center;}
-.sellLoginSignUp>button{
-  font-size: 15px;
-  margin:9px;
-  height:40px;
-  white-space: no-wrap;
-
+.sellLoginSignUp{
+  display:flex;
+  align-items: center;
 }
+
+.loginSignupDiv>button{
+  height: 55px;
+  font-size:20px;
+}
+
 
 .loginSignupDiv{
   display:flex;
