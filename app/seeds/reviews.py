@@ -3,34 +3,32 @@ from app.models.reviews import Reviews
 from sqlalchemy.sql import text
 
 def tienkissesdudes_reviews():
-    review_1=Reviews(
+
+    review_1c=Reviews(
         user_id = 1 ,
         item_id = 1,
         desc = 'These are forsure a cop!',
         picture_aws_link = 'https://cdn.discordapp.com/attachments/1118210959077556414/1118223469398724720/Eizn9DnWoAA8YjE.jpg'
     )
-    review_2=Reviews(
-        user_id = 1,
-        item_id = 2,
+    review_2c=Reviews(
+        user_id = 2,
+        item_id = 1,
         desc = 'Looks good with Jeans',
-        picture_aws_link = 'https://cdn.discordapp.com/attachments/1118210959077556414/1118223469398724720/Eizn9DnWoAA8YjE.jpg'
+        picture_aws_link = 'https://cdn.discordapp.com/attachments/1118210959077556414/1119365487323791541/Nike-SB-Dunk-Low-Pro-2.png'
     )
-    review_3=Reviews(
-        user_id = 1,
-        item_id = 3,
+    review_3c=Reviews(
+        user_id = 3,
+        item_id = 1,
         desc = 'Looks good with Jeans',
-        picture_aws_link = 'https://cdn.discordapp.com/attachments/1118210959077556414/1118223469398724720/Eizn9DnWoAA8YjE.jpg'
+        picture_aws_link = 'https://cdn.discordapp.com/attachments/1118210959077556414/1119365518588129381/2Q.png'
     )
-    review_4=Reviews(
-        user_id = 1,
-        item_id = 4,
-        desc = 'Looks good with Jeans',
-        picture_aws_link = 'https://cdn.discordapp.com/attachments/1118210959077556414/1118223469398724720/Eizn9DnWoAA8YjE.jpg'
-    )
-    db.session.add(review_1)
-    db.session.add(review_2)
-    db.session.add(review_3)
-    db.session.add(review_4)
+
+    
+
+    db.session.add(review_1c)
+    db.session.add(review_2c)
+    db.session.add(review_3c)
+
 
     db.session.commit()
 

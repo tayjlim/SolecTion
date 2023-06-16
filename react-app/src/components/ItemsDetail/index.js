@@ -15,6 +15,7 @@ import './index.css'
 
 function ItemsDetail(){
 
+
     const dispatch = useDispatch();
     const {itemId} = useParams();
 
@@ -128,11 +129,12 @@ function ItemsDetail(){
 
 
                 </div> : null}
-
+           <div className = 'reviewsDivContainer'>
            <h2>
-           On Feet Reviews
+           On Feet Pictures
            </h2>
            <Reviews itemId = {itemId} reviews={reviewsObj}></Reviews>
+           </div>
 
         </div>
         )

@@ -1,17 +1,24 @@
+import './index.css'
 
 function Reviews({itemId,reviews}){
     console.log('reviews component variable : reviews---', reviews)
     const reviewsArr = Object.values(reviews)
     console.log(reviewsArr)
+    
+    //When clicking on the image the a modal will open to view the image in full resolution!
 
-    if (!reviewsArr[0]) return(<h3>No Reviews for this listing!</h3>)
+    if (!reviewsArr[0]) return(<h3>No On Feet Photos!</h3>)
 
     else
     return(
-        <div>
-        <h3>Reviews Component</h3>
+        <div className ='mappingReviews'>
+        {reviewsArr.map((review) => (
+            <div id = {review.id}>
 
-        {}
+            <img className = 'onFeetPictureTag'src = {review.picture_aws_link}/>
+
+            </div>
+            ))}
         </div>
         )
 }

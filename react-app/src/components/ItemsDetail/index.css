@@ -2,6 +2,8 @@
     display:flex;
     justify-content: center;
     border-bottom: 1px #e2e8f0 solid;
+    margin: 0 auto;
+    max-width: 1296px;
 
 }
 .columnLeft{
@@ -52,11 +54,16 @@
     width:450px;
 }
 .productDetails{
-
     border-bottom: 1px #e2e8f0 solid;
-
+    margin: 0 auto;
+    max-width: 1296px;
 
 }
 .priceDivDetails{
     display:flex;
+}
+
+.reviewsDivContainer{
+    margin: 0 auto;
+    max-width: 1296px;
 }
