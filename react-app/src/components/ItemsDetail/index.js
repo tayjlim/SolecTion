@@ -27,14 +27,14 @@ function ItemsDetail(){
 
     else
     return(
-        <div>this is a detail page
+        <div>
             <div className = 'headerShoePriceButton'>
 
             <div className = 'columnLeft'>
             <h2>
             {singleItem.name}
             </h2>
-            <img src = {singleItem.picture_aws_link}></img>
+            <img className = 'shoepic' src = {singleItem.picture_aws_link}></img>
             </div>
 
             <div className = 'columnRight'>
@@ -43,25 +43,39 @@ function ItemsDetail(){
                     <p>Only a Couple Left!</p>
                 </div>
 
-            <button className = 'buyNowButton'>Buy Now for {singleItem.price}</button>
+            <button className = 'buyNowButton'>Buy Now for ${singleItem.price}</button>
+
             <div className = 'verifyCondition'>
+                <div className='stickerandheading'>
+                <img className = 'iconthing' src = 'https://cdn.discordapp.com/attachments/1117931108747722862/1119069429632880660/Screenshot_2023-06-15_at_5.57.13_PM.png'/>
+
                 <h3 className ='stockXVerified'>
                 StockX Verified
                 </h3>
+                </div>
+
                 <p>
                 Condition: New
                 </p>
+
             </div>
 
             <p className ='stockXVerifiedpTag'>StockX Verified is our own designation and means that we inspect every item, every time.</p>
 
-            <h3>
-            Our Promise
-            </h3>
+            <div className = 'verifyCondition'>
+                <div className='stickerandheading'>
+                <img className = 'iconthing' src = 'https://cdn.discordapp.com/attachments/1117931108747722862/1119069429909696582/Screenshot_2023-06-15_at_6.01.43_PM.png'/>
+                <h3>
+                Our Promise
+                </h3>
+                </div>
 
+
+            </div>
             <p>We strive to earn and keep your trust. If we make a mistake, we'll make it right.</p>
 
             </div>
+
             </div>
 
 
@@ -88,7 +102,9 @@ function ItemsDetail(){
 
                 </div> : null}
 
-
+            <div>
+                    Reviews Component
+            </div>
 
         </div>
         )
