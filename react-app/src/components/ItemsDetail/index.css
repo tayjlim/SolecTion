@@ -2,9 +2,10 @@
     display:flex;
     justify-content: center;
     border-bottom: 1px #e2e8f0 solid;
+
 }
 .columnLeft{
-    margin-right:20px;
+    margin-right:76px;
 }
 
 
@@ -16,7 +17,10 @@
 .columnRight{
 
     width:350px;
-    margin:15px;
+    margin-left:64px;
+    align-self: flex-end;
+    align-items: flex-end;
+    align-content: flex-end;
 
 }
 .clockDivandText{
@@ -51,7 +55,7 @@
 
     border-bottom: 1px #e2e8f0 solid;
 
-    
+
 }
 .priceDivDetails{
     display:flex;

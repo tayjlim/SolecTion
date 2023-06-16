@@ -2,7 +2,7 @@ import { getAllItemsThunk } from "../../store/items.js";
 import { useParams, NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
-
+import Reviews from '../Reviews'
 import OpenModalMenuItem from "../Navigation/OpenModalMenuItem.js";
 import { getReviewsThunk } from "../../store/reviews.js";
 
@@ -19,13 +19,15 @@ function ItemsDetail(){
     const {itemId} = useParams();
 
     const singleItem = useSelector(state=> state.items)[itemId]
-    console.log(singleItem)
+    // console.log(singleItem)
 
     const user = useSelector((state) => state.session.user);
-    console.log(user)
+    // console.log(user)
 
-    const reviews = useSelector((state) => state.reviews)
-    console.log(reviews)
+    const reviewsObj = useSelector((state) => state.reviews)
+
+    // console.log('TOTAL REVIEWS =========',reviewsObj)
+
 
     useEffect(()=>{
     dispatch(getAllItemsThunk());
@@ -33,7 +35,7 @@ function ItemsDetail(){
 
     },[dispatch])
 
-    if (!singleItem) return null
+    if (!singleItem) return(<h3>Loading....</h3>)
 
     else
     return(
@@ -130,6 +132,7 @@ function ItemsDetail(){
            <h2>
            On Feet Reviews
            </h2>
+           <Reviews itemId = {itemId} reviews={reviewsObj}></Reviews>
 
         </div>
         )
