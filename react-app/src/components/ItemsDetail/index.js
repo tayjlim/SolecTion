@@ -38,12 +38,29 @@ function ItemsDetail(){
             </div>
 
             <div className = 'columnRight'>
-            
-            <div className ='clockDivandText'>
-                <img className ='miniClock'src ='https://stockx-assets.imgix.net/dynamic/LowInventoryBadgeV3.gif?auto=format,compress&w=150&h=150&gif-q=50'/>
-                <p>Only a Couple Left!</p>
-            </div>
+                <div className ='clockDivandText'>
+                    <img className ='miniClock'src ='https://stockx-assets.imgix.net/dynamic/LowInventoryBadgeV3.gif?auto=format,compress&w=150&h=150&gif-q=50'/>
+                    <p>Only a Couple Left!</p>
+                </div>
+
             <button className = 'buyNowButton'>Buy Now for {singleItem.price}</button>
+            <div className = 'verifyCondition'>
+                <h3 className ='stockXVerified'>
+                StockX Verified
+                </h3>
+                <p>
+                Condition: New
+                </p>
+            </div>
+
+            <p className ='stockXVerifiedpTag'>StockX Verified is our own designation and means that we inspect every item, every time.</p>
+
+            <h3>
+            Our Promise
+            </h3>
+
+            <p>We strive to earn and keep your trust. If we make a mistake, we'll make it right.</p>
+
             </div>
             </div>
 
