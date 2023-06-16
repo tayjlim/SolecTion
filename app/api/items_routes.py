@@ -43,7 +43,17 @@ def make_new_item():
     else:
         return {'error': form.errors} , 400
 
+@items_routes.route('/<int:id>/reviews')
+def get_items_reviews(id):
+    items_reviews = Reviews.query.filter(Reviews.item_id == id).all()
+    if items_reviews:
+        response = []
+        for review in items_reviews:
+            response.append(review.to_dict())
 
+        return {"reviews":response}
+    else:
+        return {"reviews":[] }
 
 @items_routes.route('/<int:id>' ,methods=["DELETE"])
 @login_required
@@ -72,7 +82,7 @@ def weoweoweo(id):
 
     form = EditItemForm()
     aws_link = ''
-    
+
     if form.data['picture_aws_link']:
         picture = form.data['picture_aws_link']
 
