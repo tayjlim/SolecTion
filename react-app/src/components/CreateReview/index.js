@@ -1,5 +1,5 @@
 import React, {useEffect,useState} from 'react'
-
+import './index.css'
 
 function CreateReview () {
 
@@ -11,8 +11,15 @@ function CreateReview () {
     return(
         <div className = 'createReviewModalDiv'>
             <h3>Post a Picture!</h3>
-                <form>
-                <label>How do they feel?</label>
+                <form className = 'createReviewForm'>
+
+                <input
+                type='textarea'
+                />
+
+                <input
+                />
+
 
                 <button>Submit</button>
                 </form>

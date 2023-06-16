@@ -1,0 +1,10 @@
+.createReviewForm{
+    display:flex;
+    flex-direction: column;
+}
+.createReviewModalDiv{
+    display:flex;
+    flex-direction: column;
+    height:200px;
+    width:350px;
+}
