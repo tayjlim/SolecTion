@@ -3,8 +3,11 @@ import { useParams, NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import OpenModalMenuItem from "../Navigation/OpenModalMenuItem.js";
+
 import DeleteItems from '../DeleteItems'
 import EditItems from "../EditItems";
+
+
 import './index.css'
 
 
@@ -12,8 +15,10 @@ function ItemsDetail(){
 
     const dispatch = useDispatch();
     const {itemId} = useParams();
+
     const singleItem = useSelector(state=> state.items)[itemId]
     console.log(singleItem)
+
     const user = useSelector((state) => state.session.user);
     console.log(user)
 
@@ -43,7 +48,7 @@ function ItemsDetail(){
                     <p>Only a Couple Left!</p>
                 </div>
 
-            <button className = 'buyNowButton'>Buy Now for ${singleItem.price}</button>
+            <button className = 'buyNowButton'>Add to Cart ${singleItem.price}</button>
 
             <div className = 'verifyCondition'>
                 <div className='stickerandheading'>
@@ -73,13 +78,28 @@ function ItemsDetail(){
 
             </div>
             <p>We strive to earn and keep your trust. If we make a mistake, we'll make it right.</p>
-
             </div>
 
             </div>
 
+            <div className  ='productDetails'>
+                <h2>Product Details</h2>
 
-            {(user.id === singleItem.owner_id)
+                    <div className = 'priceDivDetails'>
+                    <p>Retail Price: </p>
+                    <p> $ 100 </p>
+                    </div>
+                <div className = 'productDescriptionDiv'>
+                    <h3>
+                    Product Description
+                    </h3>
+                    <p>{singleItem.desc}</p>
+
+                </div>
+            </div>
+
+
+            {(user && (user.id === singleItem.owner_id))
                ? <div>
 
                 <button>
@@ -102,9 +122,9 @@ function ItemsDetail(){
 
                 </div> : null}
 
-            <div>
-                    Reviews Component
-            </div>
+           <h2>
+           On Feet Reviews
+           </h2>
 
         </div>
         )
