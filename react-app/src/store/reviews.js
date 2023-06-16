@@ -13,6 +13,31 @@ export const getReviewsThunk = (itemId) => async(dispatch) =>{
     const data = response.json()
 
     if(response.ok){
-        
+        const itemReviews = {}
+        data.reviews.forEach((review)=>{
+            itemReviews[review.id] = review
+        })
+        dispatch(getReviews(itemReviews))
+        return itemReviews
     }
 }
+
+
+
+const initialState ={}
+
+const itemsReviewReducer = (state = initialState, action) =>{
+    switch(action.type){
+
+        case GET_ALL_REVIEWS:{
+            let newState = {}
+            newState = {...action.payload}
+            return newState
+        }
+
+        default:
+            return state
+    }
+}
+
+export default itemsReviewReducer
