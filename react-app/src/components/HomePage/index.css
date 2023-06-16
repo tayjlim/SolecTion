@@ -35,7 +35,10 @@
     height: 200px;
     margin:8px;
     border-radius: 4px;
+    cursor:pointer;
 }
+
+
 .reccomended{
     margin-left: 30px;
 }

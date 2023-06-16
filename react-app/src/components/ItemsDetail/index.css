@@ -26,10 +26,13 @@
 
 }
 .clockDivandText{
-    height:40px;
+    height:60px;
     background-color: #e9e8e3;
     display:flex;
     align-items: center;
+}
+.clockDivandText>p{
+    font-weight: bold;
 }
 
 .stockXVerifiedpTag{

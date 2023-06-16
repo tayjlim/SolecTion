@@ -6,5 +6,32 @@
   display: none;
 }
 .logoHeaderNav{
-  height:200px;
+object-fit: cover;
+height:70px;
+width:300px;
+}
+.navigationBarDiv{
+  margin-left:10px;
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 8px;
+}
+.searchNav{
+  height:65px;
+  width:45%;
+  font-size: 18px;
+}
+
+.sellLoginSignUp{display:flex; align-items: center;}
+.sellLoginSignUp>button{
+  font-size: 15px;
+  margin:9px;
+  height:40px;
+  white-space: no-wrap;
+
+}
+
+.loginSignupDiv{
+  display:flex;
 }
