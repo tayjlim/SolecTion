@@ -13,11 +13,22 @@ function CreateReview () {
             <h3>Post a Picture!</h3>
                 <form className = 'createReviewForm'>
 
-                <input
-                type='textarea'
+                <label>thoughts on review?
+
+                </label>
+
+                <textarea
+                className = 'description'
+                value={desc}
+                onChange = {(e)=>(setdesc(e.target.value))}
                 />
 
                 <input
+                className='fileinput'
+                type = 'file'
+                accept='image/*'
+                filename={cover_picture&&cover_picture.name}
+                onChange={(e)=>setcover_picture(e.target.files[0])}
                 />
 
 
