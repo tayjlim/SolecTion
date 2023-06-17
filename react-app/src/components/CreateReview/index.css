@@ -1,0 +1,28 @@
+.createReviewForm{
+    display:flex;
+    flex-direction: column;
+}
+.createReviewModalDiv{
+    display:flex;
+    flex-direction: column;
+    height:200px;
+    width:350px;
+}
+
+
+.description{
+    font-family: basic-sans, sans-serif;
+}
+.fileinput{
+    margin-top:5px;
+    width:100%;
+    height:70px;
+    font-weight:bolder;
+    background-color: white;
+    border:1px solid #e2e8f0;
+    font-size: 24px;
+
+    transition-delay:300ms;
+    transition:background-color 700ms ease;
+    transition:color 700ms ease;
+}

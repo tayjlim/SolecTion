@@ -38,3 +38,9 @@ width:300px;
 .loginSignupDiv{
   display:flex;
 }
+
+.navigationBarDiv
+{
+  border-bottom: 1px #e2e8f0 solid;
+  padding-bottom: 5px;
+}

@@ -4,5 +4,5 @@ from wtforms.validators import DataRequired
 from flask_wtf.file import FileField, FileAllowed,FileRequired
 
 class ReviewForm(FlaskForm):
-    desc = StringField('desc',validators=[DataRequired()])
+    desc = StringField('desc')
     cover_picture= FileField('cover_picture', validators=[FileRequired(),FileAllowed(['png', 'jpeg', 'jpg'])])

@@ -1,5 +1,5 @@
 const GET_ALL_REVIEWS ='reviews/getALLReviews'
-
+const POST_REVIEW = 'reviews/postReview'
 const getReviews = (reviews) =>{
 
     return{

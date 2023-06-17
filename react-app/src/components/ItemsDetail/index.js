@@ -50,7 +50,7 @@ function ItemsDetail(){
 
     else
     return(
-        <div>
+        <div className="entireShoeDetail">
             <div className = 'headerShoePriceButton'>
 
             <div className = 'columnLeft'>
