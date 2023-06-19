@@ -11,10 +11,14 @@ import { deleteReviewThunk,getReviewsThunk } from "../../store/reviews";
 function DeleteReview ({review}) {
     const dispatch=useDispatch();
     const {closeModal} = useModal();
-    const history = useHistory();
 
-    const handleClick = (e) =>{
+    console.log(review)
+    const handleClick = async (e) =>{
         e.preventDefault()
+
+        const res = await dispatch(deleteReviewThunk(review.id))
+        await dispatch(getReviewsThunk(review.itemId))
+        closeModal()
 
     }
 
@@ -25,8 +29,8 @@ return(
       <div className="random-text">Are you sure you want to remove this Item?</div>
       </div>
       <div className="delete-two-buttons">
-        <button className='buttons-in-modal' onClick={(e) => handleClick(e)}>Yes (Delete Item)</button>
-        <button className='buttons-in-modal' onClick={(e) => closeModal()}>No (Keep Item)</button>
+        <button className='buttons-in-modal' onClick={(e) => handleClick(e)}>Yes </button>
+        <button className='buttons-in-modal' onClick={(e) => closeModal()}>No</button>
       </div>
     </div>
  )

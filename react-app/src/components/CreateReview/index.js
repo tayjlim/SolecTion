@@ -28,6 +28,7 @@ function CreateReview ({item}) {
         formData.append('picture_aws_link',picture_aws_link)
         const res = await dispatch(postReviewsThunk(formData,item.id))
         await dispatch(getReviewsThunk(item.id))
+        closeModal()
     }
 
     return(
