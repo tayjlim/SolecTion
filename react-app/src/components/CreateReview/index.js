@@ -22,6 +22,7 @@ function CreateReview ({item}) {
     const handleClick = async (e) =>{
 
         e.preventDefault();
+        // add validators here no disabled button
         const formData = new FormData()
         formData.append('desc', desc)
         formData.append('picture_aws_link',picture_aws_link)

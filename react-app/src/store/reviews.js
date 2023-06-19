@@ -1,6 +1,6 @@
 const GET_ALL_REVIEWS ='reviews/getALLReviews'
 const POST_REVIEW = 'reviews/postReview'
-
+const DELETE_REVIEW = 'reviews/deleteReview'
 const getReviews = (reviews) =>{
 
     return{
@@ -44,6 +44,18 @@ export const postReviewsThunk = (review,itemId) => async (dispatch) =>{
     }
 
     return null
+}
+
+const deleteReview = (reviewId) => {
+    return {
+        type: DELETE_REVIEW,
+        reviewId
+    }
+}
+
+export const deleteReviewThunk = reviewId => async (dispatch) =>{
+   const response = await fetch (`/api/items/reviews`)
+    return
 }
 
 

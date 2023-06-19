@@ -1,6 +1,9 @@
 import './index.css'
+import ReviewPhotoModal from '../OpenReviewModal'
+import OpenModalImage from '../OpenModalImage'
 
-function Reviews({itemId,reviews}){
+
+function Reviews({reviews, user}){
     console.log('reviews component variable : reviews---', reviews)
     const reviewsArr = Object.values(reviews)
     console.log(reviewsArr)
@@ -12,13 +15,22 @@ function Reviews({itemId,reviews}){
     else
     return(
         <div className ='mappingReviews'>
+
         {reviewsArr.map((review) => (
+
             <div id = {review.id}>
 
-            <img className = 'onFeetPictureTag'src = {review.picture_aws_link}/>
+
+                <OpenModalImage
+                review = {review}
+                className = 'onFeetPictureTag'
+                modalComponent={<ReviewPhotoModal user = {user} review = {review}/>}
+                />
+
 
             </div>
             ))}
+
         </div>
         )
 }

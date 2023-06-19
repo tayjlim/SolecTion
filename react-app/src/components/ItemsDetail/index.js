@@ -168,7 +168,7 @@ function ItemsDetail(){
             }
 
 
-           <Reviews itemId = {itemId} reviews={reviewsObj}></Reviews>
+           <Reviews reviews={reviewsObj} user = {user}></Reviews>
            </div>
 
         </div>

@@ -142,3 +142,15 @@ def get_single_item(id):
     single_shoe = Items.query.get(id)
     single_shoe_dict = single_shoe.to_dict()
     return {'item': single_shoe_dict}
+
+
+@items_routes.route('/reviews/<int:id>/hiMark',methods=['DELETE'])
+def delete_review(id):
+    review_delete = Reviews.query.get(id)
+
+    if(review_delete is None):
+        return {"message": 'item Could not be found'}, 400
+
+    remove_file_from_s3(review_delete.picture_aws_link)
+
+    db.session.delete()
