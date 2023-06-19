@@ -6,6 +6,7 @@ from app.models.reviews import Reviews
 from app.api.aws_helpers import get_unique_filename,upload_file_to_s3,remove_file_from_s3
 from app.forms.post_item_form import ItemForm
 from app.forms.edit_item_form import EditItemForm
+from app.forms.post_review_form import ReviewForm
 
 items_routes = Blueprint('items',__name__)
 
@@ -60,7 +61,27 @@ def get_items_reviews(id):
 @login_required
 def post_new_review(id):
     user_id = current_user.id
-    
+    item_id = id
+    form = ReviewForm()
+    form["csrf_token"].data = request.cookies["csrf_token"]
+
+    if form.validate_on_submit():
+        picture = form.data['picture_aws_link']
+        picture.filename = get_unique_filename(picture.filename)
+        uploaded = upload_file_to_s3(picture)
+        aws_link = uploaded['url']
+
+        new_review = Reviews(
+            user_id = user_id,
+            item_id = item_id,
+            desc = form.data['desc'],
+            picture_aws_link = aws_link
+        )
+        db.session.add(new_review)
+        db.session.commit()
+        return new_review.to_dict()
+    else:
+        return {'errors':'bad data'}
 
 
 @items_routes.route('/<int:id>' ,methods=["DELETE"])

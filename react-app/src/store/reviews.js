@@ -1,5 +1,6 @@
 const GET_ALL_REVIEWS ='reviews/getALLReviews'
 const POST_REVIEW = 'reviews/postReview'
+
 const getReviews = (reviews) =>{
 
     return{
@@ -23,8 +24,26 @@ export const getReviewsThunk = (itemId) => async(dispatch) =>{
     }
 }
 
+const postReview = (review) =>{
+    return {
+        type:POST_REVIEW,
+        payload:review
+    }
+}
+
 export const postReviewsThunk = (review,itemId) => async (dispatch) =>{
-    const response = await fetch (`/api/items/${itemId}/reviews/new`)
+    const response = await fetch (`/api/items/${itemId}/reviews/new`,{
+        method:'POST',
+        body:review
+    })
+    const data = await response.json()
+
+    if(response.ok){
+        dispatch(postReview(data))
+        return data
+    }
+
+    return null
 }
 
 
@@ -37,6 +56,12 @@ const itemsReviewReducer = (state = initialState, action) =>{
         case GET_ALL_REVIEWS:{
             let newState = {}
             newState = {...action.payload}
+            return newState
+        }
+
+        case POST_REVIEW:{
+            let newState = {...state}
+            newState[action.payload.id] = action.payload
             return newState
         }
 

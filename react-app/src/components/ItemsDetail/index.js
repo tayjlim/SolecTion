@@ -161,7 +161,7 @@ function ItemsDetail(){
                     <OpenModalMenuItem
                     className ='onFeetButton'
                     itemText='Post a Picture'
-                    modalComponent={<CreateReview user = {user}/>}
+                    modalComponent={<CreateReview item = {singleItem} />}
                     />
                 </button>
 
