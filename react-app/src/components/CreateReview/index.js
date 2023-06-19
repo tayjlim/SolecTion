@@ -16,7 +16,8 @@ function CreateReview ({item}) {
     const [picture_aws_link, setpicture_aws_link] = useState()
     const [desc, setdesc] = useState()
 
-    console.log('did the Item pass through ?!--------',item)
+
+    // console.log('did the Item pass through ?!--------',item)
 
     const handleClick = async (e) =>{
 
@@ -52,7 +53,7 @@ function CreateReview ({item}) {
                 />
 
 
-                <button>Submit</button>
+                <button disabled={!picture_aws_link || desc.length <10 }>Submit</button>
                 </form>
         </div>
     )
