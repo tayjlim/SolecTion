@@ -20,7 +20,7 @@ def tienkissesdudes_reviews():
         user_id = 3,
         item_id = 1,
         desc = 'Looks good with Jeans',
-        picture_aws_link = 'https://cdn.discordapp.com/attachments/1118210959077556414/1119365518588129381/2Q.png'
+        picture_aws_link = 'https://www.kicksonfire.com/wp-content/uploads/2020/08/Nike-SB-Dunk-Low-Pro-8.jpeg?x58464'
     )
 
     review_1t=Reviews(

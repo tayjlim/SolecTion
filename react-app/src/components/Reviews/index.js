@@ -18,7 +18,7 @@ function Reviews({reviews, user}){
 
         {reviewsArr.map((review) => (
 
-            <div id = {review.id}>
+            <div id = {`review${review.id}`} className = 'singleMappedReview'>
 
 
                 <OpenModalImage

@@ -5,7 +5,7 @@
     object-fit: cover;
     margin:10px;
     cursor:pointer;
-
+    
     transition: .5s ease
 
 
@@ -14,8 +14,8 @@
 .onFeetPictureTag:hover{
     filter: blur(4px);
     transition:filter .5s ease
-
 }
+
 .mappingReviews{
     display:flex;
     border-top: 1px #e2e8f0 solid;
