@@ -144,7 +144,7 @@ def get_single_item(id):
     return {'item': single_shoe_dict}
 
 
-@items_routes.route('/reviews/<int:id>/hiMark',methods=['DELETE'])
+@items_routes.route('/reviews/<int:id>/deleteThat',methods=['DELETE'])
 def delete_review(id):
     review_delete = Reviews.query.get(id)
 
@@ -153,4 +153,7 @@ def delete_review(id):
 
     remove_file_from_s3(review_delete.picture_aws_link)
 
-    db.session.delete()
+    db.session.delete(review_delete)
+    db.session.commit()
+
+    return {'message' : 'Item Deleted'}
