@@ -1,12 +1,21 @@
 import React, {useEffect,useState} from 'react'
 import './index.css'
+import { useHistory } from "react-router-dom"
+import { useDispatch } from "react-redux";
+import { useModal } from "../../context/Modal";
 
 function CreateReview () {
 
-    const [cover_picture, setcover_picture] = useState()
+    const [picture_aws_link, setpicture_aws_link] = useState()
     const [desc, setdesc] = useState()
-    const [price, setprice] = useState()
 
+    const handleClick = async (e) =>{
+
+        e.preventDefault();
+        const formData = new FormData()
+        formData.append('desc', desc)
+        formData.append('picture_aws_link',picture_aws_link)
+    }
 
     return(
         <div className = 'createReviewModalDiv'>
@@ -27,8 +36,8 @@ function CreateReview () {
                 className='fileinput'
                 type = 'file'
                 accept='image/*'
-                filename={cover_picture&&cover_picture.name}
-                onChange={(e)=>setcover_picture(e.target.files[0])}
+                filename={picture_aws_link&&picture_aws_link.name}
+                onChange={(e)=>setpicture_aws_link(e.target.files[0])}
                 />
 
 

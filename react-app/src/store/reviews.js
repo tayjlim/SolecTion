@@ -23,6 +23,10 @@ export const getReviewsThunk = (itemId) => async(dispatch) =>{
     }
 }
 
+export const postReviewsThunk = (review,itemId) => async (dispatch) =>{
+    const response = await fetch (`/api/items/${itemId}/reviews/new`)
+}
+
 
 
 const initialState ={}

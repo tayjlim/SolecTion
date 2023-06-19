@@ -56,6 +56,13 @@ def get_items_reviews(id):
     else:
         return {"reviews":[] }
 
+@items_routes.route('/<int:id>/reviews/new',methods=['POST'])
+@login_required
+def post_new_review(id):
+    user_id = current_user.id
+    
+
+
 @items_routes.route('/<int:id>' ,methods=["DELETE"])
 @login_required
 def edit_item(id):
