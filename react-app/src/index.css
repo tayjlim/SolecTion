@@ -23,7 +23,6 @@ input::file-selector-button:hover,button:hover{
     transition-delay:700ms;
     transition:background-color 700ms ease;
     transition:color 700ms ease;
-
     cursor:pointer;
 
 }

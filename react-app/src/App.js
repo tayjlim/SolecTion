@@ -12,6 +12,12 @@ import ItemsDetail from "./components/ItemsDetail";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 
+// const [isLoaded, setIsLoaded] = useState(false);
+
+// useEffect(() => {
+//   dispatch(thunk here).then(() => setIsLoaded(true));
+// }, [dispatch]);
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
