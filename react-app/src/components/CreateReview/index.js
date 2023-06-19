@@ -1,19 +1,42 @@
 import React, {useEffect,useState} from 'react'
+
+import { postReviewsThunk } from '../../store/reviews';
+import { getReviewsThunk } from "../../store/reviews.js";
+
 import './index.css'
+import { useHistory } from "react-router-dom"
+import { useDispatch } from "react-redux";
+import { useModal } from "../../context/Modal";
 
-function CreateReview () {
+function CreateReview ({item}) {
+    const dispatch = useDispatch()
+    const history = useHistory()
+    const {closeModal} = useModal()
 
-    const [cover_picture, setcover_picture] = useState()
+    const [picture_aws_link, setpicture_aws_link] = useState()
     const [desc, setdesc] = useState()
-    const [price, setprice] = useState()
 
+
+    // console.log('did the Item pass through ?!--------',item)
+
+    const handleClick = async (e) =>{
+
+        e.preventDefault();
+        // add validators here no disabled button
+        const formData = new FormData()
+        formData.append('desc', desc)
+        formData.append('picture_aws_link',picture_aws_link)
+        const res = await dispatch(postReviewsThunk(formData,item.id))
+        await dispatch(getReviewsThunk(item.id))
+        closeModal()
+    }
 
     return(
         <div className = 'createReviewModalDiv'>
             <h3>Post a Picture!</h3>
-                <form className = 'createReviewForm'>
+                <form className = 'createReviewForm' onSubmit={handleClick}>
 
-                <label>thoughts on review?
+                <label>thoughts on shoe?
 
                 </label>
 
@@ -27,12 +50,12 @@ function CreateReview () {
                 className='fileinput'
                 type = 'file'
                 accept='image/*'
-                filename={cover_picture&&cover_picture.name}
-                onChange={(e)=>setcover_picture(e.target.files[0])}
+                filename={picture_aws_link&&picture_aws_link.name}
+                onChange={(e)=>setpicture_aws_link(e.target.files[0])}
                 />
 
 
-                <button>Submit</button>
+                <button disabled={!picture_aws_link || desc.length <10 }>Submit</button>
                 </form>
         </div>
     )
