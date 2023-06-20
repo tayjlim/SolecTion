@@ -1,0 +1,30 @@
+
+.singleMappedReview{
+position:relative;
+}
+
+.hoverReviewShow{
+   visibility:hidden;
+
+   text-overflow: ellipsis;
+   position:absolute;
+   bottom: 5px;
+   height: 310px;
+   border-radius: 6px;
+}
+
+
+/* .onFeetPictureTag:hover .hoverReviewShow{
+    visibility:visible;
+    opacity: 0.8;
+   cursor:pointer;
+} */
+
+/* .singleMappedReview:hover .hoverReviewShow{
+    visibility:visible;
+    opacity: 0.8;
+   cursor:pointer;
+   filter: blur(4px);
+    transition:filter .5s ease;
+
+} */

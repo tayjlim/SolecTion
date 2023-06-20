@@ -7,10 +7,16 @@ import LoginFormPage from "./components/LoginFormPage";
 import HomePage from './components/HomePage'
 import SellPage from './components/SellPage'
 import ItemsDetail from "./components/ItemsDetail";
-
+import Footer from "./components/Footer";
 
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
+
+// const [isLoaded, setIsLoaded] = useState(false);
+
+// useEffect(() => {
+//   dispatch(thunk here).then(() => setIsLoaded(true));
+// }, [dispatch]);
 
 function App() {
   const dispatch = useDispatch();
@@ -46,7 +52,10 @@ function App() {
           </Route>
 
         </Switch>
+
+
       )}
+      <Footer/>
     </>
   );
 }

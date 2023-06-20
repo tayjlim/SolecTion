@@ -6,3 +6,4 @@ from flask_wtf.file import FileField, FileAllowed,FileRequired
 class EditReviewForm(FlaskForm):
     desc = StringField('desc')
     picture_aws_link= FileField('cover_picture', validators=[FileAllowed(['png', 'jpeg', 'jpg'])])
+    

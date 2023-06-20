@@ -1,17 +1,53 @@
-import React from 'react';
+
+import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import OpenModalButton from "../OpenModalButton";
+import LoginFormModal from "../LoginFormModal";
+import SignupFormModal from "../SignupFormModal";
 import './Navigation.css';
+import { logout } from "../../store/session";
 
 function Navigation({ isLoaded }){
 	const sessionUser = useSelector(state => state.session.user);
 	const history = useHistory()
+	const ulRef = useRef();
+	const dispatch = useDispatch();
+	const [showMenu, setShowMenu] = useState(false);
+	const openMenu = () => {
+		if (showMenu) return;
+		setShowMenu(true);
+	  };
+
+	  useEffect(() => {
+		if (!showMenu) return;
+
+		const closeMenu = (e) => {
+		  if (!ulRef.current.contains(e.target)) {
+			setShowMenu(false);
+		  }
+		};
+
+		document.addEventListener("click", closeMenu);
+
+		return () => document.removeEventListener("click", closeMenu);
+	  }, [showMenu]);
+
+	  const handleLogout = (e) => {
+		e.preventDefault();
+		dispatch(logout());
+	  };
+
 
 	function onClick (e) {
 		return history.push('/sell')
 	}
+
+	const closeMenu = () => setShowMenu(false);
 	return (
 
 		<div className = 'navigationBarDiv'>
@@ -27,22 +63,32 @@ function Navigation({ isLoaded }){
 				/>
 
 			<div className = 'sellLoginSignUp'>
-				{(sessionUser) ?
+				{(sessionUser && isLoaded) ?
+				<div className = 'SellhereAndUserButton'>
 				<button onClick = {onClick}>Sell Here</button>
+				<ProfileButton user={sessionUser} />
+				</div>
+
 				:
 				null
 				}
 				{(!sessionUser) ?
 				<div className = 'loginSignupDiv'>
-				<button>Sign Up</button>
-				<button>Log In</button>
+				<OpenModalButton
+              buttonText="Log In"
+              onItemClick={closeMenu}
+              modalComponent={<LoginFormModal />}
+            />
+
+            <OpenModalButton
+              buttonText="Sign Up"
+              onItemClick={closeMenu}
+              modalComponent={<SignupFormModal />}
+            />
+
 				</div> : null
 				}
-			{isLoaded && (
 
-					<ProfileButton user={sessionUser} />
-
-			)}
 			</div>
 		</div>
 

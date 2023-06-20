@@ -2,6 +2,7 @@ import React, {useEffect,useState} from 'react'
 import './index.css'
 import OpenModalButton from '../OpenModalButton'
 import DeleteReview from '../DeleteReview'
+import EditReview from '../EditReview'
 function ReviewPhotoModal({review,user}){
 
 console.log(review)
@@ -13,7 +14,12 @@ return(
 
     { (user && user.id ===review.userId) ?
         <div className = 'editandDeleteReviewRender?'>
-            <button>Edit Review</button>
+                <OpenModalButton
+                buttonText = 'Edit Review'
+                modalComponent={
+                    <EditReview review= {review}/>
+                }
+                />
 
                 <OpenModalButton
                 buttonText = 'Delete Review'

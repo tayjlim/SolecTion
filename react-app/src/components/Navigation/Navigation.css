@@ -10,13 +10,6 @@ object-fit: cover;
 height:70px;
 width:300px;
 }
-.navigationBarDiv{
-  margin-left:10px;
-  display:flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin-bottom: 8px;
-}
 
 .searchNav{
   height:65px;
@@ -41,6 +34,15 @@ width:300px;
 
 .navigationBarDiv
 {
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 8px;
   border-bottom: 1px #e2e8f0 solid;
   padding-bottom: 5px;
+  box-shadow: 0 5px 15px #535252;
+  margin-bottom:35px;
+}
+.SellhereAndUserButton{
+  display:flex;
 }

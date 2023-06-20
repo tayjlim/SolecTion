@@ -6,6 +6,7 @@ from app.models.reviews import Reviews
 from app.api.aws_helpers import get_unique_filename,upload_file_to_s3,remove_file_from_s3
 from app.forms.post_item_form import ItemForm
 from app.forms.edit_item_form import EditItemForm
+from app.forms.edit_review_form import EditReviewForm
 from app.forms.post_review_form import ReviewForm
 
 items_routes = Blueprint('items',__name__)
@@ -142,6 +143,32 @@ def get_single_item(id):
     single_shoe = Items.query.get(id)
     single_shoe_dict = single_shoe.to_dict()
     return {'item': single_shoe_dict}
+
+@items_routes.route('/review/<int:id>/edit', methods =['PUT'])
+def edit_review(id):
+    single_review = Reviews.query.get(id)
+
+    edited = EditReviewForm()
+    aws_link =''
+
+    if edited.data['picture_aws_link']:
+        picture = edited.data['picture_aws_link']
+        picture.filename = get_unique_filename(picture.filename)
+        uploaded  = upload_file_to_s3(picture)
+        aws_link = uploaded['url']
+
+        remove_file_from_s3(single_review.picture_aws_link)
+
+    edited["csrf_token"].data = request.cookies["csrf_token"]
+
+    #update the review
+    if edited.validate_on_submit():
+        single_review.desc = edited.data['desc']
+
+        if len(aws_link)>0:
+            single_review.picture_aws_link = aws_link
+        db.session.commit()
+        return single_review.to_dict()
 
 
 @items_routes.route('/reviews/<int:id>/deleteThat',methods=['DELETE'])

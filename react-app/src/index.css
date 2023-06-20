@@ -23,7 +23,6 @@ input::file-selector-button:hover,button:hover{
     transition-delay:700ms;
     transition:background-color 700ms ease;
     transition:color 700ms ease;
-
     cursor:pointer;
 
 }
@@ -40,3 +39,12 @@ body{
     text-align: left;
     top: 5%;
   }
+body{
+    margin:0px;
+}
+
+button:disabled:hover{
+    background-color: rgb(255, 255, 255);
+    color:grey;
+
+}
