@@ -8,6 +8,8 @@ import { useHistory } from "react-router-dom"
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
 
+import Loading from '../Loading';
+
 function CreateReview ({item}) {
     const dispatch = useDispatch()
     const history = useHistory()
@@ -15,11 +17,13 @@ function CreateReview ({item}) {
 
     const [picture_aws_link, setpicture_aws_link] = useState()
     const [desc, setdesc] = useState()
+    const [loaded,setloaded] = useState(false)
 
 
     // console.log('did the Item pass through ?!--------',item)
 
     const handleClick = async (e) =>{
+        
 
         e.preventDefault();
         // add validators here no disabled button
@@ -28,8 +32,12 @@ function CreateReview ({item}) {
         formData.append('picture_aws_link',picture_aws_link)
         const res = await dispatch(postReviewsThunk(formData,item.id))
         await dispatch(getReviewsThunk(item.id))
+        await setloaded(true)
+
         closeModal()
     }
+
+
 
     return(
         <div className = 'createReviewModalDiv'>
