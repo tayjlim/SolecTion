@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import Reviews from '../Reviews'
 import CreateReview from "../CreateReview/index.js";
+import Loading from "../Loading/index.js";
 import LoginFormModal from "../LoginFormModal/index.js";
 import OpenModalMenuItem from "../Navigation/OpenModalMenuItem.js";
 import { getReviewsThunk } from "../../store/reviews.js";
@@ -47,7 +48,7 @@ function ItemsDetail(){
 
     },[dispatch])
 
-    if (!loaded) return(<h3>Loading....</h3>)
+    if (!loaded) return(<Loading></Loading>)
 
     else
     return(

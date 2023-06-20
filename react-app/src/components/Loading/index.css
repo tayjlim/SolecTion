@@ -1,0 +1,7 @@
+.loadingDiv{
+    margin:0 auto;
+    text-align: center;
+    max-width: 100vw;
+    display:flex;
+    justify-content: center;
+}
