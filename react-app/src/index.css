@@ -42,3 +42,9 @@ body{
 body{
     margin:0px;
 }
+
+button:disabled:hover{
+    background-color: rgb(255, 255, 255);
+    color:grey;
+
+}

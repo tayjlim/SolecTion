@@ -100,6 +100,25 @@ def tienkissesdudes_reviews():
         picture_aws_link = 'https://cdn.discordapp.com/attachments/1118210959077556414/1120406989575557140/Nike-Dunk-Low-SB-Heineken-WDYWT-On-Feet-1.jpg'
     )
 
+    review_cement= Reviews(
+        user_id = 1,
+        item_id = 6,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://media.discordapp.net/attachments/1118210959077556414/1120743281299562596/Nike-SB-Dunk-Low-White-Supreme-Midsole-Whitened.png?width=705&height=470'
+    )
+    review_cement1= Reviews(
+        user_id = 3,
+        item_id = 6,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://media.discordapp.net/attachments/1118210959077556414/1120743281630916711/tumblr_nkt1sjBFhH1r92k5yo1_500.png'
+    )
+    review_cement2= Reviews(
+        user_id = 4,
+        item_id = 6,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://media.discordapp.net/attachments/1118210959077556414/1120743281945481276/5eeda2ab2b74f.png'
+    )
+
 
 
 
@@ -128,7 +147,11 @@ def tienkissesdudes_reviews():
     db.session.add(review_h3)
 
 
-    db.session
+    db.session.add(review_cement)
+    db.session.add(review_cement1)
+    db.session.add(review_cement2)
+
+
 
 
 
