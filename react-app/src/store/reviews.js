@@ -11,8 +11,13 @@ const editReview = (review) =>{
 }
 
 export const editReviewThunk = (reviewId, review) => async (dispatch) =>{
-    const res = await fetch('/api/items/')
-    return
+    const res = await fetch(`/api/items/review/${reviewId}/edit`,{
+        method:'PUT',
+        body:review
+    })
+    const data = await res.json();
+    dispatch(editReview(data))
+    return 'nick'
 }
 const getReviews = (reviews) =>{
 
