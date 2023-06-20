@@ -1,9 +1,7 @@
 
 .shoePicTile{
-    width:140px;
-    height:75px;
-    object-fit: cover;
-    align-self: center;
+    width:75%;
+    object-fit: contain;
 }
 
 .itemsMapOfShoesContainer{
@@ -35,12 +33,51 @@
     height: 200px;
     margin:8px;
     border-radius: 4px;
-    cursor:pointer;
+    justify-content: space-between;
+    transition:border .5s ease
 }
-
+.ItemTileContainer>h3{
+margin:0px;
+}
 
 .reccomended{
     margin-left: 30px;
     padding-bottom: 8px;
     border-bottom: 1px #e2e8f0 solid;
+}
+.bottomTile{
+    background-color:  #e9e8e3;
+}
+.bottomTile>h3, .bottomTile>p{
+    font-weight: lighter;
+}
+
+
+.ItemTileContainer:hover{
+
+border: 1px solid #006340;
+transition: border .5s ease;
+cursor:pointer;
+
+}
+.ItemTileContainer:hover .bottomTile{
+    color:white;
+    background-color: #006340;
+    transition: all .5s ease
+}
+.ItemTileContainer:hover .textDiv{
+    color:white;
+    transition: all .5s ease
+}
+.textDiv{
+    margin:0px;
+    align-self: center;
+}
+.topTile{
+    display:flex;
+    height:55%;
+    justify-content: center;
+}
+.textDiv{
+    margin:4px;
 }

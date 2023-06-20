@@ -55,7 +55,7 @@ function CreateReview ({item}) {
                 />
 
 
-                <button disabled={!picture_aws_link || desc.length <10 }>Submit</button>
+                <button disabled={!picture_aws_link || !desc}>Submit</button>
                 </form>
         </div>
     )

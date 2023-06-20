@@ -24,6 +24,8 @@
     align-items: flex-end;
     align-content: flex-end;
 
+
+
 }
 .clockDivandText{
     height:60px;
@@ -77,4 +79,8 @@
 }
 .entireShoeDetail{
     margin-top: 75px;
+}
+
+.productDescriptionDiv{
+    width:60%;
 }
