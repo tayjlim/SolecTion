@@ -24,6 +24,9 @@ const DeleteItems =  ({item}) => {
         history.push('/home')
     }
 
+    if(!item) return null
+
+    else
  return(
     <div className='delete-modal-container'>
       <div>

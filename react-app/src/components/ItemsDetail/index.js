@@ -29,7 +29,7 @@ function ItemsDetail(){
     // console.log(user)
 
     const reviewsObj = useSelector((state) => state.reviews)
-    
+
     // console.log('TOTAL REVIEWS =========',reviewsObj)
 
 
@@ -40,7 +40,7 @@ function ItemsDetail(){
     await setLoaded(true)
     },[dispatch])
 
-    if (!loaded) return(<Loading></Loading>)
+    if (!loaded || !singleItem) return(<Loading></Loading>)
 
     else
     return(
