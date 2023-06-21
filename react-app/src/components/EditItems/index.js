@@ -17,23 +17,46 @@ function EditItems ({item}){
     const [desc, setDesc] = useState(item.desc)
     const [picture_aws_link, setPicture_aws_link] = useState(undefined)
     const [price,setPrice] = useState(item.price)
+    const [error, setError] = useState({})
 
     const tienkissesDudes = async(tien) =>{
         tien.preventDefault()
+        const errors ={}
+        if(!name){
+        errors.name = 'Name of product is required!'
+        }
 
+        if(!desc){
+            errors.description = 'Description of product is required!'
+        }else if(desc.length < 100 ){
+            errors.description = 'Description of product must be atleast 100 characters long!'
+        }
+
+        if(!picture_aws_link){
+            errors.picture_aws_link = 'Picture of product is required!'
+        }
+        if(!price){
+            errors.price = 'Price of product is required!'
+        }
+
+        if(Object.values(errors).length > 0){
+            setError(errors)
+        }
+
+        else{
         const formData = new FormData()
         formData.append('name',name)
         formData.append('desc',desc)
         formData.append('price',price)
 
-        if(picture_aws_link){
-        formData.append('picture_aws_link',picture_aws_link)
-        }
+            if(picture_aws_link){
+            formData.append('picture_aws_link',picture_aws_link)
+            }
 
         const res = await dispatch(editItemsThunk(item.id,formData))
         await dispatch(getAllItemsThunk())
-
         return closeModal()
+        }
     }
 
     return(
@@ -44,17 +67,18 @@ function EditItems ({item}){
                 Name
             </label>
 
+
+
             <input
             placeholder="name"
             type = 'text'
             value = {name}
             onChange = {(e)=>setName(e.target.value)}
             />
-
+            <p className='pErrors'>{error.name}</p>
             <label>
                 Description
             </label>
-
 
             <input
             placeholder = 'write a product description'
@@ -62,6 +86,7 @@ function EditItems ({item}){
             value = {desc}
             onChange = {(e) => setDesc(e.target.value)}
             />
+            <p className='pErrors'>{error.description}</p>
 
             <label>
             Current Photo:
@@ -76,6 +101,8 @@ function EditItems ({item}){
                 onChange={(e) => setPicture_aws_link(e.target.files[0])}
             />
 
+            <p className='pErrors'>{error.picture_aws_link}</p>
+
             <label>Price</label>
             <input
             placeholder=""
@@ -85,6 +112,8 @@ function EditItems ({item}){
             value={price}
             onChange={(e) => setPrice(e.target.value)}
             />
+
+            <p className='pErrors'>{error.price}</p>
 
 
             <button>submit</button>
