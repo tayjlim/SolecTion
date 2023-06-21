@@ -84,3 +84,7 @@
 .productDescriptionDiv{
     width:60%;
 }
+.deleteEditItemButtonDiv{
+    margin: 0 auto;
+    max-width: 1296px;
+}

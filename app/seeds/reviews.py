@@ -118,7 +118,24 @@ def tienkissesdudes_reviews():
         desc = 'amazing with everything',
         picture_aws_link = 'https://media.discordapp.net/attachments/1118210959077556414/1120743281945481276/5eeda2ab2b74f.png'
     )
-
+    review_rg= Reviews(
+        user_id = 1,
+        item_id = 7,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://i.pinimg.com/originals/54/21/c5/5421c50f7e22fd9fea59977ca6913285.jpg'
+    )
+    review_rg1= Reviews(
+        user_id = 3,
+        item_id = 7,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://i.pinimg.com/originals/e0/30/11/e030111521b2e458448b58a89c0a9cef.jpg'
+    )
+    review_rg2= Reviews(
+        user_id = 4,
+        item_id = 7,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://live.staticflickr.com/7643/16639480867_12ef486bac_b.jpg'
+    )
 
 
 
@@ -150,6 +167,10 @@ def tienkissesdudes_reviews():
     db.session.add(review_cement)
     db.session.add(review_cement1)
     db.session.add(review_cement2)
+
+    db.session.add(review_rg)
+    db.session.add(review_rg1)
+    db.session.add(review_rg2)
 
 
 

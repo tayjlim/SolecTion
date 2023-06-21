@@ -4,10 +4,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import Reviews from '../Reviews'
 import CreateReview from "../CreateReview/index.js";
+import Loading from "../Loading/index.js";
 import LoginFormModal from "../LoginFormModal/index.js";
 import OpenModalMenuItem from "../Navigation/OpenModalMenuItem.js";
 import { getReviewsThunk } from "../../store/reviews.js";
-
 import DeleteItems from '../DeleteItems'
 import EditItems from "../EditItems";
 
@@ -20,6 +20,7 @@ function ItemsDetail(){
 
     const dispatch = useDispatch();
     const {itemId} = useParams();
+    const [loaded, setLoaded] = useState(false)
 
     const singleItem = useSelector(state=> state.items)[itemId]
     // console.log(singleItem)
@@ -28,25 +29,18 @@ function ItemsDetail(){
     // console.log(user)
 
     const reviewsObj = useSelector((state) => state.reviews)
-
+    
     // console.log('TOTAL REVIEWS =========',reviewsObj)
 
-    const renderCreateReview = (reviewsArr, user) => {
-        for (let review of reviewsArr) {
-          // console.log('iterating the index? or the arr[0]',i)
-          if (review.userId === user.id)
-            return false
-        }
-        return true
-      }
 
-    useEffect(()=>{
-    dispatch(getAllItemsThunk());
-    dispatch(getReviewsThunk(itemId))
 
+    useEffect(async ()=>{
+    await dispatch(getAllItemsThunk());
+    await dispatch(getReviewsThunk(itemId))
+    await setLoaded(true)
     },[dispatch])
 
-    if (!singleItem) return(<h3>Loading....</h3>)
+    if (!loaded) return(<Loading></Loading>)
 
     else
     return(
@@ -118,7 +112,7 @@ function ItemsDetail(){
 
 
             {(user && (user.id === singleItem.owner_id))
-               ? <div>
+               ? <div className = 'deleteEditItemButtonDiv'>
 
                 <button>
                     <OpenModalMenuItem
