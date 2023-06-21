@@ -23,24 +23,29 @@ function CreateReview ({item}) {
     // console.log('did the Item pass through ?!--------',item)
 
     const handleClick = async (e) =>{
-        
+
 
         e.preventDefault();
         // add validators here no disabled button
+        setloaded(true)
         const formData = new FormData()
         formData.append('desc', desc)
         formData.append('picture_aws_link',picture_aws_link)
         const res = await dispatch(postReviewsThunk(formData,item.id))
         await dispatch(getReviewsThunk(item.id))
-        await setloaded(true)
+        await
 
         closeModal()
     }
 
+    // return(<Loading></Loading>)
 
 
     return(
         <div className = 'createReviewModalDiv'>
+
+        {(loaded) ? (<Loading></Loading>):
+            <>
             <h3>Post a Picture!</h3>
                 <form className = 'createReviewForm' onSubmit={handleClick}>
 
@@ -65,7 +70,10 @@ function CreateReview ({item}) {
 
                 <button disabled={!picture_aws_link || !desc}>Submit</button>
                 </form>
+                </>
+        }
         </div>
+
     )
 
 }

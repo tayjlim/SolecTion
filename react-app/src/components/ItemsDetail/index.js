@@ -29,23 +29,15 @@ function ItemsDetail(){
     // console.log(user)
 
     const reviewsObj = useSelector((state) => state.reviews)
-
+    
     // console.log('TOTAL REVIEWS =========',reviewsObj)
 
-    const renderCreateReview = (reviewsArr, user) => {
-        for (let review of reviewsArr) {
-          // console.log('iterating the index? or the arr[0]',i)
-          if (review.userId === user.id)
-            return false
-        }
-        return true
-      }
+
 
     useEffect(async ()=>{
     await dispatch(getAllItemsThunk());
     await dispatch(getReviewsThunk(itemId))
     await setLoaded(true)
-
     },[dispatch])
 
     if (!loaded) return(<Loading></Loading>)

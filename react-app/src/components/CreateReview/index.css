@@ -5,8 +5,7 @@
 .createReviewModalDiv{
     display:flex;
     flex-direction: column;
-    height:200px;
-    width:350px;
+    background-color: white;
 }
 
 
