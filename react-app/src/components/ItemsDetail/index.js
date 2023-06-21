@@ -150,7 +150,7 @@ function ItemsDetail(){
                     />
 
                 </button>
-                :
+                :(user.id != singleItem.owner_id) ?
                 <button>
                     <OpenModalMenuItem
                     className ='onFeetButton'
@@ -158,6 +158,8 @@ function ItemsDetail(){
                     modalComponent={<CreateReview item = {singleItem} />}
                     />
                 </button>
+                :
+                null
 
             }
 
