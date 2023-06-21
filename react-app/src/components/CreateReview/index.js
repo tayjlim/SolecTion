@@ -29,15 +29,16 @@ function CreateReview ({item}) {
         if(!picture_aws_link){
             errorForm.picture_aws_link = 'You must provide a picture to upload!'
         }
+
         if(desc.length >100){
-            errorForm.desc = 'you description must have less than 100 characters!'
+            errorForm.desc = 'Maximum of 200 characters'
         }
 
         if(Object.values(errorForm).length > 0 ){
             setErrors(errorForm)
         }
-        else{
 
+        else{
         // add validators here no disabled button
         setloaded(true)
         const formData = new FormData()
@@ -70,7 +71,9 @@ function CreateReview ({item}) {
                 value={desc}
                 onChange = {(e)=>(setdesc(e.target.value))}
                 />
+                <p className='pErrors'>{errors.desc}</p>
 
+                <label>Upload a photo(required)</label>
                 <input
                 className='fileinput'
                 type = 'file'
