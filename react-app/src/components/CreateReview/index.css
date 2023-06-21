@@ -25,3 +25,6 @@
     transition:background-color 700ms ease;
     transition:color 700ms ease;
 }
+.pErrors{
+    color :red;
+}

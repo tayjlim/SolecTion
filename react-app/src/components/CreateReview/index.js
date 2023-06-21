@@ -18,14 +18,26 @@ function CreateReview ({item}) {
     const [picture_aws_link, setpicture_aws_link] = useState()
     const [desc, setdesc] = useState()
     const [loaded,setloaded] = useState(false)
+    const [errors, setErrors] = useState({})
 
 
     // console.log('did the Item pass through ?!--------',item)
 
     const handleClick = async (e) =>{
-
-
         e.preventDefault();
+        const errorForm = {}
+        if(!picture_aws_link){
+            errorForm.picture_aws_link = 'You must provide a picture to upload!'
+        }
+        if(desc.length >100){
+            errorForm.desc = 'you description must have less than 100 characters!'
+        }
+
+        if(Object.values(errorForm).length > 0 ){
+            setErrors(errorForm)
+        }
+        else{
+
         // add validators here no disabled button
         setloaded(true)
         const formData = new FormData()
@@ -33,9 +45,8 @@ function CreateReview ({item}) {
         formData.append('picture_aws_link',picture_aws_link)
         const res = await dispatch(postReviewsThunk(formData,item.id))
         await dispatch(getReviewsThunk(item.id))
-        await
-
         closeModal()
+        }
     }
 
     // return(<Loading></Loading>)
@@ -49,12 +60,13 @@ function CreateReview ({item}) {
             <h3>Post a Picture!</h3>
                 <form className = 'createReviewForm' onSubmit={handleClick}>
 
-                <label>thoughts on shoe?
+                <label>Write a Caption! (optional)
 
                 </label>
 
                 <textarea
                 className = 'description'
+                placeholder='write a caption for your post max(100 characters)'
                 value={desc}
                 onChange = {(e)=>(setdesc(e.target.value))}
                 />
@@ -67,8 +79,10 @@ function CreateReview ({item}) {
                 onChange={(e)=>setpicture_aws_link(e.target.files[0])}
                 />
 
+                <p className = 'pErrors'>{errors.picture_aws_link}</p>
 
-                <button disabled={!picture_aws_link || !desc}>Submit</button>
+
+                <button disabled={!picture_aws_link}>Submit</button>
                 </form>
                 </>
         }
@@ -77,5 +91,6 @@ function CreateReview ({item}) {
     )
 
 }
+
 
 export default CreateReview;

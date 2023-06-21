@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
+import './index.css'
 
 // const [isLoaded, setIsLoaded] = useState(false);
 
@@ -27,8 +28,10 @@ function App() {
 
   return (
     <>
+      <div id = 'content-wrap'>
       <Navigation isLoaded={isLoaded} />
       {isLoaded && (
+
         <Switch>
 
           <Route path="/login" >
@@ -53,8 +56,8 @@ function App() {
 
         </Switch>
 
-
       )}
+       </div>
       <Footer/>
     </>
   );

@@ -5,9 +5,9 @@ import './index.css'
 function Footer () {
 
 return(
-    <div className = 'footerDiv'>
+    <footer id="footer" className = 'footerDiv'>
     THIS IS THE FOOTER
-    </div>
+    </footer>
 )
 
 
