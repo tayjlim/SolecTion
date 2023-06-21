@@ -22,18 +22,18 @@ function EditItems ({item}){
     const tienkissesDudes = async(tien) =>{
         tien.preventDefault()
         const errors ={}
+
+
         if(!name){
         errors.name = 'Name of product is required!'
+        }else if(name.length >65){
+            errors.name='Name of product is too long!(less than 65 characters)'
         }
 
         if(!desc){
             errors.description = 'Description of product is required!'
         }else if(desc.length < 100 ){
             errors.description = 'Description of product must be atleast 100 characters long!'
-        }
-
-        if(!picture_aws_link){
-            errors.picture_aws_link = 'Picture of product is required!'
         }
         if(!price){
             errors.price = 'Price of product is required!'
@@ -42,7 +42,7 @@ function EditItems ({item}){
         if(Object.values(errors).length > 0){
             setError(errors)
         }
-
+        
         else{
         const formData = new FormData()
         formData.append('name',name)
