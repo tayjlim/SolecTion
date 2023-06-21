@@ -16,7 +16,7 @@ function CreateReview ({item}) {
     const {closeModal} = useModal()
 
     const [picture_aws_link, setpicture_aws_link] = useState()
-    const [desc, setdesc] = useState()
+    const [desc, setdesc] = useState('')
     const [loaded,setloaded] = useState(false)
     const [errors, setErrors] = useState({})
 
@@ -29,9 +29,10 @@ function CreateReview ({item}) {
         if(!picture_aws_link){
             errorForm.picture_aws_link = 'You must provide a picture to upload!'
         }
-
+        if(desc){
         if(desc.length >100){
-            errorForm.desc = 'Maximum of 200 characters'
+            errorForm.desc = 'Maximum of 100 characters'
+        }
         }
 
         if(Object.values(errorForm).length > 0 ){

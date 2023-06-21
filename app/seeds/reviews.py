@@ -137,6 +137,44 @@ def tienkissesdudes_reviews():
         picture_aws_link = 'https://live.staticflickr.com/7643/16639480867_12ef486bac_b.jpg'
     )
 
+    review_nl1= Reviews(
+        user_id = 1,
+        item_id = 8,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://cdn.weartesters.com/wp-content/uploads/2014/11/Premier-x-Nike-SB-Dunk-High-Premium-Northern-Lights-Detailed-Look-Release-Info-3.jpg'
+    )
+    review_nl2= Reviews(
+        user_id = 3,
+        item_id = 8,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://cdn.sanity.io/images/c1chvb1i/production/aaa63501ff3b7da3b5fd68da41aa58aeb57da5ac-640x426.jpg/nike-sb-dunk-yeezy-4.jpg'
+    )
+    review_nl3= Reviews(
+        user_id = 4,
+        item_id = 8,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://i.pinimg.com/736x/6a/20/49/6a20497bf1b0b102ebf26b29d04c2a64.jpg'
+    )
+
+    review_tl1= Reviews(
+        user_id = 1,
+        item_id = 9,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://www.allaboutanthony.com/wp-content/uploads/2016/04/Nike-Dunk-SB-Low-Tiffany-Diamond-On-Feet-WDYWT.jpg'
+    )
+    review_tl2= Reviews(
+        user_id = 3,
+        item_id = 9,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://64.media.tumblr.com/e8f01000346947889a5bea58593dad32/tumblr_mid9f81ux31r92k5yo1_1280.jpg'
+    )
+    review_tl3= Reviews(
+        user_id = 4,
+        item_id = 9,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://i.pinimg.com/originals/ee/28/6f/ee286f13a60d01c706e26a652db69577.jpg'
+    )
+
 
 
 
@@ -171,6 +209,14 @@ def tienkissesdudes_reviews():
     db.session.add(review_rg)
     db.session.add(review_rg1)
     db.session.add(review_rg2)
+
+    db.session.add(review_nl1)
+    db.session.add(review_nl2)
+    db.session.add(review_nl3)
+
+    db.session.add(review_tl1)
+    db.session.add(review_tl2)
+    db.session.add(review_tl3)
 
 
 
