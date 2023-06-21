@@ -6,5 +6,43 @@
   display: none;
 }
 .logoHeaderNav{
-  height:200px;
+object-fit: cover;
+height:70px;
+width:300px;
+}
+
+.searchNav{
+  height:65px;
+  width:45%;
+  font-size: 18px;
+}
+
+.sellLoginSignUp{
+  display:flex;
+  align-items: center;
+}
+
+.loginSignupDiv>button{
+  height: 55px;
+  font-size:20px;
+}
+
+
+.loginSignupDiv{
+  display:flex;
+}
+
+.navigationBarDiv
+{
+  display:flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 8px;
+  border-bottom: 1px #e2e8f0 solid;
+  padding-bottom: 5px;
+  box-shadow: 0 5px 15px #535252;
+  margin-bottom:35px;
+}
+.SellhereAndUserButton{
+  display:flex;
 }

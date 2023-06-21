@@ -19,9 +19,21 @@ def username_exists(form, field):
     if user:
         raise ValidationError('Username is already in use.')
 
+def is_email(form,field):
+    email = field.data
+    if len (email.split("@")) !=2:
+        raise ValidationError('Not a valid email (missing or too many @ signs)')
+
+def no_special_chars (form, field):
+    user = field.data
+    specialchars = '!@#$%^&*}()-"=_+,./<>?;:}\[{]'
+    for char in specialchars:
+        if char in user:
+            raise ValidationError('No Special characters allowed!')
+
 
 class SignUpForm(FlaskForm):
     username = StringField(
-        'username', validators=[DataRequired(), username_exists])
-    email = StringField('email', validators=[DataRequired(), user_exists])
+        'username', validators=[DataRequired(), username_exists,no_special_chars])
+    email = StringField('email', validators=[DataRequired(), user_exists,is_email])
     password = StringField('password', validators=[DataRequired()])

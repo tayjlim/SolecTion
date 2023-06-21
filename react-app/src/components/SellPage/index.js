@@ -10,22 +10,45 @@ function SellPage() {
     const [name,setName] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState(1);
+    const [error, setError] = useState({})
+
     const dispatch = useDispatch()
     const history = useHistory();
 
 
     async function handleSubmit (e) {
     e.preventDefault()
-    const formData = new FormData()
+    const errors ={}
+    if(!name){
+        errors.name = 'Name of product is required!'
+    }
+    
+    if(!description){
+        errors.description = 'Description of product is required!'
+    }else if(description.length < 100 ){
+        errors.description = 'Description of product must be atleast 100 characters long!'
+    }
 
-    formData.append('name',name)
-    formData.append('desc',description)
-    formData.append('price',price)
-    formData.append('picture_aws_link',picture_aws_link)
-    const res = await dispatch(postItemsThunk(formData))
+    if(!picture_aws_link){
+        errors.picture_aws_link = 'Picture of product is required!'
+    }
+    if(!price){
+        errors.price = 'Price of product is required!'
+    }
 
-    return history.push(`/items`)
+    if(Object.values(errors).length > 0){
+        setError(errors)
+    }
 
+    else{
+        const formData = new FormData()
+        formData.append('name',name)
+        formData.append('desc',description)
+        formData.append('price',price)
+        formData.append('picture_aws_link',picture_aws_link)
+        const res = await dispatch(postItemsThunk(formData))
+        return history.push(`/items`)
+    }
     }
 
 
@@ -40,6 +63,8 @@ return(
                 onChange = {(e) => setName(e.target.value)}
                 />
 
+                <p className='pErrors'>{error.name}</p>
+
                 <label>description</label>
                 <input
                 placeholder = 'write a product description'
@@ -47,6 +72,8 @@ return(
                 value = {description}
                 onChange = {(e) => setDescription(e.target.value)}
                 />
+
+                <p className='pErrors'>{error.description}</p>
 
                 <label>Picture</label>
                 <input
@@ -57,15 +84,17 @@ return(
                 onChange={(e) => setPicture_aws_link(e.target.files[0])}
                 />
 
+                <p className='pErrors'>{error.picture_aws_link}</p>
+
                 <label>Price</label>
                 <input
                         placeholder=""
                         type="number"
                         min="1"
-                        max="99"
                         value={price}
                         onChange={(e) => setPrice(e.target.value)}
                     />
+                 <p className='pErrors'>{error.price}</p>
 
                 <button>submit</button>
 

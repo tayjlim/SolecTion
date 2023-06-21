@@ -20,3 +20,11 @@ class Reviews(db.Model):
     )
     #connecting to User
     review_user_id = db.relationship('User', back_populates = 'review')
+
+    def to_dict(self):
+        return{
+            'id':self.id,
+            'userId':self.user_id,
+            'itemId': self.item_id,
+            'desc': self.desc,
+            'picture_aws_link':self.picture_aws_link}

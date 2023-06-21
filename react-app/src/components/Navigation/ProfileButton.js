@@ -38,7 +38,7 @@ function ProfileButton({ user }) {
   const closeMenu = () => setShowMenu(false);
 
   return (
-    <>
+    <div>
       <button onClick={openMenu}>
         <i className="fas fa-user-circle" />
       </button>
@@ -52,7 +52,7 @@ function ProfileButton({ user }) {
             </li>
           </>
         ) : (
-          <>
+          <div>
             <OpenModalButton
               buttonText="Log In"
               onItemClick={closeMenu}
@@ -64,10 +64,10 @@ function ProfileButton({ user }) {
               onItemClick={closeMenu}
               modalComponent={<SignupFormModal />}
             />
-          </>
+          </div>
         )}
       </ul>
-    </>
+    </div>
   );
 }
 

@@ -85,7 +85,62 @@ def undo_items():
     picture_aws_link='https://images.stockx.com/images/Nike-Dunk-SB-Low-Freddy-Krueger.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=avif&auto=compress&dpr=1&trim=color&updated_at=1607045341&q=57'
     )
 
-    
+    shoe11 = Items(
+    owner_id=2,
+    name='Nike SB Dunk Low "Pushead 2"',
+    desc="The Nike SB Dunk Low 'Pushead 2' is a collaboration with artist Brian Schroeder, also known as Pushead. The shoe features a unique design with Pushead's signature style, combining intricate illustrations and graffiti-inspired elements.",
+    price=120,
+    picture_aws_link='https://images.stockx.com/360/Nike-Dunk-SB-Low-Pushead-2/Images/Nike-Dunk-SB-Low-Pushead-2/Lv2/img01.jpg?fm=avif&auto=compress&w=576&dpr=1&updated_at=1635346655&h=384&q=57'
+    )
+
+    shoe12 = Items(
+    owner_id=2,
+    name='Nike SB Dunk High "De La Soul"',
+    desc='The Nike SB Dunk High "De La Soul" pays homage to the iconic hip-hop group. It features a vibrant color scheme and artwork inspired by De La Soul\'s album covers, making it a sought-after collector\'s item.',
+    price=120,
+    picture_aws_link='https://images.stockx.com/360/Nike-Dunk-SB-High-De-La-Soul/Images/Nike-Dunk-SB-High-De-La-Soul/Lv2/img01.jpg?fm=avif&auto=compress&w=576&dpr=1&updated_at=1635191517&h=384&q=57'
+    )
+
+    shoe13 = Items(
+    owner_id=2,
+    name='Nike SB Dunk Low "Reese Forbes Denim"',
+    desc='The Nike SB Dunk Low "Reese Forbes Denim" is a collaboration with professional skateboarder Reese Forbes. It incorporates denim material and stitching details, giving it a unique and stylish look.',
+    price=120,
+    picture_aws_link='https://images.stockx.com/360/Nike-SB-Dunk-Low-Reese-Forbes-Denim/Images/Nike-SB-Dunk-Low-Reese-Forbes-Denim/Lv2/img01.jpg?fm=avif&auto=compress&w=576&dpr=1&updated_at=1628051312&h=384&q=57'
+    )
+
+    shoe14 = Items(
+    owner_id=2,
+    name='Nike SB Dunk Low "Hawaii"',
+    desc='The Nike SB Dunk Low "Hawaii" draws inspiration from the tropical paradise. It features vibrant floral patterns, palm tree graphics, and beach-themed details, capturing the essence of Hawaii\'s culture and scenery.',
+    price=120,
+    picture_aws_link='https://images.stockx.com/360/Nike-SB-Hawaii-Dunk-Low/Images/Nike-SB-Hawaii-Dunk-Low/Lv2/img01.jpg?fm=avif&auto=compress&w=576&dpr=1&updated_at=1645647725&h=384&q=57'
+        )
+
+    shoe15 = Items(
+    owner_id=2,
+    name='Nike SB Dunk High "Unlucky"',
+    desc='The Nike SB Dunk High "Unlucky" showcases a Halloween-inspired design. It incorporates black and orange colors, spiderweb graphics, and other spooky details, making it a popular choice for fans of themed sneakers.',
+    price=120,
+    picture_aws_link='https://images.stockx.com/360/Nike-Dunk-High-Unlucky/Images/Nike-Dunk-High-Unlucky/Lv2/img01.jpg?fm=avif&auto=compress&w=576&dpr=1&updated_at=1635339341&h=384&q=57'
+    )
+
+    shoe16 = Items(
+    owner_id=2,
+    name='Nike SB Dunk Low "Supreme Elephant"',
+    desc='The Nike SB Dunk Low "Supreme Elephant" is a collaboration with Supreme. It features a unique elephant print pattern across the upper, combined with Supreme branding elements, creating a distinctive and eye-catching look.',
+    price=120,
+    picture_aws_link='https://images.stockx.com/360/Nike-SB-Dunk-Low-atmos-Elephant/Images/Nike-SB-Dunk-Low-atmos-Elephant/Lv2/img01.jpg?fm=avif&auto=compress&w=576&dpr=1&updated_at=1653312371&h=384&q=57'
+    )
+
+
+
+
+
+
+
+
+
     db.session.add(shoe1)
     db.session.add(shoe2)
     db.session.add(shoe3)
@@ -96,6 +151,13 @@ def undo_items():
     db.session.add(shoe8)
     db.session.add(shoe9)
     db.session.add(shoe10)
+    db.session.add(shoe11)
+    db.session.add(shoe12)
+    db.session.add(shoe13)
+    db.session.add(shoe14)
+    db.session.add(shoe15)
+    db.session.add(shoe16)
+
     db.session.commit()
 
 def under_items():

@@ -1,1 +1,64 @@
 /* TODO Add site wide styles */
+
+button,input::file-selector-button {
+    margin-top:5px;
+    width:100%;
+    height:70px;
+    font-weight:bolder;
+    background-color: white;
+    border:1px solid #e2e8f0;
+    font-size: 24px;
+
+    transition-delay:300ms;
+    transition:background-color 700ms ease;
+    transition:color 700ms ease;
+
+}
+
+input::file-selector-button:hover,button:hover{
+
+    color: white;
+    background-color: black;
+
+    transition-delay:700ms;
+    transition:background-color 700ms ease;
+    transition:color 700ms ease;
+    cursor:pointer;
+
+}
+
+body{
+    font-family: basic-sans, sans-serif;
+}
+
+.profile-dropdown {
+    position: absolute;
+    right: 2%;
+    border-radius: 3px;
+    padding: 10px;
+    text-align: left;
+    top: 5%;
+  }
+body{
+    margin:0px;
+}
+
+button:disabled:hover{
+    background-color: rgb(255, 255, 255);
+    color:grey;
+
+}
+
+#root{
+    position:relative;
+    min-height: 100vh;
+}
+#content-wrap{
+    padding-bottom:7.5rem;
+}
+  #footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height:4.5rem;            /* Footer height */
+  }

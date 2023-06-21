@@ -1,16 +1,7 @@
-.ItemTileContainer{
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #e2e8f0;
-    width: 200px;
-    height: 200px;
-    margin:8px;
-    border-radius: 4px;
-}
+
 .shoePicTile{
-    width:140px;
-    height:75px;
-    object-fit: cover;
+    width:75%;
+    object-fit: contain;
 }
 
 .itemsMapOfShoesContainer{
@@ -25,10 +16,68 @@
     padding-left: 20px;
     padding-right: 20px;
     justify-content: center;
+    margin: 0 auto;
+    max-width: 1296px;
 }
 .homePageLinkThang{
     align-self: center;
     max-height: 400px;
     max-width: 1000px;
     object-fit: cover;
+}
+.ItemTileContainer{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #e2e8f0;
+    width: 200px;
+    height: 200px;
+    margin:8px;
+    border-radius: 4px;
+    justify-content: space-between;
+    transition:border .5s ease
+}
+.ItemTileContainer>h3{
+margin:0px;
+}
+
+.reccomended{
+    margin-left: 30px;
+    padding-bottom: 8px;
+    border-bottom: 1px #e2e8f0 solid;
+}
+.bottomTile{
+    background-color:  #e9e8e3;
+}
+.bottomTile>h3, .bottomTile>p{
+    font-weight: lighter;
+}
+
+
+.ItemTileContainer:hover{
+
+border: 1px solid #006340;
+transition: border .5s ease;
+cursor:pointer;
+
+}
+.ItemTileContainer:hover .bottomTile{
+    color:white;
+    background-color: #006340;
+    transition: all .5s ease
+}
+.ItemTileContainer:hover .textDiv{
+    color:white;
+    transition: all .5s ease
+}
+.textDiv{
+    margin:0px;
+    align-self: center;
+}
+.topTile{
+    display:flex;
+    height:55%;
+    justify-content: center;
+}
+.textDiv{
+    margin:4px;
 }

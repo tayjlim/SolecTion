@@ -1,0 +1,90 @@
+.headerShoePriceButton{
+    display:flex;
+    justify-content: center;
+    border-bottom: 1px #e2e8f0 solid;
+    margin: 0 auto;
+    max-width: 1296px;
+
+}
+.columnLeft{
+    margin-right:76px;
+}
+
+
+.verifyCondition{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.columnRight{
+
+    width:350px;
+    margin-left:64px;
+    align-self: flex-end;
+    align-items: flex-end;
+    align-content: flex-end;
+
+
+
+}
+.clockDivandText{
+    height:60px;
+    background-color: #e9e8e3;
+    display:flex;
+    align-items: center;
+}
+.clockDivandText>p{
+    font-weight: bold;
+}
+
+.stockXVerifiedpTag{
+ padding-bottom: 9px;
+ border-bottom: .5px #e2e8f0 solid;
+}
+
+.iconthing{
+
+    width:24px;
+    height:24px;
+}
+
+.stickerandheading{
+    display:flex;
+    align-items: center;
+}
+.miniClock{
+    width:40px;
+}
+.shoepic{
+    width:450px;
+}
+.productDetails{
+    border-bottom: 1px #e2e8f0 solid;
+    margin: 0 auto;
+    max-width: 1296px;
+
+}
+.priceDivDetails{
+    display:flex;
+}
+
+.reviewsDivContainer{
+    margin: 0 auto;
+    max-width: 1296px;
+}
+
+.OnfeetButtonDiv{
+    display:flex;
+    justify-content: space-between;
+}
+.entireShoeDetail{
+    margin-top: 75px;
+}
+
+.productDescriptionDiv{
+    width:60%;
+}
+.deleteEditItemButtonDiv{
+    margin: 0 auto;
+    max-width: 1296px;
+}
