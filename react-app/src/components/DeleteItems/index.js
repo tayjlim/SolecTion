@@ -13,11 +13,11 @@ const DeleteItems =  ({item}) => {
     const dispatch=useDispatch();
     const {closeModal} = useModal();
     const history = useHistory();
-    console.log(item.id)
+    // console.log(item.id)
 
     const handleClick = async(e) =>{
         e.preventDefault();
-        console.log(item.id)
+        // console.log(item.id)
         await dispatch(deleteItemsThunk(item.id))
         await dispatch(getAllItemsThunk())
         closeModal()

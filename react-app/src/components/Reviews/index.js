@@ -4,9 +4,9 @@ import OpenModalImage from '../OpenModalImage'
 
 
 function Reviews({reviews, user}){
-    console.log('reviews component variable : reviews---', reviews)
+    // console.log('reviews component variable : reviews---', reviews)
     const reviewsArr = Object.values(reviews)
-    console.log(reviewsArr)
+    // console.log(reviewsArr)
 
     //When clicking on the image the a modal will open to view the image in full resolution!
 

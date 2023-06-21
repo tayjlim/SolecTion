@@ -12,7 +12,7 @@ function DeleteReview ({review}) {
     const dispatch=useDispatch();
     const {closeModal} = useModal();
 
-    console.log(review)
+    // console.log(review)
     const handleClick = async (e) =>{
         e.preventDefault()
 
