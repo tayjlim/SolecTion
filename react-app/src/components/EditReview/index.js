@@ -46,7 +46,7 @@ function EditReview ({review}){
                 onChange={(e) => setPicture_aws_link(e.target.files[0])}
                 />
 
-            <button>submit</button>
+            <button className = 'allButton'>submit</button>
             </form>
         </div>
 

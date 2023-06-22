@@ -1,9 +1,9 @@
 /* TODO Add site wide styles */
 
-button,input::file-selector-button {
+.allButton,.buyNowButton,input::file-selector-button {
     margin-top:5px;
-    width:100%;
     height:70px;
+    width:100%;
     font-weight:bolder;
     background-color: white;
     border:1px solid #e2e8f0;
@@ -15,7 +15,7 @@ button,input::file-selector-button {
 
 }
 
-input::file-selector-button:hover,button:hover{
+input::file-selector-button:hover,.buyNowButton:hover,.allButton:hover{
 
     color: white;
     background-color: black;
@@ -28,6 +28,8 @@ input::file-selector-button:hover,button:hover{
 }
 
 body{
+    /* font-family:SuisseIntl-Regular,sans-serif; */
+
     font-family: basic-sans, sans-serif;
 }
 

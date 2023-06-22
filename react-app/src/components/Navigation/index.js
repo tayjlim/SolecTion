@@ -60,12 +60,13 @@ function Navigation({ isLoaded }){
 				type='search'
 				placeholder = 'Search for brand... color...etc'
 				className = 'searchNav'
+				onClick={(e)=>(alert('Feature Coming Soon!'))}
 				/>
 
 			<div className = 'sellLoginSignUp'>
 				{(sessionUser && isLoaded) ?
 				<div className = 'SellhereAndUserButton'>
-				<button onClick = {onClick}>Sell Here</button>
+				<button  className = 'allButton' onClick = {onClick}>Sell Here</button>
 				<ProfileButton user={sessionUser} />
 				</div>
 
@@ -77,12 +78,14 @@ function Navigation({ isLoaded }){
 				<OpenModalButton
               buttonText="Log In"
               onItemClick={closeMenu}
+			  id ='navButtonLogin'
               modalComponent={<LoginFormModal />}
             />
 
             <OpenModalButton
               buttonText="Sign Up"
               onItemClick={closeMenu}
+			  id ='navButtonSignUp'
               modalComponent={<SignupFormModal />}
             />
 

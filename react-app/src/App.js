@@ -13,6 +13,11 @@ import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import './index.css'
 
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+import './index.css'
+
+
 // const [isLoaded, setIsLoaded] = useState(false);
 
 // useEffect(() => {
@@ -30,6 +35,8 @@ function App() {
     <>
       <div id = 'content-wrap'>
       <Navigation isLoaded={isLoaded} />
+
+      
       {isLoaded && (
 
         <Switch>

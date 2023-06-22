@@ -31,8 +31,27 @@ function ItemsDetail(){
     const reviewsObj = useSelector((state) => state.reviews)
 
     // console.log('TOTAL REVIEWS =========',reviewsObj)
+    function getRandomNumber() {
+        // Generate a random decimal number between 0 and 1
+        const random = Math.random();
+        // Round the decimal number to the nearest whole number (0 or 1)
+        const randomNumber = Math.round(random);
+        // Add 1 to the rounded number to get a result between 1 and 2
+        const finalNumber = randomNumber + 1;
+        return finalNumber;
+        }
 
+    const clockFireBag ={
+        1:{
+            url:'https://stockx-assets.imgix.net/dynamic/LowInventoryBadgeV3.gif?auto=format,compress&w=150&h=150&gif-q=50',
+            text: 'Only a Couple Left!'
+        },
+        2:{
+            url:'https://stockx-assets.imgix.net/dynamic/PriceDropBadgeV3.gif?auto=format,compress&w=150&h=150&gif-q=50',
+            text:'Now On Sale!'
+        }
 
+    }
 
     useEffect(async ()=>{
     await dispatch(getAllItemsThunk());
@@ -60,7 +79,7 @@ function ItemsDetail(){
                     <p>Only a Couple Left!</p>
                 </div>
 
-            <button className = 'buyNowButton'>Add to Cart ${singleItem.price}</button>
+            <button className = 'buyNowButton' onClick={(e)=>(alert('Feature Coming Soon!'))}>Add to Cart ${singleItem.price} </button>
 
             <div className = 'verifyCondition'>
                 <div className='stickerandheading'>
@@ -114,7 +133,7 @@ function ItemsDetail(){
             {(user && (user.id === singleItem.owner_id))
                ? <div className = 'deleteEditItemButtonDiv'>
 
-                <button>
+                <button className = 'allButton'>
                     <OpenModalMenuItem
                     className="delete-button"
                     itemText="Delete this Item"
@@ -122,7 +141,7 @@ function ItemsDetail(){
                     />
                 </button>
 
-                <button>
+                <button className = 'allButton'>
                     <OpenModalMenuItem
                     className="edit-button"
                     itemText="Edit this Item"
@@ -141,7 +160,7 @@ function ItemsDetail(){
 
             {(!user) ?
 
-                <button>
+                <button className = 'allButton'>
 
                     <OpenModalMenuItem
                     className ='onFeetButton'
@@ -150,8 +169,9 @@ function ItemsDetail(){
                     />
 
                 </button>
+
                 :(user.id != singleItem.owner_id) ?
-                <button>
+                <button className = 'allButton'>
                     <OpenModalMenuItem
                     className ='onFeetButton'
                     itemText='Post a Picture'

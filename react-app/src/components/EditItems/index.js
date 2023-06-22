@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect, useState } from "react";
 import { useModal } from "../../context/Modal";
 import { editItemsThunk,getAllItemsThunk } from "../../store/items";
-
+import './index.css'
 function EditItems ({item}){
     const dispatch = useDispatch();
     const { closeModal } = useModal()
@@ -42,7 +42,7 @@ function EditItems ({item}){
         if(Object.values(errors).length > 0){
             setError(errors)
         }
-        
+
         else{
         const formData = new FormData()
         formData.append('name',name)
@@ -90,7 +90,7 @@ function EditItems ({item}){
 
             <label>
             Current Photo:
-            <img className = 'shoePicTile' src = {item.picture_aws_link}></img>
+            <img className = 'editModal' src = {item.picture_aws_link}></img>
             </label>
 
             <input
@@ -116,7 +116,7 @@ function EditItems ({item}){
             <p className='pErrors'>{error.price}</p>
 
 
-            <button>submit</button>
+            <button className = 'allButton' >submit</button>
 
 
             </form>

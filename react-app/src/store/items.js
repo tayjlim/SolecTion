@@ -10,7 +10,7 @@ const editItems = (items) =>{
     }
 }
 export const editItemsThunk =(itemsId, items) => async (dispatch) =>{
-    console.log(items,'--------------inside thunk-------')
+    // console.log(items,'--------------inside thunk-------')
     const res = await fetch (`/api/items/${itemsId}/edit`,{
         method:'PUT',
         body: items
@@ -47,7 +47,7 @@ const deleteItems = (itemsId) => {
     }
 }
 export const deleteItemsThunk = (itemsId)=> async (dispatch) =>{
-    console.log('inside thunk - -----------------------------')
+    // console.log('inside thunk - -----------------------------')
     const response = await fetch(`/api/items/${itemsId}`,{
         method:'DELETE'
     })

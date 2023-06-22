@@ -22,7 +22,7 @@ function SellPage() {
     if(!name){
         errors.name = 'Name of product is required!'
     }
-    
+
     if(!description){
         errors.description = 'Description of product is required!'
     }else if(description.length < 100 ){
@@ -96,7 +96,7 @@ return(
                     />
                  <p className='pErrors'>{error.price}</p>
 
-                <button>submit</button>
+                <button className = 'allButton'>submit</button>
 
         </form>
     </div>

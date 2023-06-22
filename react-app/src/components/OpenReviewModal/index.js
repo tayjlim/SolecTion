@@ -5,11 +5,11 @@ import DeleteReview from '../DeleteReview'
 import EditReview from '../EditReview'
 function ReviewPhotoModal({review,user}){
 
-console.log(review)
+// console.log(review)
 // <h2>
 // //    {review.desc}
 //    </h2>
-console.log(user,'user inside of the modeal')
+// console.log(user,'user inside of the modeal')
 return(
 
     <div className = 'reviewPictureBlownup'>
@@ -19,14 +19,14 @@ return(
     { (user && user.id ===review.userId) ?
         <div className = 'editandDeleteReviewRender'>
                 <OpenModalButton
-                buttonText = 'Edit Review'
+                buttonText = 'Edit Post'
                 modalComponent={
                     <EditReview review= {review}/>
                 }
                 />
 
                 <OpenModalButton
-                buttonText = 'Delete Review'
+                buttonText = 'Delete Post'
                 modalComponent={
                     <DeleteReview review = {review}/>
                 }
