@@ -55,9 +55,9 @@ function LoginFormModal() {
             required
           />
         </label>
-        <button type="submit">Log In</button>
+        <button  className = 'allButton' type="submit">Log In</button>
       </form>
-      <button type="submit"
+      <button  className = 'allButton' type="submit"
          onClick={handleDemoSubmit}>Demo User Login
       </button>
 

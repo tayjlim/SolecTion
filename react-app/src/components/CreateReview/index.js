@@ -86,7 +86,7 @@ function CreateReview ({item}) {
                 <p className = 'pErrors'>{errors.picture_aws_link}</p>
 
 
-                <button disabled={!picture_aws_link}>Submit</button>
+                <button className = 'allButton' disabled={!picture_aws_link}>Submit</button>
                 </form>
                 </>
         }

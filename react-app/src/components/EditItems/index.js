@@ -42,7 +42,7 @@ function EditItems ({item}){
         if(Object.values(errors).length > 0){
             setError(errors)
         }
-        
+
         else{
         const formData = new FormData()
         formData.append('name',name)
@@ -116,7 +116,7 @@ function EditItems ({item}){
             <p className='pErrors'>{error.price}</p>
 
 
-            <button>submit</button>
+            <button className = 'allButton' >submit</button>
 
 
             </form>

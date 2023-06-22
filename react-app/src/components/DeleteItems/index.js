@@ -33,8 +33,8 @@ const DeleteItems =  ({item}) => {
       <div className="random-text">Are you sure you want to remove this Item?</div>
       </div>
       <div className="delete-two-buttons">
-        <button className='buttons-in-modal' onClick={(e) => handleClick(e)}>Yes (Delete Item)</button>
-        <button className='buttons-in-modal' onClick={(e) => closeModal()}>No (Keep Item)</button>
+        <button className = 'allButton' id='buttons-in-modal' onClick={(e) => handleClick(e)}>Yes (Delete Item)</button>
+        <button  className = 'allButton' id='buttons-in-modal' onClick={(e) => closeModal()}>No (Keep Item)</button>
       </div>
     </div>
  )

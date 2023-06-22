@@ -81,3 +81,26 @@ cursor:pointer;
 .textDiv{
     margin:4px;
 }
+.carousel.carousel-slider .control-arrow {
+    right: 600px;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    margin-top: 0;
+    padding: 5px;
+}
+
+.carouselDiv-not-package{
+    position: relative;
+}
+.carouselDiv-not-package,.carousel-root{
+    margin:0 auto;
+    max-width:1000px;
+
+}
+.aTagStockXLink{
+    position:absolute;
+    width:1000px;
+    height:289px;
+    z-index:2;
+}

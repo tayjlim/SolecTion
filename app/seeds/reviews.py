@@ -175,6 +175,44 @@ def tienkissesdudes_reviews():
         picture_aws_link = 'https://i.pinimg.com/originals/ee/28/6f/ee286f13a60d01c706e26a652db69577.jpg'
     )
 
+    review_fk1= Reviews(
+        user_id = 1,
+        item_id = 10,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://4.bp.blogspot.com/-OfYmJOV06Ao/WcoN6UvU69I/AAAAAAAA8iM/wKP1XQIwL_cFswUnzy_7onJL6a5vfvngwCLcBGAs/s1600/IMG_9209.JPG'
+    )
+    review_fk2= Reviews(
+        user_id = 3,
+        item_id = 10,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://pbs.twimg.com/media/EINXIxDWwAEnspQ.jpg'
+    )
+    review_fk3= Reviews(
+        user_id = 4,
+        item_id = 10,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://i.pinimg.com/originals/cf/ff/5d/cfff5d3294e0e9456b1e242847b3a0d0.jpg'
+    )
+
+    review_ph1= Reviews(
+        user_id = 1,
+        item_id = 11,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://i.pinimg.com/736x/fa/f6/59/faf6594a61269de026aafc29c1384b5e.jpg'
+    )
+    review_ph2= Reviews(
+        user_id = 3,
+        item_id = 11,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://i.pinimg.com/originals/4c/f5/62/4cf5629cfdb20d74a6b416c578407b08.jpg'
+    )
+    review_ph3= Reviews(
+        user_id = 4,
+        item_id = 11,
+        desc = 'amazing with everything',
+        picture_aws_link = 'https://images.solecollector.com/complex/image/upload/c_fill,dpr_2.0,f_auto,fl_lossy,q_auto,w_680/blob_lvwqwf'
+    )
+
 
 
 
@@ -218,6 +256,13 @@ def tienkissesdudes_reviews():
     db.session.add(review_tl2)
     db.session.add(review_tl3)
 
+    db.session.add(review_fk1)
+    db.session.add(review_fk2)
+    db.session.add(review_fk3)
+
+    db.session.add(review_ph1)
+    db.session.add(review_ph2)
+    db.session.add(review_ph3)
 
 
 

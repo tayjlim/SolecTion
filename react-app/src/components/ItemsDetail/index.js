@@ -114,7 +114,7 @@ function ItemsDetail(){
             {(user && (user.id === singleItem.owner_id))
                ? <div className = 'deleteEditItemButtonDiv'>
 
-                <button>
+                <button className = 'allButton'>
                     <OpenModalMenuItem
                     className="delete-button"
                     itemText="Delete this Item"
@@ -122,7 +122,7 @@ function ItemsDetail(){
                     />
                 </button>
 
-                <button>
+                <button className = 'allButton'>
                     <OpenModalMenuItem
                     className="edit-button"
                     itemText="Edit this Item"
@@ -141,7 +141,7 @@ function ItemsDetail(){
 
             {(!user) ?
 
-                <button>
+                <button className = 'allButton'>
 
                     <OpenModalMenuItem
                     className ='onFeetButton'
@@ -150,8 +150,9 @@ function ItemsDetail(){
                     />
 
                 </button>
+
                 :(user.id != singleItem.owner_id) ?
-                <button>
+                <button className = 'allButton'>
                     <OpenModalMenuItem
                     className ='onFeetButton'
                     itemText='Post a Picture'

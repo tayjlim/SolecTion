@@ -65,7 +65,7 @@ function Navigation({ isLoaded }){
 			<div className = 'sellLoginSignUp'>
 				{(sessionUser && isLoaded) ?
 				<div className = 'SellhereAndUserButton'>
-				<button onClick = {onClick}>Sell Here</button>
+				<button  className = 'allButton' onClick = {onClick}>Sell Here</button>
 				<ProfileButton user={sessionUser} />
 				</div>
 
