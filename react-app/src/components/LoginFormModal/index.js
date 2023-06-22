@@ -30,11 +30,12 @@ function LoginFormModal() {
 
   return (
     <>
+    <div className = 'LoginModalClass'>
       <h1>Log In</h1>
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
-            <li key={idx}>{error}</li>
+            <li className="pErrors" key={idx}>{error}</li>
           ))}
         </ul>
         <label>
@@ -60,7 +61,7 @@ function LoginFormModal() {
       <button  className = 'allButton' type="submit"
          onClick={handleDemoSubmit}>Demo User Login
       </button>
-
+      </div>
     </>
   );
 }

@@ -9,9 +9,10 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import './index.css'
 
-import slideComponent from '../slideComponent';
+
 
 function HomePage(){
+
     function randomKeys(obj){
         const keys = Object.keys(obj)
         const randomKeys = []
@@ -43,10 +44,12 @@ function HomePage(){
 
     if(!loaded) return (<Loading></Loading>)
 
+    else
     return(
         <div className = 'homePageEntireDiv'>
 
         <div className = 'carouselDiv-not-package'>
+
 
             <a className = 'aTagStockXLink'href= 'https://stockx.com/'>
             </a>
@@ -55,7 +58,7 @@ function HomePage(){
             <img className = 'homePageLinkThang' src ='https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt6e43389cbe22a4cf/649310c7359ef016e760f3ec/GoSkateDay_Primary_Desktop.jpg?quality=80&auto=webp&format=pjpg&dpr=1&trim=0,0,80,0&width=1246'></img>
             <img className = 'homePageLinkThang' src = 'https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt0f92b134530e3b58/6492aa5983c7fb7da05f5978/Banner_Template_(1)Primary_Desktop.jpg?quality=80&auto=webp&format=pjpg&dpr=1&trim=0,0,80,0&width=1246'></img>
             <img className = 'homePageLinkThang' src = 'https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt4ef57789f3159fd1/64905e51d40ad01e99681e77/FOGEssentials_TheBlackCollection_Primary_Desktop.jpg?quality=80&auto=webp&format=pjpg&dpr=1&trim=0,0,80,0&width=1246'></img>
-            <img className = 'homePageLinkThang' src= ''></img>
+            <img className = 'simpsons' src= 'https://cdn.discordapp.com/attachments/1118210959077556414/1121489244041519245/newonept1.jpeg'></img>
             </Carousel>
 
 
@@ -65,8 +68,8 @@ function HomePage(){
                 <div className = 'itemsMapOfShoesContainer'>
                         {randomKeys(items).map(item=>(
                             <ItemTile key = {item.id} item = {item}></ItemTile>
-                        ))
-                }
+                        ))}
+                        
                 </div>
 
                 <h2 className = 'reccomended'>All Shoes</h2>

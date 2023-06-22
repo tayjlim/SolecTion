@@ -20,6 +20,7 @@ width:300px;
 .sellLoginSignUp{
   display:flex;
   align-items: center;
+  height:70px;
 }
 
 .loginSignupDiv>button{
@@ -45,4 +46,31 @@ width:300px;
 }
 .SellhereAndUserButton{
   display:flex;
+}
+
+#navButtonLogin,#navButtonSignUp{
+  height: 36px;
+  font-weight: 600;
+  font-size:18px;
+  width:90px;
+  word-break: keep-all;
+  margin:8px;
+  margin-bottom:0;
+  margin-top:0px;
+}
+
+#navButtonSignUp{
+  background-color: #393939;
+  color:white;
+
+  transition:background-color .5s ease;
+  transition: color .5s ease;
+}
+
+#navButtonSignUp:hover{
+background-color: white;
+color:#393939;
+
+transition: background-color .5s ease;
+transition: color .5s ease;
 }

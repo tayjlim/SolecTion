@@ -20,13 +20,12 @@ const DeleteItems =  ({item}) => {
         // console.log(item.id)
         await dispatch(deleteItemsThunk(item.id))
         await dispatch(getAllItemsThunk())
-        closeModal()
         history.push('/home')
     }
 
     if(!item) return null
 
-    else
+    else{
  return(
     <div className='delete-modal-container'>
       <div>
@@ -38,6 +37,7 @@ const DeleteItems =  ({item}) => {
       </div>
     </div>
  )
+    }
 }
 
 
