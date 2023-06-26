@@ -20,7 +20,8 @@ const DeleteItems =  ({item}) => {
         // console.log(item.id)
         await dispatch(deleteItemsThunk(item.id))
         await dispatch(getAllItemsThunk())
-        history.push('/home')
+        await history.push('/home')
+        await closeModal()
     }
 
     if(!item) return null
