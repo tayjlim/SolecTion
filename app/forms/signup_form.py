@@ -31,7 +31,7 @@ def no_special_chars (form, field):
         if char in user:
             raise ValidationError('No Special characters allowed!')
 
-def six_chars (form,field):
+def six_chars (form, field):
     password = field.data
     if len (password) < 6:
         raise ValidationError("Password needs to be atleast 6 characters in length!")
@@ -41,4 +41,4 @@ class SignUpForm(FlaskForm):
     username = StringField(
         'username', validators=[DataRequired(), username_exists,no_special_chars])
     email = StringField('email', validators=[DataRequired(),Email()])
-    password = StringField('password', validators=[DataRequired(),six_chars()])
+    password = StringField('password', validators=[DataRequired(),six_chars])
