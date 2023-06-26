@@ -30,7 +30,7 @@ function EditReview ({review}){
     return(
         <div>
             <form onSubmit={onSubmit}>
-                <h2> Edit your review!</h2>
+                <h2> Edit your post!</h2>
                 <label>Description </label>
 
                 <textarea className = 'description'
