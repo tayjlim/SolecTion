@@ -35,5 +35,5 @@ def no_special_chars (form, field):
 class SignUpForm(FlaskForm):
     username = StringField(
         'username', validators=[DataRequired(), username_exists,no_special_chars])
-    email = StringField('email', validators=[DataRequired(), user_exists,is_email,Email()])
+    email = StringField('email', validators=[DataRequired(),Email()])
     password = StringField('password', validators=[DataRequired()])
