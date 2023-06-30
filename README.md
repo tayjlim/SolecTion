@@ -1,6 +1,8 @@
-# Flask React Project
+# SolecTion
 
-This is the starter for the Flask React project.
+SolecTion is a soft clone of Stock X. This E-Commerce site allows users to post shoes how they look in person on a specific item.
+
+Check out []
 
 ## Getting started
 1. Clone this repository (only this branch)
