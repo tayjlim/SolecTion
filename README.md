@@ -33,6 +33,31 @@ Check out it out [here!](https://solection.onrender.com/)
 6. Now you can use the Demo User or Create an account
 
 Amazon Web Services S3
-For setting up your AWS refer to this guide
+For setting up your AWS refer to this [guide](https://github.com/jdrichardsappacad/aws-s3-pern-demo)
 
 # Features
+
+## Items
+* Users can create an Item for sale
+* Users can read/view other Items
+* Users can create an Item for sale
+* Users can delete their Itme for sale
+
+## Post Section!
+* Users can create posts for Items for sale
+* Users can read/view all posts for an Item
+* Users can edit their posts for an Item
+
+## WishList
+* Users can add items to their wishlist
+* Users can remove remove items in their wishlist
+
+## Cart
+* Users can add Items to their cart
+* Users can remove Items from their cart
+
+## Built By 
+Taylor Lim
+
+https://www.linkedin.com/in/tayjlim0592/
+
