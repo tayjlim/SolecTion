@@ -60,4 +60,4 @@ For setting up your AWS refer to this [guide](https://github.com/jdrichardsappac
 Taylor Lim
 
 https://www.linkedin.com/in/tayjlim0592/
-
+https://github.com/tayjlim
