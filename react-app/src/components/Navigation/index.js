@@ -9,6 +9,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
+import SearchBar from "../SearchBar";
 import './Navigation.css';
 import { logout } from "../../store/session";
 
@@ -18,6 +19,7 @@ function Navigation({ isLoaded }){
 	const ulRef = useRef();
 	const dispatch = useDispatch();
 	const [showMenu, setShowMenu] = useState(false);
+	const [search, setSearchValue] = useState('')
 	const openMenu = () => {
 		if (showMenu) return;
 		setShowMenu(true);
@@ -56,12 +58,7 @@ function Navigation({ isLoaded }){
 				<img className ='logoHeaderNav' src = 'https://cdn.discordapp.com/attachments/1117931108747722862/1118582479146733658/solection-low-resolution-logo-color-on-transparent-background.png'/>
 				</NavLink>
 
-				<input
-				type='search'
-				placeholder = 'Search for brand... color...etc'
-				className = 'searchNav'
-				onClick={(e)=>(alert('Feature Coming Soon!'))}
-				/>
+				<SearchBar></SearchBar>
 
 			<div className = 'sellLoginSignUp'>
 				{(sessionUser && isLoaded) ?
