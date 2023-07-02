@@ -1,10 +1,44 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from 'react-router-dom';
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import SearchIcon from '@mui/icons-material/Search';
 import './index.css'
-function SearchBar({}){
+import { getAllItemsThunk } from "../../store/items";
+function SearchBar(){
+    const dispatch = useDispatch();
+    const itemsObj = useSelector(state => state.items)
+    const items = Object.values(itemsObj)
+    // console.log('list of items',items)
 
+
+    const [filtered, setFiltered]  = useState([])
+    const [search, setSearch] = useState('')
+    console.log('is ths filtered working correctly',filtered)
+
+    const filterSearch = (event) =>{
+        const searchWord = event.target.value;
+        setSearch(searchWord)
+        const filter = items.filter((item) => {
+            // console.log('NAME OF ITEM', item.name)
+            return item.name.toLowerCase().includes(search.toLowerCase()) || item.desc.toLowerCase().includes(search.toLowerCase())
+        })
+        // console.log('after the filter function',filter)
+
+        if(searchWord === ''){
+            setFiltered([])
+        }else{
+        setFiltered(filter)
+        }
+        const clearInput = () =>{
+            setFiltered([])
+            setSearch('')
+        }
+    }
+
+    useEffect(async()=>{
+        await dispatch(getAllItemsThunk())
+
+    },[dispatch])
     return (
         <div className = 'search'>
 
@@ -16,11 +50,13 @@ function SearchBar({}){
             type='search'
             placeholder = 'Search for brand... color...etc'
             className = 'searchNav'
-            onClick={(e)=>(alert('Feature Coming Soon!'))}
+            onChange = {filterSearch}
             />
             </div>
 
-            <div className="='dataResult">
+            <div className="dataResult" >
+            
+
 
             </div>
         </div>
