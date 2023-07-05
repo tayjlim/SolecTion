@@ -38,24 +38,34 @@ function LoginFormModal() {
             <li className="pErrors" key={idx}>{error}</li>
           ))}
         </ul>
-        <label>
-          Email
+
+        <div className = 'form-row'>
+
           <input
+            className = 'loginInput'
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-        </label>
-        <label>
-          Password
+          <span className = 'fieldportion'>
+          Email Address
+          </span>
+        </div>
+
+            <div className = 'form-row'>
+
           <input
+            className = 'loginInput'
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-        </label>
+          <span className = 'fieldportion'>
+          password
+          </span>
+          </div>
         <button  className = 'allButton' type="submit">Log In</button>
       </form>
       <button  className = 'allButton' type="submit"

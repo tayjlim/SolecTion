@@ -9,6 +9,7 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
+import SignupFormPage from "../SignupFormPage";
 import SearchBar from "../SearchBar";
 import './Navigation.css';
 import { logout } from "../../store/session";
@@ -79,12 +80,10 @@ function Navigation({ isLoaded }){
               modalComponent={<LoginFormModal />}
             />
 
-            <OpenModalButton
-              buttonText="Sign Up"
-              onItemClick={closeMenu}
-			  id ='navButtonSignUp'
-              modalComponent={<SignupFormModal />}
-            />
+            <button
+			id ='navButtonSignUp'
+			onClick = { (e)=>(history.push('/signUp'))}
+			>Sign Up </button>
 
 				</div> : null
 				}

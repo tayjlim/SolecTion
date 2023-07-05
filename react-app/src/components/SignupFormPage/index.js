@@ -30,19 +30,24 @@ function SignupFormPage() {
   return (
     <>
       <h1>Sign Up</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className = 'wholeFormSignUp'>
         <ul>
           {errors.map((error, idx) => <li key={idx}>{error}</li>)}
         </ul>
-        <label>
-          Email
+
+        <div className = 'form-row'>
           <input
+          className ='loginInput'
             type="text"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-        </label>
+          <span className = 'fieldportion'>
+          Email Address
+          </span>
+        </div>
+
         <label>
           Username
           <input
