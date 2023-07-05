@@ -80,10 +80,13 @@ function Navigation({ isLoaded }){
               modalComponent={<LoginFormModal />}
             />
 
-            <button
-			id ='navButtonSignUp'
-			onClick = { (e)=>(history.push('/signUp'))}
-			>Sign Up </button>
+           <OpenModalButton
+					buttonText = 'SignUp'
+					onItemClick={closeMenu}
+					id = 'navButtonSignUp'
+					modalComponent={<SignupFormModal />}
+			/>
+
 
 				</div> : null
 				}

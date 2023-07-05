@@ -24,6 +24,7 @@ margin-bottom:5px;
   height: 48px;
   margin: 0px;
   border: 0px;
+  padding:0px;
   width: 100%;
 
 }
@@ -32,4 +33,16 @@ margin-bottom:5px;
   font-size: 10px;
   transition: font-size 0.3s ease all;
 }
+
+.staySmall{
+  position: absolute;
+  left: 16px;
+  pointer-events: none;
+  top: 8px;
+  transition: 0.2s ease all;
+  color: #949494;
+  font-size: 5px;
+  transition: font-size 0.3s ease all;
+}
+
 
