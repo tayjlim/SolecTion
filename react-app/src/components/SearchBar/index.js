@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
-import SearchIcon from '@mui/icons-material/Search';
 import './index.css'
 import { getAllItemsThunk } from "../../store/items";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
