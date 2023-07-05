@@ -4,16 +4,24 @@ import { useDispatch, useSelector } from "react-redux";
 import SearchIcon from '@mui/icons-material/Search';
 import './index.css'
 import { getAllItemsThunk } from "../../store/items";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 function SearchBar(){
     const dispatch = useDispatch();
     const itemsObj = useSelector(state => state.items)
     const items = Object.values(itemsObj)
+    const history = useHistory();
     // console.log('list of items',items)
 
 
     const [filtered, setFiltered]  = useState([])
     const [search, setSearch] = useState('')
     console.log('is ths filtered working correctly',filtered)
+
+    const clickItem = async(e, result) =>{
+        await setSearch('')
+        await setFiltered([])
+        await history.push(`/items/${result.id}`)
+    }
 
     const filterSearch = (event) =>{
         const searchWord = event.target.value;
@@ -54,11 +62,19 @@ function SearchBar(){
             />
             </div>
 
-            <div className="dataResult" >
-            
+
+        <div className="dataResult" >
+        {filtered.map(result => (
+            <div
+            className = 'resultsDiv'
+            onClick={(e)=>clickItem(e,result)}>{result.name}</div>
+        ))}
+
+        </div>
 
 
-            </div>
+
+
         </div>
     )
 }
