@@ -11,11 +11,6 @@ height:70px;
 width:300px;
 }
 
-.searchNav{
-  height:65px;
-  width:45%;
-  font-size: 18px;
-}
 
 .sellLoginSignUp{
   display:flex;
@@ -37,7 +32,7 @@ width:300px;
 {
   display:flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   margin-bottom: 8px;
   border-bottom: 1px #e2e8f0 solid;
   padding-bottom: 5px;
@@ -57,6 +52,7 @@ width:300px;
   margin:8px;
   margin-bottom:0;
   margin-top:0px;
+  cursor:pointer;
 }
 
 #navButtonSignUp{
