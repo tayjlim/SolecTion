@@ -39,7 +39,7 @@ function ProfileButton({ user }) {
 
   return (
     <div>
-      <button className = 'allButton' onClick={openMenu}>
+      <button id = 'profileButtonSell' className = 'allButton' onClick={openMenu}>
        My Account
       </button>
       <ul className={ulClassName} ref={ulRef}>

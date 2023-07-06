@@ -55,13 +55,21 @@ function SellPage() {
 return(
     <div className='outdivCreate'>
         <form className = 'createItemFormContainer' onSubmit={handleSubmit}>
-                <label>Item</label>
+            <div className = 'form-row'>
                 <input
-                placeholder = 'name'
+                className = 'loginInput'
+                id = 'nameInput'
                 type = 'text'
                 value = {name}
                 onChange = {(e) => setName(e.target.value)}
+                required
                 />
+                <span className = {(name.length > 0) ? 'staySmall' : 'fieldportion'}>
+                Name of Product
+                </span>
+
+              </div>
+
 
                 <p className='pErrors'>{error.name}</p>
 
