@@ -1,6 +1,5 @@
 .createItemFormContainer{
-    display:flex;
-    flex-direction: column;
+
     justify-content: center;
     align-items: center;
 }
@@ -8,14 +7,27 @@
 
 .createItemFormContainer{
     margin: 0 auto;
-    width: 350px;
+    width: 800px;
     border: 3px solid #e2e8f0;
     padding:0px;
     border-radius: 5px;
+    display: flex;
 }
+
 #nameInput{
     border:1px solid #e2e8f0;
-    padding-left:4px;
-    width: 100%;
+    width:100%;
+    margin-top:5px;
+    height:35px;
+}
+#divinSellPage{
+
+    margin-top: 5px;
     margin: 0 auto;
+    max-width: 80%;
+}
+.Sellproduct{
+    margin:0 auto;
+    display:flex;
+    justify-content: center;
 }
