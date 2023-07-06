@@ -19,6 +19,7 @@ function Navigation({ isLoaded }){
 	const history = useHistory()
 	const ulRef = useRef();
 	const dispatch = useDispatch();
+	console.log(sessionUser,'-------------------')
 	const [showMenu, setShowMenu] = useState(false);
 	const [search, setSearchValue] = useState('')
 	const openMenu = () => {
@@ -64,8 +65,9 @@ function Navigation({ isLoaded }){
 			<div className = 'sellLoginSignUp'>
 				{(sessionUser && isLoaded) ?
 				<div className = 'SellhereAndUserButton'>
-				<button  className = 'allButton' onClick = {onClick}>Sell Here</button>
-				<ProfileButton user={sessionUser} />
+				<button onClick ={(e)=>history.push('/myCart')}id = 'navCartButton' className = 'allButton'> My Cart</button>
+				<button id = 'navButtonSell' className = 'allButton' onClick = {onClick}>Sell Here</button>
+				<ProfileButton  user={sessionUser} />
 				</div>
 
 				:

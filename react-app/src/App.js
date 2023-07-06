@@ -36,20 +36,20 @@ function App() {
       <div id = 'content-wrap'>
       <Navigation isLoaded={isLoaded} />
 
-      
+
       {isLoaded && (
 
         <Switch>
 
-          <Route path="/login" >
+          <Route exact path="/login" >
             <LoginFormPage />
           </Route>
 
-          <Route path = '/sell'>
+          <Route exact path = '/sell'>
             <SellPage/>
           </Route>
 
-          <Route path="/signup">
+          <Route exact path="/signup">
             <SignupFormPage />
           </Route>
 

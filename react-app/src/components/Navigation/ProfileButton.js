@@ -39,13 +39,13 @@ function ProfileButton({ user }) {
 
   return (
     <div>
-      <button className = 'allButton' onClick={openMenu}>
-        <i className="fas fa-user-circle" />
+      <button id = 'profileButtonSell' className = 'allButton' onClick={openMenu}>
+       My Account
       </button>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
           <>
-            <li>{user.username}</li>
+            <li>Welcome! {user.username}</li>
             <li>{user.email}</li>
             <li>
               <button className = 'allButton' onClick={handleLogout}>Log Out</button>

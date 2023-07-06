@@ -37,8 +37,12 @@ function HomePage(){
     console.log(itemsArr)
 
     useEffect(async()=>{
-        await dispatch(getAllItemsThunk())
-        await setloaded(true)
+
+        setTimeout(async ()=>{
+            await dispatch(getAllItemsThunk())
+            await setloaded(true)
+        },1000)
+
 
     },[dispatch])
 
@@ -69,7 +73,7 @@ function HomePage(){
                         {randomKeys(items).map(item=>(
                             <ItemTile key = {item.id} item = {item}></ItemTile>
                         ))}
-                        
+
                 </div>
 
                 <h2 className = 'reccomended'>All Shoes</h2>

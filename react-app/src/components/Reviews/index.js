@@ -9,7 +9,7 @@ function Reviews({reviews, user}){
     // console.log(reviewsArr)
 
     //When clicking on the image the a modal will open to view the image in full resolution!
-
+    
     if (!reviewsArr[0]) return(null)
 
     else

@@ -53,27 +53,43 @@ function SellPage() {
 
 
 return(
-    <div className = 'createItemFormContainer'>
+    <div className='outdivCreate'>
+
+    <div className = 'Sellproduct'>
+            <h2>New Product!</h2>
+        </div>
         <form className = 'createItemFormContainer' onSubmit={handleSubmit}>
-                <label>Item</label>
+            <div className = 'leftDiv'>
+            <div  id = 'divinSellPage' className = 'form-row'>
                 <input
-                placeholder = 'name'
+                className = 'loginInput'
+                id = 'nameInput'
                 type = 'text'
                 value = {name}
                 onChange = {(e) => setName(e.target.value)}
+                required
                 />
+                <span className = {(name.length > 0) ? 'staySmall' : 'fieldportion'}>
+                Name of Product
+                </span>
+
+              </div>
+
 
                 <p className='pErrors'>{error.name}</p>
 
-                <label>description</label>
+                <div id = 'divinSellPage' className = 'form-row'>
                 <input
-                placeholder = 'write a product description'
+                className = 'loginInput'
+                id = 'nameInput'
                 type = 'text'
                 value = {description}
                 onChange = {(e) => setDescription(e.target.value)}
                 />
-
+                <span className = {(description.length > 0) ? 'staySmall' : 'fieldportion'}>Description</span>
+                </div>
                 <p className='pErrors'>{error.description}</p>
+                </div>
 
                 <label>Picture</label>
                 <input
