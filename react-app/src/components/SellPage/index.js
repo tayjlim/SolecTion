@@ -53,7 +53,7 @@ function SellPage() {
 
 
 return(
-    <div className = 'createItemFormContainer'>
+    <div className='outdivCreate'>
         <form className = 'createItemFormContainer' onSubmit={handleSubmit}>
                 <label>Item</label>
                 <input

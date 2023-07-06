@@ -29,6 +29,7 @@ function ItemsDetail(){
     // console.log(user)
 
     const reviewsObj = useSelector((state) => state.reviews)
+    // console.log(reviewsObj, 'reviews obj is this one --------')
 
     // console.log('TOTAL REVIEWS =========',reviewsObj)
     function getRandomNumber() {
@@ -54,10 +55,16 @@ function ItemsDetail(){
     }
 
     useEffect(async ()=>{
-    await dispatch(getAllItemsThunk());
-    await dispatch(getReviewsThunk(itemId))
-    await setLoaded(true)
-    },[dispatch])
+
+        if(loaded)setLoaded(false)
+
+        setTimeout(async ()=>{
+            await dispatch(getAllItemsThunk());
+            await dispatch(getReviewsThunk(itemId))
+            await setLoaded(true)
+        },1000)
+
+    },[dispatch,itemId])
 
     if (!loaded || !singleItem) return(<Loading></Loading>)
 

@@ -26,7 +26,6 @@ function SearchBar(){
         const searchWord = event.target.value;
         setSearch(searchWord)
         const filter = items.filter((item) => {
-            // console.log('NAME OF ITEM', item.name)
             return item.name.toLowerCase().includes(search.toLowerCase()) || item.desc.toLowerCase().includes(search.toLowerCase())
         })
         // console.log('after the filter function',filter)
