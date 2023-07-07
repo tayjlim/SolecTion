@@ -7,11 +7,15 @@
 
 .createItemFormContainer{
     margin: 0 auto;
-    width: 800px;
+    width: 600px;
     border: 3px solid #e2e8f0;
     padding:0px;
     border-radius: 5px;
-    display: flex;
+
+}
+.entireFormDiv{
+    display:flex;
+    justify-content: space-between;
 }
 
 #nameInput{
@@ -24,10 +28,20 @@
 
     margin-top: 5px;
     margin: 0 auto;
-    max-width: 80%;
+    width:250px;
 }
 .Sellproduct{
     margin:0 auto;
     display:flex;
     justify-content: center;
+}
+.leftDiv,.rightDiv{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin:5px;
+}
+#fileSelector::file-selector-button{
+    height:35px;
+    font-size: 20px;
 }

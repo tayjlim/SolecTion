@@ -59,6 +59,7 @@ return(
             <h2>New Product!</h2>
         </div>
         <form className = 'createItemFormContainer' onSubmit={handleSubmit}>
+            <div className = 'entireFormDiv'>
             <div className = 'leftDiv'>
             <div  id = 'divinSellPage' className = 'form-row'>
                 <input
@@ -91,8 +92,9 @@ return(
                 <p className='pErrors'>{error.description}</p>
                 </div>
 
-                <label>Picture</label>
+                <div className = 'rightDiv'>
                 <input
+                id = 'fileSelector'
                 placeholder="insert a file here "
                 type="file"
                 accept='image/*'
@@ -111,10 +113,12 @@ return(
                         onChange={(e) => setPrice(e.target.value)}
                     />
                  <p className='pErrors'>{error.price}</p>
-
-                <button className = 'allButton'>submit</button>
+                </div>
+            </div>
+            <button className = 'allButton'>submit</button>
 
         </form>
+
     </div>
     )
 }
