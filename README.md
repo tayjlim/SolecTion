@@ -14,23 +14,32 @@ Check out it out [here!](https://solection.onrender.com/)
 ## Getting Started 
 1. Clone this repository:
 
-[https://github.com/itsmaica/Remotebnb.git](https://github.com/tayjlim/SolecTion)
+[(https://github.com/tayjlim/SolecTion](https://github.com/tayjlim/SolecTion)
 
-2. Install denpendencies into the Backed and the Frontend by making a terminal for each one and then run the following:
+Clone this repository (only this branch)
 
-* npm install
-3. Create a .env file using the .envexample provided
+Install dependencies
 
-4. Set up your database with information from your .env and then run the following to create your database, migrate, and seed:
+pipenv install -r requirements.txt
+Create a .env file based on the example with proper settings for your development environment
 
-* npx dotenv sequelize db:create
-* npx dotenv sequelize db:migrate
-* npx dotenv sequelize db:seed:all
-5. Start the app for both backend and frontend using:
+Make sure the SQLite3 database connection URL is in the .env file
 
-* npm start
+Replace the value for SCHEMA with a unique name.
 
-6. Now you can use the Demo User or Create an account
+Get into your pipenv shell, migrate the database, seed the database, and run the Flask app
+
+pipenv shell
+flask db upgrade
+flask seed all
+flask run
+Navigate into the react-app directory
+
+Install npm packages
+
+After the installation is complete run:
+
+npm start
 
 Amazon Web Services S3
 For setting up your AWS refer to this [guide](https://github.com/jdrichardsappacad/aws-s3-pern-demo)
