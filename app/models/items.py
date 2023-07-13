@@ -1,6 +1,6 @@
 from .db import db, add_prefix_for_prod, SCHEMA, environment
 from .reviews import Reviews
-
+from app.models.cart import cart
 
 class Items(db.Model):
     __tablename__ = 'items'
@@ -35,3 +35,6 @@ class Items(db.Model):
     review_name = db.relationship(
         "Reviews",cascade="all,delete-orphan", back_populates = 'review_item_id'
     )
+
+    #many to many JOIN table suhhh
+    user_cart = db.relationship('User',secondary = cart, back_populates = 'item_cart')
