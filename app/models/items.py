@@ -35,3 +35,6 @@ class Items(db.Model):
     review_name = db.relationship(
         "Reviews",cascade="all,delete-orphan", back_populates = 'review_item_id'
     )
+
+    #many to many JOIN table suhhh
+    user_cart = db.relationship('User',secondary = 'cart', back_populates = 'user_cart')
