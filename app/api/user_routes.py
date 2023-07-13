@@ -1,6 +1,8 @@
 from flask import Blueprint, jsonify
-from flask_login import login_required
+from flask_login import login_required, current_user
+from app.models.db import db
 from app.models import User
+from app.models.items import Items
 
 user_routes = Blueprint('users', __name__)
 
@@ -23,3 +25,13 @@ def user(id):
     """
     user = User.query.get(id)
     return user.to_dict()
+
+@user_routes.route('cart/<int:itemId>/add')
+@login_required
+def add_to_cart(itemId):
+    user_id = current_user.id
+    curr_user = User.query.get(user_id)
+    item = Items.query.get(itemId)
+    curr_user.cartId.append(item)
+    db.session.commit()
+    return curr_user.to_dict()
