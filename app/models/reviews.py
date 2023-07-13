@@ -21,6 +21,8 @@ class Reviews(db.Model):
     #connecting to User
     review_user_id = db.relationship('User', back_populates = 'review')
 
+    #many to many JOIN table suhhh
+    
     def to_dict(self):
         return{
             'id':self.id,

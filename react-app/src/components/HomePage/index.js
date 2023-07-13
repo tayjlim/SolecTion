@@ -29,7 +29,8 @@ function HomePage(){
     const dispatch = useDispatch()
     const [loaded,setloaded] = useState(false)
     const items = useSelector((state)=> state.items)
-
+    const user = useSelector((state)=>state)
+    console.log(user)
     // console.log('calling the randomKeysfunction------',randomKeys(items))
 
 
