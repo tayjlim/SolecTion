@@ -20,14 +20,14 @@ def users():
 @user_routes.route('/cart/<int:id>',methods=['POST'])
 @login_required
 def add_to_cart(id):
-    print('---------------------', id,'----------')
+    # print('---------------------', id,'----------')
     user_id = current_user.id
 
     curr_user = User.query.get(user_id)
-    print('-0---0-0-0-0------',curr_user)
+    # print('-0---0-0-0-0------',curr_user)
 
     item = Items.query.get(id)
-    print('---------------',item)
+    # print('---------------',item)
 
     curr_user.item_cart.append(item)
     db.session.commit()
