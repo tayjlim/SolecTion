@@ -11,6 +11,20 @@ const removeUser = () => ({
 	type: REMOVE_USER,
 });
 
+export const addToCart= (itemId) => async (dispatch) =>{
+	const res = await fetch(`/api/users/cart/${itemId}`,
+	{
+		method:'POST'
+	})
+
+	const data = await res.json()
+	if(res.ok){
+		dispatch(authenticate())
+		return data
+	}
+
+}
+
 const initialState = { user: null };
 
 export const authenticate = () => async (dispatch) => {
