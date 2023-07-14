@@ -7,6 +7,7 @@ from app.models.items import Items
 user_routes = Blueprint('users', __name__)
 
 
+
 @user_routes.route('/')
 @login_required
 def users():
@@ -15,6 +16,23 @@ def users():
     """
     users = User.query.all()
     return {'users': [user.to_dict() for user in users]}
+
+@user_routes.route('/cart/<int:id>',methods=['POST'])
+@login_required
+def add_to_cart(id):
+    print('---------------------', id,'----------')
+    user_id = current_user.id
+
+    curr_user = User.query.get(user_id)
+    print('-0---0-0-0-0------',curr_user)
+
+    item = Items.query.get(id)
+    print('---------------',item)
+
+    curr_user.item_cart.append(item)
+    db.session.commit()
+
+    return curr_user.to_dict()
 
 
 @user_routes.route('/<int:id>')
@@ -25,13 +43,3 @@ def user(id):
     """
     user = User.query.get(id)
     return user.to_dict()
-
-@user_routes.route('cart/<int:itemId>/add')
-@login_required
-def add_to_cart(itemId):
-    user_id = current_user.id
-    curr_user = User.query.get(user_id)
-    item = Items.query.get(itemId)
-    curr_user.cartId.append(item)
-    db.session.commit()
-    return curr_user.to_dict()

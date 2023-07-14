@@ -11,6 +11,8 @@ import { getReviewsThunk } from "../../store/reviews.js";
 import DeleteItems from '../DeleteItems'
 import EditItems from "../EditItems";
 
+import { addToCart } from "../../store/session.js";
+
 
 import './index.css'
 
@@ -41,6 +43,13 @@ function ItemsDetail(){
         const finalNumber = randomNumber + 1;
         return finalNumber;
         }
+
+    const handleAddToCart = async (e) =>{
+        console.log(itemId)
+        e.preventDefault();
+        dispatch(addToCart(singleItem.id))
+
+    }
 
     const clockFireBag ={
         1:{
@@ -86,7 +95,7 @@ function ItemsDetail(){
                     <p>Only a Couple Left!</p>
                 </div>
 
-            <button className = 'buyNowButton' onClick={(e)=>(alert('Feature Coming Soon!'))}>Add to Cart ${singleItem.price} </button>
+            <button className = 'buyNowButton' onClick={handleAddToCart}>Add to Cart ${singleItem.price} </button>
 
             <div className = 'verifyCondition'>
                 <div className='stickerandheading'>

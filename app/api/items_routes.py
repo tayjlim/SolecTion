@@ -8,6 +8,7 @@ from app.forms.post_item_form import ItemForm
 from app.forms.edit_item_form import EditItemForm
 from app.forms.edit_review_form import EditReviewForm
 from app.forms.post_review_form import ReviewForm
+from app.models.user import User
 
 items_routes = Blueprint('items',__name__)
 
@@ -44,6 +45,8 @@ def make_new_item():
         return new_item.to_dict()
     else:
         return {'error': form.errors} , 400
+
+
 
 @items_routes.route('/<int:id>/reviews')
 def get_items_reviews(id):

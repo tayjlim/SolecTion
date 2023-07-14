@@ -38,11 +38,11 @@ class User(db.Model, UserMixin):
         item_ids = []
 
         for item in self.item_cart:
-            item_ids.append(item.id)
+            item_ids.append(item.to_dict())
 
         return {
             'id': self.id,
             'username': self.username,
             'email': self.email,
-            'cartId':item_ids
+            'item_cart': item_ids
         }
