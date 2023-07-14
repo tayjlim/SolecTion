@@ -1,0 +1,22 @@
+#rightTileID{
+    position: relative;
+}
+
+#removefromCart {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+
+    font-weight: lighter;
+    font-size: 15px;
+    cursor: pointer;
+    margin-bottom:4px;
+
+  }
+#cartTileID{
+    cursor:default
+}
+#leftTileID{
+    cursor: pointer;
+}

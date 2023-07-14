@@ -6,9 +6,9 @@
 
 .itemsMapOfShoesContainer{
     display:inline-flex;
-    justify-content: center;
     flex-wrap: wrap;
     align-self: center;
+    max-width:1094px;
 }
 .homePageEntireDiv{
     display:flex;
@@ -38,7 +38,7 @@
     margin:8px;
     border-radius: 4px;
     justify-content: space-between;
-    transition:border .5s ease
+    transition:all .5s ease
 }
 .ItemTileContainer>h3{
 margin:0px;
