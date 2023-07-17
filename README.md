@@ -57,10 +57,6 @@ For setting up your AWS refer to this [guide](https://github.com/jdrichardsappac
 * Users can read/view all posts for an Item
 * Users can edit their posts for an Item
 
-## WishList
-* Users can add items to their wishlist
-* Users can remove remove items in their wishlist
-
 ## Cart
 * Users can add Items to their cart
 * Users can remove Items from their cart
