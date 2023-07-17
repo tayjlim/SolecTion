@@ -1,13 +1,25 @@
 import { useHistory } from "react-router-dom";
 import './index.css'
+import { deleteFromCart } from "../../store/session";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { authenticate } from "../../store/session";
 function CartTile ({item}) {
 
 
     const history = useHistory();
-    const handleClick= () =>{
-        history.push(`/items/${item.id}`)
+    const dispatch = useDispatch();
+    const handleDelete = async(e)=>{
+        e.preventDefault()
+        await dispatch(deleteFromCart(item.id))
+        await dispatch(authenticate())
 
     }
+    const handleClick= () =>{
+        history.push(`/items/${item.id}`)
+    }
+
+
 
 return (
     <div id = 'cartTileID' className="ItemTileContainer" >
@@ -19,7 +31,7 @@ return (
                     <p className = 'textDiv'>{item.name}</p>
                     <h3 className = 'textDiv'>${item.price}</h3>
                 </div>
-                <p id ='removefromCart'>Delete</p>
+                <p onClick = {handleDelete} id ='removefromCart'>Delete</p>
             </div>
 
        </div>

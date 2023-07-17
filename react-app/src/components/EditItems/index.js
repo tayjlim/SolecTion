@@ -61,37 +61,44 @@ function EditItems ({item}){
 
     return(
         <div>
-            <form onSubmit={tienkissesDudes}>
+            <form className = 'edithisitemform'onSubmit={tienkissesDudes}>
             <h2>Edit your Listing!</h2>
-            <label>
-                Name
-            </label>
 
+            <div  className = 'form-row'>
+                <input
+                className = 'loginInput'
+                id = 'nameInput'
+                type = 'text'
+                value = {name}
+                onChange = {(e) => setName(e.target.value)}
+                required
+                />
+                <span className = {(name.length > 0) ? 'staySmall' : 'fieldportion'}>
+                Name of Product
+                </span>
 
+              </div>
 
-            <input
-            placeholder="name"
-            type = 'text'
-            value = {name}
-            onChange = {(e)=>setName(e.target.value)}
-            />
             <p className='pErrors'>{error.name}</p>
-            <label>
-                Description
-            </label>
 
-            <input
-            placeholder = 'write a product description'
+            <div  className = 'form-row'>
+            <textarea
+            className = 'loginInput'
+            id = 'inputofedit'
             type = 'text'
             value = {desc}
+            rows='60'
             onChange = {(e) => setDesc(e.target.value)}
             />
-            <p className='pErrors'>{error.description}</p>
 
-            <label>
-            Current Photo:
+            <span id = ''className = {(desc.length > 0) ? 'staySmall' : 'fieldportion'}>Description</span>
+            </div>
+
+            <h2>
+            Current Photo
+            </h2>
             <img className = 'editModal' src = {item.picture_aws_link}></img>
-            </label>
+
 
             <input
                 placeholder="insert a file here "

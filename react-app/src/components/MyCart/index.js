@@ -2,11 +2,13 @@ import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from 'react-redux';
 import CartTile from "../CartTile";
+import Loading from '../Loading';
 import './index.css'
+
 function MyCart ({}){
 
     const dispatch = useDispatch();
-
+    const [loaded,setloaded] = useState(false)
     const user = useSelector((state)=> state.session.user)
 
     let totalPrice = 0;
@@ -16,6 +18,16 @@ function MyCart ({}){
 
     // console.log(totalPrice)
     // console.log('can we store it here -----', user.item_cart)
+    useEffect(async()=>{
+
+      setTimeout(async ()=>{
+          await setloaded(true)
+      },1000)
+
+
+  },[dispatch])
+
+  if(!loaded) return (<Loading></Loading>)
 
 if(!user) return (<h2>Please Log in to see cart!</h2>)
 

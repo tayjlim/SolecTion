@@ -68,6 +68,7 @@ margin-left:15px;
 }
 #descriptionInput{
   width: 250px;
+  font-family: basic-sans, sans-serif;
   border: 1px solid #e2e8f0;
 }
 #navButtonSignUp{

@@ -28,13 +28,14 @@ function EditReview ({review}){
     }
 
     return(
-        <div>
-            <form onSubmit={onSubmit}>
+        <div >
+            <form className = 'editReview'onSubmit={onSubmit}>
                 <h2> Edit your post!</h2>
                 <label>Description </label>
 
                 <textarea className = 'description'
                 value={desc}
+                rows = '4'
                 onChange = {(e)=>(setDesc(e.target.value))}
                 />
 
@@ -46,7 +47,7 @@ function EditReview ({review}){
                 onChange={(e) => setPicture_aws_link(e.target.files[0])}
                 />
 
-            <button className = 'allButton'>submit</button>
+            <button className = 'allButton'>Submit</button>
             </form>
         </div>
 

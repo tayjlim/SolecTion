@@ -1,5 +1,5 @@
 .LoginModalClass>h1, .LoginModalClass>form>label{
-    color:white;
+    color:black;
 
 }
 
@@ -36,13 +36,28 @@ margin-bottom:5px;
 
 .staySmall{
   position: absolute;
-  left: 16px;
+  left: 10px;
   pointer-events: none;
-  top: 8px;
+  top: 7px;
   transition: 0.2s ease all;
   color: #949494;
   font-size: 5px;
   transition: font-size 0.3s ease all;
 }
-
-
+.modal-content{
+  display:flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  padding:8px;
+  width: 500px;
+  outline: 3px solid #006340;
+}
+.LoginModalClass{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.logInHeader{
+  align-self: center;
+}
