@@ -67,3 +67,14 @@ button:disabled:hover{
     width: 100%;
     height:4.5rem;            /* Footer height */
   }
+
+.editReview{
+    display:flex;
+    flex-direction: column;
+}
+.editReview > h2{
+    align-self: center;
+}
+textarea {
+    resize: none;
+  }

@@ -36,9 +36,9 @@ margin-bottom:5px;
 
 .staySmall{
   position: absolute;
-  left: 16px;
+  left: 10px;
   pointer-events: none;
-  top: 8px;
+  top: 7px;
   transition: 0.2s ease all;
   color: #949494;
   font-size: 5px;

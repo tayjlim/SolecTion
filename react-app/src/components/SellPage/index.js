@@ -80,14 +80,17 @@ return(
                 <p className='pErrors'>{error.name}</p>
 
                 <div id = 'divinSellPage' className = 'form-row'>
-                <input
+                <textarea
                 className = 'loginInput'
-                id = 'nameInput'
+                id = 'descriptionInput'
                 type = 'text'
                 value = {description}
+                rows='60'
+
                 onChange = {(e) => setDescription(e.target.value)}
                 />
-                <span className = {(description.length > 0) ? 'staySmall' : 'fieldportion'}>Description</span>
+
+                <span id = ''className = {(description.length > 0) ? 'staySmall' : 'fieldportion'}>Description</span>
                 </div>
                 <p className='pErrors'>{error.description}</p>
                 </div>
