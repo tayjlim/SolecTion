@@ -95,7 +95,24 @@ function ItemsDetail(){
                     <p>Only a Couple Left!</p>
                 </div>
 
-            <button className = 'buyNowButton' onClick={handleAddToCart}>Add to Cart ${singleItem.price} </button>
+
+                {(!user) ?
+
+                    <button className = 'allButton'>
+
+                        <OpenModalMenuItem
+                        className ='onFeetButton'
+                        itemText ='Log in to purchase!'
+                        modalComponent={<LoginFormModal/>}
+                        />
+
+                    </button>
+
+                    :<button className = 'buyNowButton' onClick={handleAddToCart}>Add to Cart ${singleItem.price} </button>
+
+                }
+
+
 
             <div className = 'verifyCondition'>
                 <div className='stickerandheading'>

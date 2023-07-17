@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { postItemsThunk } from '../../store/items'
+import Loading from '../Loading';
 import './index.css'
 
 function SellPage() {
 
     const [picture_aws_link, setPicture_aws_link] = useState(undefined);
     const [name,setName] = useState('');
+    const [loaded,setloaded] = useState(false)
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState(1);
     const [error, setError] = useState({})
@@ -15,6 +17,14 @@ function SellPage() {
     const dispatch = useDispatch()
     const history = useHistory();
 
+    useEffect(async()=>{
+
+        setTimeout(async ()=>{
+            await setloaded(true)
+        },1000)
+
+
+    },[dispatch])
 
     async function handleSubmit (e) {
     e.preventDefault()
@@ -50,8 +60,9 @@ function SellPage() {
         return history.push(`/items`)
     }
     }
-
-
+ if(!loaded) return (<Loading></Loading>)
+ 
+else
 return(
     <div className='outdivCreate'>
 
