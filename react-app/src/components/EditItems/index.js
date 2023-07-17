@@ -61,7 +61,7 @@ function EditItems ({item}){
 
     return(
         <div>
-            <form onSubmit={tienkissesDudes}>
+            <form className = 'edithisitemform'onSubmit={tienkissesDudes}>
             <h2>Edit your Listing!</h2>
 
             <div  className = 'form-row'>
@@ -84,7 +84,7 @@ function EditItems ({item}){
             <div  className = 'form-row'>
             <textarea
             className = 'loginInput'
-            id = 'descriptionInput'
+            id = 'inputofedit'
             type = 'text'
             value = {desc}
             rows='60'
@@ -94,10 +94,11 @@ function EditItems ({item}){
             <span id = ''className = {(desc.length > 0) ? 'staySmall' : 'fieldportion'}>Description</span>
             </div>
 
-            <label>
-            Current Photo:
+            <h2>
+            Current Photo
+            </h2>
             <img className = 'editModal' src = {item.picture_aws_link}></img>
-            </label>
+
 
             <input
                 placeholder="insert a file here "

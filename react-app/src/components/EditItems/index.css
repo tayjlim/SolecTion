@@ -1,3 +1,25 @@
 .editModal{
     width:253px;
 }
+#inputofedit{
+
+        width: 100%;
+        font-family: basic-sans, sans-serif;
+        border: 1px solid #e2e8f0;
+
+        height: 70px;
+        padding-top: 9px;
+        text-align: left;
+}
+
+.edithisitemform{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.edithisitemform>h2,.edithisitemform>img {
+    align-self: center;
+    
+}
