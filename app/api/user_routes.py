@@ -34,6 +34,19 @@ def add_to_cart(id):
 
     return curr_user.to_dict()
 
+@user_routes.route('/cart/delete/<int:id>', methods=['DELETE'])
+@login_required
+def deletecart(id):
+    user_id = current_user.id
+    curr_user = User.query.get(user_id)
+
+    item = Items.query.get(id)
+
+    curr_user.item_cart.remove(item)
+    db.session.commit()
+
+    return curr_user.to_dict()
+
 
 @user_routes.route('/<int:id>')
 @login_required

@@ -11,6 +11,18 @@ const removeUser = () => ({
 	type: REMOVE_USER,
 });
 
+export const deleteFromCart = (itemId)=> async(dispatch) =>{
+	const res = await fetch(`/api/users/cart/delete/${itemId}`,
+	{
+		method:'DELETE'
+	})
+
+	const data = await res.json()
+	if(res.ok){
+		return data
+	}
+}
+
 export const addToCart= (itemId) => async (dispatch) =>{
 	const res = await fetch(`/api/users/cart/${itemId}`,
 	{
