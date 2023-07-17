@@ -7,7 +7,7 @@ import './index.css'
 function EditItems ({item}){
     const dispatch = useDispatch();
     const { closeModal } = useModal()
-    console.log(item)
+    //console.log(item)
 
 
     // console.log(singleItem, '------ undefined? ------')

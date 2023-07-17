@@ -19,7 +19,7 @@ function Navigation({ isLoaded }){
 	const history = useHistory()
 	const ulRef = useRef();
 	const dispatch = useDispatch();
-	console.log(sessionUser,'-------------------')
+	//console.log(sessionUser,'-------------------')
 	const [showMenu, setShowMenu] = useState(false);
 	const [search, setSearchValue] = useState('')
 	const openMenu = () => {
