@@ -6,7 +6,7 @@ import { editReviewThunk,getReviewsThunk } from "../../store/reviews";
 
 function EditReview ({review}){
 
-    console.log('----------',review,'-----inside of edit?')
+    //console.log('----------',review,'-----inside of edit?')
     const [picture_aws_link, setPicture_aws_link] = useState(undefined)
     const [desc, setDesc] = useState(review?.desc)
     const dispatch = useDispatch();

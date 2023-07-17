@@ -50,7 +50,7 @@ function SearchBar(){
 
             <div className="searchInputs">
 
-            <img className = 'searchIcon'src = 'https://cdn.discordapp.com/attachments/1117931108747722862/1125180197411495946/searchicon-removebg-preview.png'></img>
+            <img className = 'searchIcon' src = 'https://cdn.discordapp.com/attachments/1117931108747722862/1125180197411495946/searchicon-removebg-preview.png'></img>
 
             <input
             type='search'

@@ -30,12 +30,12 @@ function HomePage(){
     const [loaded,setloaded] = useState(false)
     const items = useSelector((state)=> state.items)
     const user = useSelector((state)=>state)
-    console.log(user)
+    //console.log(user)
     // console.log('calling the randomKeysfunction------',randomKeys(items))
 
 
     const itemsArr = Object.values(items)
-    console.log(itemsArr)
+    //console.log(itemsArr)
 
     useEffect(async()=>{
 
