@@ -45,7 +45,7 @@ function ItemsDetail(){
         }
 
     const handleAddToCart = async (e) =>{
-        console.log(itemId)
+        // console.log(itemId)
         e.preventDefault();
         await dispatch(addToCart(singleItem.id))
         alert('Succesfully Added to cart!')
