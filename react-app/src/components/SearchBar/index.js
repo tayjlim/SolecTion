@@ -14,7 +14,7 @@ function SearchBar(){
 
     const [filtered, setFiltered]  = useState([])
     const [search, setSearch] = useState('')
-    console.log('is ths filtered working correctly',filtered)
+    // console.log('is ths filtered working correctly',filtered)
 
     const clickItem = async(e, result) =>{
         await setSearch('')
