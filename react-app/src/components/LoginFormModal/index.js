@@ -31,7 +31,7 @@ function LoginFormModal() {
   return (
     <>
     <div className = 'LoginModalClass'>
-      <h1>Log In</h1>
+      <h1 className = 'logInHeader'>Log In </h1>
 
       <form onSubmit={handleSubmit}>
         <ul>
@@ -55,7 +55,7 @@ function LoginFormModal() {
 
         </div>
 
-            <div className = 'form-row'>
+        <div className = 'form-row'>
 
           <input
             className = 'loginInput'
@@ -66,7 +66,7 @@ function LoginFormModal() {
           />
 
           <span className = {(password.length>0) ? 'staySmall' : 'fieldportion'}>
-          password
+          Password
           </span>
 
           </div>

@@ -35,7 +35,8 @@ function SignupFormModal() {
 
 	return (
 		<>
-			<h1 className="whiteText">Sign Up</h1>
+			<h1>Sign Up</h1>
+
 			<form onSubmit={handleSubmit}>
 				<ul>
 					{errors.map((error, idx) => (
@@ -43,49 +44,67 @@ function SignupFormModal() {
 						className="pErrors" key={idx}>{error}</li>
 					))}
 				</ul>
-				<label className="whiteText">
-					Email
-					<input
 
-						type="text"
-						value={email}
-						onChange={(e) => setEmail(e.target.value)}
-						required
-					/>
-				</label>
-				<label
-				className="whiteText">
-					Username
-					<input
+				<div className = 'form-row'>
+				<input
+					className = 'loginInput'
+					type="text"
+					value={email}
+					onChange={(e) => setEmail(e.target.value)}
+					required
+				/>
+				<span className = {(email.length > 0) ? 'staySmall' : 'fieldportion'}>
+				Email Address
+				</span>
+				</div>
 
-						type="text"
-						value={username}
-						onChange={(e) => setUsername(e.target.value)}
-						required
-					/>
-				</label>
-				<label
-				className="whiteText">
-					Password
-					<input
+				<div className = 'form-row'>
+				<input
+					className = 'loginInput'
+					type="text"
+					value={username}
+					onChange={(e) => setUsername(e.target.value)}
+					required
+				/>
+				<span className = {(username.length > 0) ? 'staySmall' : 'fieldportion'}>
+				Username
+				</span>
+				</div>
 
-						type="password"
-						value={password}
-						onChange={(e) => setPassword(e.target.value)}
-						required
-					/>
-				</label>
-				<label
-				className="whiteText">
-					Confirm Password
-					<input
-					
-						type="password"
-						value={confirmPassword}
-						onChange={(e) => setConfirmPassword(e.target.value)}
-						required
-					/>
-				</label>
+				<div className = 'form-row'>
+
+				<input
+					className = 'loginInput'
+					type="password"
+					value={password}
+					onChange={(e) => setPassword(e.target.value)}
+					required
+				/>
+
+				<span className = {(password.length>0) ? 'staySmall' : 'fieldportion'}>
+				Password
+				</span>
+
+				</div>
+
+				<div className = 'form-row'>
+
+				<input
+					className = 'loginInput'
+					type="password"
+					value={confirmPassword}
+					onChange={(e) => setConfirmPassword(e.target.value)}
+					required
+				/>
+
+				<span className = {(confirmPassword.length>0) ? 'staySmall' : 'fieldportion'}>
+				Confirm Password
+				</span>
+
+				</div>
+
+
+
 				<button className = 'allButton' type="submit">Sign Up</button>
 			</form>
 		</>
