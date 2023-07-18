@@ -56,8 +56,7 @@ function HomePage(){
         <div className = 'carouselDiv-not-package'>
 
 
-            <a className = 'aTagStockXLink'href= 'https://stockx.com/'>
-            </a>
+           
             <Carousel infiniteLoop={true} showArrows={false} showThumbs={false} showStatus={false} autoPlay={true} interval={1700}>
             <img className = 'homePageLinkThang' src ='https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt2461bd2e4c3de3c4/6489bcb5cc30bb66ecb05a96/Mystery_ReStockX2Primary_Desktop-EN.jpg?quality=80&auto=webp&format=pjpg&dpr=1&trim=0,0,80,0&width=1246'/>
             <img className = 'homePageLinkThang' src ='https://images-cs.stockx.com/v3/assets/blt818b0c67cf450811/blt6e43389cbe22a4cf/649310c7359ef016e760f3ec/GoSkateDay_Primary_Desktop.jpg?quality=80&auto=webp&format=pjpg&dpr=1&trim=0,0,80,0&width=1246'></img>

@@ -9,6 +9,7 @@ import SellPage from './components/SellPage'
 import ItemsDetail from "./components/ItemsDetail";
 import Footer from "./components/Footer";
 import MyCart from "./components/MyCart";
+import ThankYouVisiting from "./components/ThankYou";
 
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
@@ -42,6 +43,10 @@ function App() {
 
         <Switch>
 
+          <Route exact path ='/thankyou'>
+          <ThankYouVisiting/>
+          </Route>
+          
           <Route exact path="/login" >
             <LoginFormPage />
           </Route>
@@ -61,7 +66,7 @@ function App() {
           <Route exact path = '/myCart'>
           <MyCart/>
           </Route>
-          
+
           <Route path = '/'>
             <HomePage/>
           </Route>

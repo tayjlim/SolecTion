@@ -17,8 +17,8 @@ function SearchBar(){
     // console.log('is ths filtered working correctly',filtered)
 
     const clickItem = async(e, result) =>{
-        await setSearch('')
-        await setFiltered([])
+        setSearch('')
+        setFiltered([])
         await history.push(`/items/${result.id}`)
     }
 
@@ -35,10 +35,7 @@ function SearchBar(){
         }else{
         setFiltered(filter)
         }
-        const clearInput = () =>{
-            setFiltered([])
-            setSearch('')
-        }
+       
     }
 
     useEffect(async()=>{
@@ -57,6 +54,7 @@ function SearchBar(){
             placeholder = 'Search for brand... color...etc'
             className = 'searchNav'
             onChange = {filterSearch}
+            value ={search}
             />
             </div>
 

@@ -78,3 +78,7 @@ button:disabled:hover{
 textarea {
     resize: none;
   }
+.thankyou{
+display:flex;
+justify-content: center;
+}

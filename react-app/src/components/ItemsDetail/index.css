@@ -88,3 +88,7 @@
     margin: 0 auto;
     max-width: 1296px;
 }
+.fade-in{
+    
+    pointer-events: none;
+}
