@@ -30,8 +30,11 @@ function ItemsDetail(){
     const user = useSelector((state) => state.session.user);
     // console.log(user.item_cart, singleItem)
     // console.log(user.item_cart.some(item => item.id === singleItem.id))
+    let itemInCart =[];
+    if(user){
+    itemInCart = user.item_cart.some(item => item.id === singleItem.id);
+    }
 
-    const itemInCart = user.item_cart.some(item => item.id === singleItem.id);
 
     const reviewsObj = useSelector((state) => state.reviews)
     // console.log(reviewsObj, 'reviews obj is this one --------')
