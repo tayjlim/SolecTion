@@ -10,10 +10,7 @@ import OpenModalMenuItem from "../Navigation/OpenModalMenuItem.js";
 import { getReviewsThunk } from "../../store/reviews.js";
 import DeleteItems from '../DeleteItems'
 import EditItems from "../EditItems";
-
 import { addToCart } from "../../store/session.js";
-
-
 import './index.css'
 
 
@@ -23,12 +20,18 @@ function ItemsDetail(){
     const dispatch = useDispatch();
     const {itemId} = useParams();
     const [loaded, setLoaded] = useState(false)
+    const [isAdded, setIsAdded] = useState(false);
+
+
 
     const singleItem = useSelector(state=> state.items)[itemId]
     // console.log(singleItem)
 
     const user = useSelector((state) => state.session.user);
-    // console.log(user)
+    // console.log(user.item_cart, singleItem)
+    // console.log(user.item_cart.some(item => item.id === singleItem.id))
+
+    const itemInCart = user.item_cart.some(item => item.id === singleItem.id);
 
     const reviewsObj = useSelector((state) => state.reviews)
     // console.log(reviewsObj, 'reviews obj is this one --------')
@@ -46,10 +49,9 @@ function ItemsDetail(){
 
     const handleAddToCart = async (e) =>{
         // console.log(itemId)
+        setIsAdded(true);
         e.preventDefault();
         await dispatch(addToCart(singleItem.id))
-        alert('Succesfully Added to cart!')
-
     }
 
     const clockFireBag ={
@@ -97,22 +99,23 @@ function ItemsDetail(){
                 </div>
 
 
-                {(!user) ?
-
-                    <button className = 'allButton'>
-
-                        <OpenModalMenuItem
-                        className ='onFeetButton'
-                        itemText ='Log in to purchase!'
-                        modalComponent={<LoginFormModal/>}
-                        />
-
+                {!user ? (
+                    <button className="allButton">
+                      <OpenModalMenuItem
+                        className="onFeetButton"
+                        itemText="Log in to purchase!"
+                        modalComponent={<LoginFormModal />}
+                      />
                     </button>
-
-                    :<button className = 'buyNowButton' onClick={handleAddToCart}>Add to Cart ${singleItem.price} </button>
-
-                }
-
+                  ) : (
+                    <button
+                      className={`buyNowButton ${isAdded || itemInCart ? 'fade-out' : ''}`}
+                      onClick={handleAddToCart}
+                      disabled={isAdded || itemInCart}
+                    >
+                      {isAdded || itemInCart ? 'Added to Cart' : `Add to Cart $${singleItem.price}`}
+                    </button>
+                  )}
 
 
             <div className = 'verifyCondition'>

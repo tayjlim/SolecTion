@@ -35,10 +35,7 @@ function SearchBar(){
         }else{
         setFiltered(filter)
         }
-        const clearInput = () =>{
-            setFiltered([])
-            setSearch('')
-        }
+       
     }
 
     useEffect(async()=>{

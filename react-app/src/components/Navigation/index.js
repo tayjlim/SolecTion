@@ -16,12 +16,12 @@ import { logout } from "../../store/session";
 
 function Navigation({ isLoaded }){
 	const sessionUser = useSelector(state => state.session.user);
+	// console.log(sessionUser.item_cart)
 	const history = useHistory()
 	const ulRef = useRef();
 	const dispatch = useDispatch();
 	//console.log(sessionUser,'-------------------')
 	const [showMenu, setShowMenu] = useState(false);
-	const [search, setSearchValue] = useState('')
 	const openMenu = () => {
 		if (showMenu) return;
 		setShowMenu(true);
@@ -65,7 +65,7 @@ function Navigation({ isLoaded }){
 			<div className = 'sellLoginSignUp'>
 				{(sessionUser && isLoaded) ?
 				<div className = 'SellhereAndUserButton'>
-				<button onClick ={(e)=>history.push('/myCart')}id = 'navCartButton' className = 'allButton'> My Cart</button>
+				<button onClick ={(e)=>history.push('/myCart')}id = 'navCartButton' className = 'allButton'> My Cart ({sessionUser.item_cart.length})</button>
 				<button id = 'navButtonSell' className = 'allButton' onClick = {onClick}>Sell Here</button>
 				<ProfileButton  user={sessionUser} />
 				</div>

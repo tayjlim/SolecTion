@@ -44,11 +44,23 @@ margin-left:15px;
   display:flex;
 }
 
-#navButtonLogin,#navButtonSignUp,#navButtonSell,#navCartButton{
+#navButtonLogin,#navButtonSignUp,#navButtonSell{
   height: 36px;
   font-weight: 600;
   font-size:18px;
   width:90px;
+  word-break: keep-all;
+  margin:8px;
+  margin-bottom:0;
+  margin-top:0px;
+  cursor:pointer;
+}
+#navCartButton
+{
+  height: 36px;
+  font-weight: 600;
+  font-size:18px;
+  width:120px;
   word-break: keep-all;
   margin:8px;
   margin-bottom:0;

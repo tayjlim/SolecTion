@@ -4,9 +4,10 @@ import { useSelector } from 'react-redux';
 import CartTile from "../CartTile";
 import Loading from '../Loading';
 import './index.css'
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 function MyCart ({}){
-
+    const history = useHistory()
     const dispatch = useDispatch();
     const [loaded,setloaded] = useState(false)
     const user = useSelector((state)=> state.session.user)
@@ -61,7 +62,7 @@ return (
           <h2>${totalPrice}</h2>
         </div>
 
-        <button id="checkoutButton" className="allButton">Checkout Now!</button>
+        <button id="checkoutButton" className="allButton" onClick={(e)=>(history.push('/thankyou'))}>Checkout Now!</button>
         </div>
       </div>
     ) : <h2>Please Log in To See cart!</h2>}
