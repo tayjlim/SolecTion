@@ -9,6 +9,7 @@ function CartTile ({item}) {
 
     const history = useHistory();
     const dispatch = useDispatch();
+    
     const handleDelete = async(e)=>{
         e.preventDefault()
         await dispatch(deleteFromCart(item.id))
