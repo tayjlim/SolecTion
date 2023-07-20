@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from 'react-redux';
+import { authenticate, deleteFromCart } from "../../store/session";
 import CartTile from "../CartTile";
 import Loading from '../Loading';
 import './index.css'
@@ -15,6 +16,17 @@ function MyCart ({}){
     let totalPrice = 0;
     if(user){
      totalPrice = user.item_cart.reduce((accumulator,item_cart)=>accumulator + item_cart.price,0)
+    }
+    const checkout =  async(e) =>{
+      e.preventDefault();
+      for(let item of user.item_cart){
+        console.log(item)
+        await dispatch(deleteFromCart(item.id))
+        await dispatch(authenticate())
+        // console.log('dispatch success ---- ')
+      }
+      await history.push('/thankyou')
+
     }
 
     // console.log(totalPrice)
@@ -62,7 +74,7 @@ return (
           <h2>${totalPrice}</h2>
         </div>
 
-        <button id="checkoutButton" className="allButton" onClick={(e)=>(history.push('/thankyou'))}>Checkout Now!</button>
+        <button id="checkoutButton" className="allButton" onClick={checkout}>Checkout Now!</button>
         </div>
       </div>
     ) : <h2>Please Log in To See cart!</h2>}

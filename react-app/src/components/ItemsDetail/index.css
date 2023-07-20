@@ -27,6 +27,10 @@
 
 
 }
+
+.OwnerOfItem{
+    cursor:none;
+}
 .clockDivandText{
     height:60px;
     background-color: #e9e8e3;
@@ -89,6 +93,6 @@
     max-width: 1296px;
 }
 .fade-in{
-    
+
     pointer-events: none;
 }

@@ -5,7 +5,7 @@ from app.models.db import db, environment, SCHEMA
 def undo_items():
 
     shoe1 = Items(
-    owner_id=2,
+    owner_id=3,
     name='Nike SB Dunk Low "Chicago"',
     desc='The Nike SB Dunk Low "Chicago" features a classic colorway inspired by the Chicago Bulls. It has a red and black leather upper with white accents.',
     price=120,
@@ -13,7 +13,7 @@ def undo_items():
     )
 
     shoe2 = Items(
-    owner_id=2,
+    owner_id=3,
     name='Nike SB Dunk Low "Travis Scott"',
     desc='The Nike SB Dunk Low "Travis Scott" is a collaboration with rapper Travis Scott. It features earthy tones, removable paisley print overlays, and a hidden stash pocket.',
     price=120,
@@ -21,7 +21,7 @@ def undo_items():
     )
 
     shoe3 = Items(
-    owner_id=2,
+    owner_id=3,
     name='Nike SB Dunk High "Tiffany"',
     desc='The Nike SB Dunk High "Tiffany" is a classic colorway inspired by the diamond brand Tiffany & Co. It features a teal and black color scheme with silver accents.',
     price=120,
@@ -30,7 +30,7 @@ def undo_items():
 
 
     shoe4 = Items(
-    owner_id=2,
+    owner_id=3,
     name='Nike SB Dunk Low "Pigeon"',
     desc='The Nike SB Dunk Low "Pigeon" is a legendary sneaker designed in collaboration with Jeff Staple. It gained significant attention due to its limited release and iconic pigeon logo on the heel.',
     price=120,
@@ -38,7 +38,7 @@ def undo_items():
     )
 
     shoe5 = Items(
-    owner_id=2,
+    owner_id=3,
     name='Nike SB Dunk Low "Heineken"',
     desc="The Nike SB Dunk Low 'Heineken' pays homage to the famous beer brand. It features a green and black color scheme inspired by Heineken's branding, along with premium materials and details.",
     price=120,
@@ -46,7 +46,7 @@ def undo_items():
     )
 
     shoe6 = Items(
-    owner_id=2,
+    owner_id=3,
     name='Nike SB Dunk Low "Supreme White Cement"',
     desc="The Nike SB Dunk Low 'Supreme' is a collaboration with the streetwear brand Supreme. It showcases unique colorways and materials, often incorporating Supreme's iconic box logo on the tongue or insole.",
     price=120,
@@ -54,7 +54,7 @@ def undo_items():
     )
 
     shoe7 = Items(
-    owner_id=2,
+    owner_id=3,
     name='Nike SB Dunk Low "Raygun"',
     desc='The Nike SB Dunk Low "Raygun" draws inspiration from the fictional Roswell Rayguns basketball team. It features vibrant colors, playful graphics, and an extraterrestrial theme.',
     price=120,
@@ -62,7 +62,7 @@ def undo_items():
     )
 
     shoe8 = Items(
-    owner_id=2,
+    owner_id=3,
     name='Nike SB Dunk High "Northern Lights"',
     desc='The Nike SB Dunk High "Northern Lights" takes inspiration from the mesmerizing natural phenomenon. It incorporates iridescent details and patterns to mimic the beauty of the aurora borealis.',
     price=120,
@@ -70,7 +70,7 @@ def undo_items():
     )
 
     shoe9 = Items(
-    owner_id=2,
+    owner_id=3,
     name='Nike SB Dunk Low "Diamond"',
     desc="The Nike SB Dunk Low 'Diamond' is a collaboration with Diamond Supply Co. It features a clean colorway with metallic silver accents and Diamond's signature logo on the tongue.",
     price=120,
@@ -78,7 +78,7 @@ def undo_items():
     )
 
     shoe10 = Items(
-    owner_id=2,
+    owner_id=3,
     name='Nike SB Dunk Low "Freddy Krueger"',
     desc="The Nike SB Dunk Low 'Freddy Krueger' is a highly sought-after release inspired by the iconic horror film character. It showcases a blood-spattered design and details reminiscent of Freddy's glove.",
     price=120,
@@ -86,7 +86,7 @@ def undo_items():
     )
 
     shoe11 = Items(
-    owner_id=2,
+    owner_id=3,
     name='Nike SB Dunk Low "Pushead 2"',
     desc="The Nike SB Dunk Low 'Pushead 2' is a collaboration with artist Brian Schroeder, also known as Pushead. The shoe features a unique design with Pushead's signature style, combining intricate illustrations and graffiti-inspired elements.",
     price=120,
@@ -94,7 +94,7 @@ def undo_items():
     )
 
     shoe12 = Items(
-    owner_id=2,
+    owner_id=3,
     name='Nike SB Dunk High "De La Soul"',
     desc='The Nike SB Dunk High "De La Soul" pays homage to the iconic hip-hop group. It features a vibrant color scheme and artwork inspired by De La Soul\'s album covers, making it a sought-after collector\'s item.',
     price=120,
@@ -102,7 +102,7 @@ def undo_items():
     )
 
     shoe13 = Items(
-    owner_id=2,
+    owner_id=3,
     name='Nike SB Dunk Low "Reese Forbes Denim"',
     desc='The Nike SB Dunk Low "Reese Forbes Denim" is a collaboration with professional skateboarder Reese Forbes. It incorporates denim material and stitching details, giving it a unique and stylish look.',
     price=120,
@@ -110,7 +110,7 @@ def undo_items():
     )
 
     shoe14 = Items(
-    owner_id=2,
+    owner_id=3,
     name='Nike SB Dunk Low "Hawaii"',
     desc='The Nike SB Dunk Low "Hawaii" draws inspiration from the tropical paradise. It features vibrant floral patterns, palm tree graphics, and beach-themed details, capturing the essence of Hawaii\'s culture and scenery.',
     price=120,
@@ -118,7 +118,7 @@ def undo_items():
         )
 
     shoe15 = Items(
-    owner_id=2,
+    owner_id=3,
     name='Nike SB Dunk High "Unlucky"',
     desc='The Nike SB Dunk High "Unlucky" showcases a Halloween-inspired design. It incorporates black and orange colors, spiderweb graphics, and other spooky details, making it a popular choice for fans of themed sneakers.',
     price=120,
@@ -126,7 +126,7 @@ def undo_items():
     )
 
     shoe16 = Items(
-    owner_id=2,
+    owner_id=3,
     name='Nike SB Dunk Low "Supreme Elephant"',
     desc='The Nike SB Dunk Low "Supreme Elephant" is a collaboration with Supreme. It features a unique elephant print pattern across the upper, combined with Supreme branding elements, creating a distinctive and eye-catching look.',
     price=120,
