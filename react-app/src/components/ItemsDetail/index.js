@@ -119,7 +119,8 @@ function ItemsDetail(){
                     >
                       {isAdded || itemInCart ? 'Added to Cart' : `Add to Cart $${singleItem.price}`}
                     </button>
-                  ): <button className = 'buyNowButton OwnerOfItem'>
+                  ): <button className = 'buyNowButton itemInCart fade-out'
+                        disabled={true}>
                     You own this item
                   </button>}
 
