@@ -111,7 +111,7 @@ function ItemsDetail(){
                         modalComponent={<LoginFormModal />}
                       />
                     </button>
-                  ) : (singleItem.owner_id == user.id) ?(
+                  ) : (singleItem.owner_id != user.id) ?(
                     <button
                       className={`buyNowButton ${isAdded || itemInCart ? 'fade-out' : ''}`}
                       onClick={handleAddToCart}
@@ -119,10 +119,11 @@ function ItemsDetail(){
                     >
                       {isAdded || itemInCart ? 'Added to Cart' : `Add to Cart $${singleItem.price}`}
                     </button>
-                  ): <button className = 'buyNowButton itemInCart fade-out'
-                        disabled={true}>
-                    You own this item
-                  </button>}
+                  ):
+                  <button className = 'buyNowButton itemInCart fade-out'
+                  disabled={true}>
+                You own this item
+                </button> }
 
 
             <div className = 'verifyCondition'>
